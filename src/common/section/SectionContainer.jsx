@@ -11,6 +11,7 @@ const Main = styled.main`
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 `;
+
 const SectionContext = React.createContext();
 const useSectionContext = () => {
   const context = React.useContext(SectionContext);
@@ -23,7 +24,7 @@ const useSectionContext = () => {
   return context;
 };
 
-const SectionContainer = (props) => {
+const SectionContainer = props => {
   const { registerSection, updateScrollLocation } = useScrollLocation();
 
   return (

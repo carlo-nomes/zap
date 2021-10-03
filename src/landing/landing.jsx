@@ -1,12 +1,12 @@
 import React from "react";
 
-import Section from "common/section";
-import Spacer from "common/spacer";
-import Arrow from "common/arrow";
+import Section from "common/Section";
+import Spacer from "common/Spacer";
+import Arrow from "common/Arrow";
 
-import Title from "./title";
-import SubTitle from "./sub-title";
-import Header from "./header";
+import Title from "./Title";
+import SubTitle from "./SubTitle";
+import Header from "./Header";
 
 const Landing = () => (
   <Section id="landing" color="light">

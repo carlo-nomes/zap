@@ -1,6 +1,6 @@
 import React from "react";
 
-import Item from "./item";
+import Item from "./Item";
 
 export default () => (
   <Item href="https://www.linkedin.com/in/carlo-nomes/" aria-label="LinkedIn">

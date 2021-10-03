@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-import Section from "common/section";
-import emojis from "common/emojis";
-import Spacer from "common/spacer";
+import Section from "common/Section";
+import Spacer from "common/Spacer";
 
-import ProfileImage from "./profile-image";
+import { Wave } from "common/emojis";
 
 const Wrapper = styled.span`
   align-self: center;
@@ -37,9 +36,8 @@ const Bio = () => (
   <Section id="bio" color="primary">
     <Spacer />
     <Wrapper>
-      <ProfileImage />
       <Text>
-        <emojis.Wave />
+        <Wave />
         &nbsp; Hi, I'm Carlo.
         <br />
         I'm an Antwerp based developer, helping companies create amazing webapps

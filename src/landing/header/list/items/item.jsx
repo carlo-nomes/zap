@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Button from "common/button";
+import Button from "common/Button";
 
 const ItemWrapper = styled.li`
   display: block;
@@ -9,7 +9,7 @@ const ItemWrapper = styled.li`
   margin: 5px;
 `;
 
-const Item = (props) => (
+const Item = props => (
   <ItemWrapper>
     <Button.Link
       href=""

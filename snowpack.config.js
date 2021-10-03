@@ -6,6 +6,10 @@ module.exports = {
   mount: {
     public: "/",
     src: "/_dist_",
+    "src/common": "/_dist_/common",
+  },
+  alias: {
+    common: "./src/common",
   },
   plugins: [
     /* ... */

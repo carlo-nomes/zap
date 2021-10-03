@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { useSectionContext } from "./section-container";
+import { useSectionContext } from "./SectionContainer";
 
 const Section = styled.section`
   width: 100%;

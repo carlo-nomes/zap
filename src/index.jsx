@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-export default ReactDOM.render(
-  <div>TEST</div>,
-  document.getElementById("root")
-);
+import App from "./App";
+
+export default ReactDOM.render(<App />, document.getElementById("root"));
