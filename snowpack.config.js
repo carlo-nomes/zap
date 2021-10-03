@@ -7,9 +7,7 @@ module.exports = {
     public: "/",
     src: "/_dist_",
   },
-  plugins: [
-    /* ... */
-  ],
+  plugins: ["@snowpack/plugin-typescript"],
   packageOptions: {
     /* ... */
   },
