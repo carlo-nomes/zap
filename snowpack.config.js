@@ -4,18 +4,12 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    public: { url: "/zap/", static: true, dot: true },
-    src: "/zap/_dist/",
+    public: { url: "/", static: true, dot: true },
+    src: "/_dist",
   },
   plugins: ["@snowpack/plugin-typescript"],
-  packageOptions: {
-    /* ... */
-  },
-  devOptions: {
-    /* ... */
-  },
   buildOptions: {
+    // site hosted on https://carlo-nomes.github.io/zap
     baseUrl: "/zap",
-    metaUrlPath: "/zap/_snowpack/",
   },
 };
