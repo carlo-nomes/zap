@@ -4,7 +4,7 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    public: "/",
+    public: { url: "/", static: true, dot: true },
     src: "/_dist_",
   },
   plugins: ["@snowpack/plugin-typescript"],
@@ -15,6 +15,6 @@ module.exports = {
     /* ... */
   },
   buildOptions: {
-    /* ... */
+    baseUrl: "/zap",
   },
 };
