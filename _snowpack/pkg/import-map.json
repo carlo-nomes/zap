@@ -3,6 +3,7 @@
     "lodash.debounce": "./lodash.debounce.js",
     "react": "./react.js",
     "react-dom": "./react-dom.js",
-    "styled-components": "./styled-components.js"
+    "styled-components": "./styled-components.js",
+    "styled-normalize": "./styled-normalize.js"
   }
 }

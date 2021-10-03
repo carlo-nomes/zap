@@ -7,7 +7,7 @@ import SubTitle from "./SubTitle.js";
 import Header from "./Header/index.js";
 const Landing = () => /* @__PURE__ */ React.createElement(Section, {
   id: "landing",
-  color: "light"
+  color: "var(--colors-gray-100)"
 }, /* @__PURE__ */ React.createElement(Header, null), /* @__PURE__ */ React.createElement(Spacer, null), /* @__PURE__ */ React.createElement(Title, null), /* @__PURE__ */ React.createElement(SubTitle, null), /* @__PURE__ */ React.createElement(Spacer, null), /* @__PURE__ */ React.createElement(Arrow, {
   href: "#bio"
 }));

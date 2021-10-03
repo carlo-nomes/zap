@@ -11,7 +11,7 @@ const Section = styled.section`
   position: relative;
   scroll-snap-align: start;
 
-  background-color: ${({color, theme}) => color && theme.colors[color] || color};
+  background-color: ${({color}) => color};
 `;
 const SectionWrapper = (props) => {
   const {current: id} = React.useRef(props.id);

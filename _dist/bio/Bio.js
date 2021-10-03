@@ -29,6 +29,6 @@ const Text = styled.p`
 `;
 const Bio = () => /* @__PURE__ */ React.createElement(Section, {
   id: "bio",
-  color: "primary"
+  color: "var(--colors-primary)"
 }, /* @__PURE__ */ React.createElement(Spacer, null), /* @__PURE__ */ React.createElement(Wrapper, null, /* @__PURE__ */ React.createElement(Text, null, /* @__PURE__ */ React.createElement(Wave, null), "  Hi, I'm Carlo.", /* @__PURE__ */ React.createElement("br", null), "I'm an Antwerp based developer, helping companies create amazing webapps using the latest tools and techniques.")), /* @__PURE__ */ React.createElement(Spacer, null));
 export default Bio;

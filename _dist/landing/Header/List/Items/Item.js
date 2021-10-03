@@ -1,6 +1,10 @@
 import React from "../../../../../_snowpack/pkg/react.js";
 import styled from "../../../../../_snowpack/pkg/styled-components.js";
-import Button from "../../../../common/Button.js";
+import AppButton from "../../../../common/Button.js";
+const Button = styled(AppButton)`
+  width: 2.5rem;
+  height: 2.5rem;
+`;
 const ItemWrapper = styled.li`
   display: block;
   text-decoration: none;
@@ -10,7 +14,6 @@ const Item = (props) => /* @__PURE__ */ React.createElement(ItemWrapper, null, /
   as: "a",
   target: "_blank",
   rel: "noopener noreferrer",
-  size: "40px",
   ...props
 }));
 export default Item;

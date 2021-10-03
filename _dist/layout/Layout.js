@@ -1,6 +1,6 @@
 import React from "../../_snowpack/pkg/react.js";
-import styled, {ThemeProvider} from "../../_snowpack/pkg/styled-components.js";
-import theme from "./theme.json.proxy.js";
+import styled from "../../_snowpack/pkg/styled-components.js";
+import GlobalStyle from "./GlobalStyles.js";
 const Wrapper = styled.div`
   position: absolute;
   top: 0;
@@ -11,11 +11,6 @@ const Wrapper = styled.div`
 
   display: flex;
   flex-direction: column;
-
-  font: ${({theme: theme2}) => theme2.font.base};
-  color: ${({theme: theme2}) => theme2.colors.text};
 `;
-const Layout = ({children}) => /* @__PURE__ */ React.createElement(ThemeProvider, {
-  theme
-}, /* @__PURE__ */ React.createElement(Wrapper, null, children));
+const Layout = ({children}) => /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(GlobalStyle, null), /* @__PURE__ */ React.createElement(Wrapper, null, children));
 export default Layout;

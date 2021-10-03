@@ -7,25 +7,25 @@ const Button = styled.button`
   display: block;
 
   box-sizing: border-box;
-  width: ${({size}) => size || "auto"};
-  height: ${({size}) => size || "auto"};
 
   padding: 10px;
   border-radius: 50%;
 
-  background-color: #d3d3d3;
-  color: #fafafa;
+  background-color: var(--colors-gray-400);
+  transition: background-color var(--transition-duration-default) ease-in-out;
+  color: var(--colors-gray-100);
 
-  box-shadow: rgba(0, 0, 0, 0.2) 0 2px 2px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 0.125rem 0.25rem;
 
   &:hover {
-    background-color: #c4c4c4;
+    background-color: var(--colors-gray-300);
   }
 
   &:active,
-  &::focus {
+  &:focus {
     outline: none;
-    box-shadow: rgba(0, 0, 0, 0.2) 0 2px 2px inset;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 0.125rem 0.25rem inset;
+    background-color: var(--colors-gray-300);
   }
 `;
 export default Button;

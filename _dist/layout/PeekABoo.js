@@ -1,6 +1,6 @@
 import React from "../../_snowpack/pkg/react.js";
 import styled from "../../_snowpack/pkg/styled-components.js";
-import {HearNoEvil, SeeNoEvil} from "./emojis/index.js";
+import {HearNoEvil, SeeNoEvil} from "../common/emojis/index.js";
 const Hidden = styled.div`
   position: absolute;
   top: -60px;
