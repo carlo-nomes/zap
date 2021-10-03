@@ -32,6 +32,8 @@ Temporary Items
 .apdisk
 
 ### react ###
+build
+
 .DS_*
 *.log
 logs
