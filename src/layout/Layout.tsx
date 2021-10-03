@@ -1,7 +1,7 @@
 import React from "react";
-import styled, { ThemeProvider } from "styled-components";
+import styled from "styled-components";
 
-import theme from "./theme.json";
+import GlobalStyle from "./GlobalStyles";
 
 const Wrapper = styled.div`
   position: absolute;
@@ -13,9 +13,6 @@ const Wrapper = styled.div`
 
   display: flex;
   flex-direction: column;
-
-  font: ${({ theme }) => theme.font.base};
-  color: ${({ theme }) => theme.colors.text};
 `;
 
 type Props = {
@@ -23,9 +20,10 @@ type Props = {
 };
 
 const Layout = ({ children }: Props) => (
-  <ThemeProvider theme={theme}>
+  <>
+    <GlobalStyle />
     <Wrapper>{children}</Wrapper>
-  </ThemeProvider>
+  </>
 );
 
 export default Layout;

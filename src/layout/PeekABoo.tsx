@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { HearNoEvil, SeeNoEvil } from "./emojis";
+import { HearNoEvil, SeeNoEvil } from "../common/emojis";
 
 const Hidden = styled.div`
   position: absolute;
