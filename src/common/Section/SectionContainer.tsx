@@ -16,10 +16,7 @@ const SectionContext = React.createContext();
 const useSectionContext = () => {
   const context = React.useContext(SectionContext);
 
-  if (!context)
-    throw Error(
-      "useSectionContext is not available outside of SectionContainer"
-    );
+  if (!context) throw Error("useSectionContext is not available outside of SectionContainer");
 
   return context;
 };

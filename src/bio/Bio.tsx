@@ -40,8 +40,7 @@ const Bio = () => (
         <Wave />
         &nbsp; Hi, I'm Carlo.
         <br />
-        I'm an Antwerp based developer, helping companies create amazing webapps
-        using the latest tools and techniques.
+        I'm an Antwerp based developer, helping companies create amazing webapps using the latest tools and techniques.
       </Text>
     </Wrapper>
     <Spacer />

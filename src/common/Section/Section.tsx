@@ -20,9 +20,7 @@ const SectionWrapper = (props) => {
   // Cannot change id after init
   const { current: id } = React.useRef(props.id);
   if (id !== props.id && process.env.NODE_ENV === "development") {
-    console.warn(
-      "props.id can't change after initialisation of Section component"
-    );
+    console.warn("props.id can't change after initialisation of Section component");
   }
 
   const { registerSection } = useSectionContext();

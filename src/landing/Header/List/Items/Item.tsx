@@ -11,13 +11,7 @@ const ItemWrapper = styled.li`
 
 const Item = (props) => (
   <ItemWrapper>
-    <Button.Link
-      href=""
-      target="_blank"
-      rel="noopener noreferrer"
-      size="40px"
-      {...props}
-    />
+    <Button.Link href="" target="_blank" rel="noopener noreferrer" size="40px" {...props} />
   </ItemWrapper>
 );
 
