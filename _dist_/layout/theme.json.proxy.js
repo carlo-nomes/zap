@@ -1,0 +1,2 @@
+let json = {"colors":{"text":"#333333","light":"#fafafa","primary":"#f4d75a"},"font":{"base":"16px \"Source Sans Pro\", sans-serif","small":".75rem \"Source Sans Pro\", sans-serif","large":"1.5rem \"Source Sans Pro\", sans-serif"}};
+export default json;
