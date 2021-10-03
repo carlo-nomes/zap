@@ -1,4 +1,4 @@
-import React from "./pkg/react.js";
+import React from "../snowpack/pkg/react.js";
 import {SectionContainer} from "./common/Section/index.js";
 import Landing from "./landing/index.js";
 import Bio from "./bio/index.js";

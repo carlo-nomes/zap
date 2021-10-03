@@ -1,4 +1,4 @@
-import styled from "../../../pkg/styled-components.js";
+import styled from "../../../../snowpack/pkg/styled-components.js";
 const List = styled.ul`
   display: inline-flex;
   flex-wrap: wrap;

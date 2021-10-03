@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from "../../pkg/react.js";
-import styled from "../../pkg/styled-components.js";
-import debounce from "../../pkg/lodash.debounce.js";
+import React, {useEffect, useState} from "../../../snowpack/pkg/react.js";
+import styled from "../../../snowpack/pkg/styled-components.js";
+import debounce from "../../../snowpack/pkg/lodash.debounce.js";
 const Main = styled.main`
   flex: 1;
 

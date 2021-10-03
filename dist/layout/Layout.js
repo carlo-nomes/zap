@@ -1,5 +1,5 @@
-import React from "../pkg/react.js";
-import styled, {ThemeProvider} from "../pkg/styled-components.js";
+import React from "../../snowpack/pkg/react.js";
+import styled, {ThemeProvider} from "../../snowpack/pkg/styled-components.js";
 import theme from "./theme.json.proxy.js";
 const Wrapper = styled.div`
   position: absolute;

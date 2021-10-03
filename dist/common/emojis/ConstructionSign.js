@@ -1,4 +1,4 @@
-import React from "../../pkg/react.js";
+import React from "../../../snowpack/pkg/react.js";
 const ConstructionSign = () => /* @__PURE__ */ React.createElement("span", {
   role: "img",
   "aria-label": "Construction Sign"
