@@ -1,8 +1,8 @@
 import React from "react";
 
-import Section from "common/Section";
-import Spacer from "common/Spacer";
-import Arrow from "common/Arrow";
+import Section from "../common/Section";
+import Spacer from "../common/Spacer";
+import Arrow from "../common/Arrow";
 
 import Title from "./Title";
 import SubTitle from "./SubTitle";

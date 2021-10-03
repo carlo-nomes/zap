@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import Right from "./right";
-import Left from "./left";
-import Bolt from "./bolt";
+import Right from "./Right";
+import Left from "./Left";
+import Bolt from "./Bolt";
 
 const Wrapper = styled.h1`
   display: flex;

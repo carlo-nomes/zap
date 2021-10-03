@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SectionContainer } from "common/Section";
+import { SectionContainer } from "./common/Section";
 
 import Landing from "./landing";
 import Bio from "./bio";

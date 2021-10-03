@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-import Section from "common/Section";
-import Spacer from "common/Spacer";
+import Section from "../common/Section";
+import Spacer from "../common/Spacer";
 
-import { Wave } from "common/emojis";
+import { Wave } from "../common/emojis";
 
 const Wrapper = styled.span`
   align-self: center;
@@ -40,8 +40,7 @@ const Bio = () => (
         <Wave />
         &nbsp; Hi, I'm Carlo.
         <br />
-        I'm an Antwerp based developer, helping companies create amazing webapps
-        using the latest tools and techniques.
+        I'm an Antwerp based developer, helping companies create amazing webapps using the latest tools and techniques.
       </Text>
     </Wrapper>
     <Spacer />

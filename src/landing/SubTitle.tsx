@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { ConstructionSign } from "common/emojis";
+import { ConstructionSign } from "../common/emojis";
 
 const Wrapper = styled.h2`
   align-self: center;
