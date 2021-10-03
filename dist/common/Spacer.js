@@ -1,4 +1,4 @@
-import styled from "../../_snowpack/pkg/styled-components.js";
+import styled from "../pkg/styled-components.js";
 const Spacer = styled.div`
   flex: 1;
 `;

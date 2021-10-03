@@ -1,4 +1,4 @@
-import React from "../../_snowpack/pkg/react.js";
+import React from "../pkg/react.js";
 import Section from "../common/Section/index.js";
 import Spacer from "../common/Spacer.js";
 import Arrow from "../common/Arrow.js";

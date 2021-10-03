@@ -1,4 +1,4 @@
-import React from "../../../../../_snowpack/pkg/react.js";
+import React from "../../../../pkg/react.js";
 import Item from "./Item.js";
 export default () => /* @__PURE__ */ React.createElement(Item, {
   href: "https://codepen.io/carlo-nomes/",

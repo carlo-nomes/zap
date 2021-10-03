@@ -1,5 +1,5 @@
-import React from "../../_snowpack/pkg/react.js";
-import styled, {keyframes} from "../../_snowpack/pkg/styled-components.js";
+import React from "../pkg/react.js";
+import styled, {keyframes} from "../pkg/styled-components.js";
 const jitter = keyframes`
   0%,
   100% {

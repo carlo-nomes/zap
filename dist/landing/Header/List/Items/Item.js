@@ -1,5 +1,5 @@
-import React from "../../../../../_snowpack/pkg/react.js";
-import styled from "../../../../../_snowpack/pkg/styled-components.js";
+import React from "../../../../pkg/react.js";
+import styled from "../../../../pkg/styled-components.js";
 import Button from "../../../../common/Button.js";
 const ItemWrapper = styled.li`
   display: block;

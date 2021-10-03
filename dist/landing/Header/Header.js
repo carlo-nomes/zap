@@ -1,5 +1,5 @@
-import React from "../../../_snowpack/pkg/react.js";
-import styled from "../../../_snowpack/pkg/styled-components.js";
+import React from "../../pkg/react.js";
+import styled from "../../pkg/styled-components.js";
 import List, {Items} from "./List/index.js";
 const Wrapper = styled.header`
   align-self: stretch;
