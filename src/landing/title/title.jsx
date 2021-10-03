@@ -1,9 +1,9 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
-import Right from "./right"
-import Left from "./left"
-import Bolt from "./bolt"
+import Right from "./right";
+import Left from "./left";
+import Bolt from "./bolt";
 
 const Wrapper = styled.h1`
   display: flex;
@@ -36,7 +36,7 @@ const Wrapper = styled.h1`
     font-size: 3rem;
     height: 60px;
   }
-`
+`;
 
 const Title = () => (
   <Wrapper>
@@ -44,6 +44,6 @@ const Title = () => (
     <Bolt />
     <Right>dev</Right>
   </Wrapper>
-)
+);
 
-export default Title
+export default Title;

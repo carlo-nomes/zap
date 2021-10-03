@@ -1,11 +1,11 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
-import Section from "common/section"
-import emojis from "common/emojis"
-import Spacer from "common/spacer"
+import Section from "common/section";
+import emojis from "common/emojis";
+import Spacer from "common/spacer";
 
-import ProfileImage from "./profile-image"
+import ProfileImage from "./profile-image";
 
 const Wrapper = styled.span`
   align-self: center;
@@ -17,7 +17,7 @@ const Wrapper = styled.span`
   @media (max-aspect-ratio: 1/1), (min-width: 1000px) and (min-height: 800px) {
     flex-direction: column;
   }
-`
+`;
 
 const Text = styled.p`
   flex: 1;
@@ -31,7 +31,7 @@ const Text = styled.p`
   @media (max-width: 500px), (max-height: 500px) {
     font-size: 1.5rem;
   }
-`
+`;
 
 const Bio = () => (
   <Section id="bio" color="primary">
@@ -48,6 +48,6 @@ const Bio = () => (
     </Wrapper>
     <Spacer />
   </Section>
-)
+);
 
-export default Bio
+export default Bio;

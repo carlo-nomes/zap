@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-import Item from "./item"
+import Item from "./item";
 
 export default () => (
   <Item href="https://github.com/carlo-nomes/" aria-label="GitHub">
@@ -11,4 +11,4 @@ export default () => (
       />
     </svg>
   </Item>
-)
+);

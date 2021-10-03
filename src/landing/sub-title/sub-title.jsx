@@ -1,7 +1,7 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
-import emojis from "common/emojis"
+import emojis from "common/emojis";
 
 const Wrapper = styled.h2`
   align-self: center;
@@ -17,7 +17,7 @@ const Wrapper = styled.h2`
   @media (max-width: 700px), (max-height: 700px) {
     font-size: 1rem;
   }
-`
+`;
 
 const SubTitle = () => (
   <Wrapper>
@@ -25,6 +25,6 @@ const SubTitle = () => (
     under construction
     <emojis.ConstructionSign />
   </Wrapper>
-)
+);
 
-export default SubTitle
+export default SubTitle;

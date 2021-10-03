@@ -1,8 +1,8 @@
-import React from "react"
-import styled, { ThemeProvider } from "styled-components"
-import { Helmet } from "react-helmet"
+import React from "react";
+import styled, { ThemeProvider } from "styled-components";
+import { Helmet } from "react-helmet";
 
-import theme from "./theme.json"
+import theme from "./theme.json";
 
 const Wrapper = styled.div`
   position: absolute;
@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 
   font: ${({ theme }) => theme.font.base};
   color: ${({ theme }) => theme.colors.text};
-`
+`;
 
 const Layout = ({ element }) => (
   <>
@@ -33,6 +33,6 @@ const Layout = ({ element }) => (
       <Wrapper>{element}</Wrapper>
     </ThemeProvider>
   </>
-)
+);
 
-export default Layout
+export default Layout;

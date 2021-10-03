@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const List = styled.ul`
   display: inline-flex;
@@ -8,6 +8,6 @@ const List = styled.ul`
   width: auto;
   margin: 0;
   padding: 10px;
-`
+`;
 
-export default List
+export default List;

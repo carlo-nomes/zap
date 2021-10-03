@@ -1,5 +1,5 @@
-import React from "react"
-import styled, { keyframes } from "styled-components"
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
 const groove = keyframes`
   0% {
@@ -14,7 +14,7 @@ const groove = keyframes`
   100% {
     color: #b5413b;
   }
-`
+`;
 
 const Wrapper = styled.span`
   animation: ${groove} 30s infinite;
@@ -26,7 +26,7 @@ const Wrapper = styled.span`
     height: 100%;
     width: auto;
   }
-`
+`;
 
 const Bolt = () => (
   <Wrapper>
@@ -38,6 +38,6 @@ const Bolt = () => (
       />
     </svg>
   </Wrapper>
-)
+);
 
-export default Bolt
+export default Bolt;

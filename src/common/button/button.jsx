@@ -1,6 +1,6 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
-const styleElement = el => styled(el)`
+const styleElement = (el) => styled(el)`
   border: none;
   font: inherit;
   cursor: pointer;
@@ -28,9 +28,9 @@ const styleElement = el => styled(el)`
     outline: none;
     box-shadow: rgba(0, 0, 0, 0.2) 0 2px 2px inset;
   }
-`
+`;
 
-const Button = styleElement("button")
-Button.Link = styleElement("a")
+const Button = styleElement("button");
+Button.Link = styleElement("a");
 
-export default Button
+export default Button;

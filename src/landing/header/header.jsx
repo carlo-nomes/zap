@@ -1,7 +1,7 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
-import List, { Items } from "./list"
+import List, { Items } from "./list";
 
 const Wrapper = styled.header`
   align-self: stretch;
@@ -10,7 +10,7 @@ const Wrapper = styled.header`
   flex-direction: row;
 
   justify-content: flex-end;
-`
+`;
 
 export default () => (
   <Wrapper>
@@ -23,4 +23,4 @@ export default () => (
       <Items.Twitter />
     </List>
   </Wrapper>
-)
+);

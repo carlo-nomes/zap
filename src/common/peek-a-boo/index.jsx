@@ -1,3 +1,3 @@
-import PeekABoo from "./peek-a-boo"
+import PeekABoo from "./peek-a-boo";
 
-export default PeekABoo
+export default PeekABoo;

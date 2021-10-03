@@ -1,7 +1,7 @@
-import React from "react"
-import styled from "styled-components"
-import { StaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import React from "react";
+import styled from "styled-components";
+import { StaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
 
 const clippath = `
 clip-path: polygon(
@@ -15,16 +15,16 @@ clip-path: polygon(
   0% 43%,
   17% 12%
 );
-`
+`;
 
 const StyledImage = styled(Img)`
   margin: 20px;
 
   ${clippath};
   filter: saturate(17%) brightness(105%) contrast(215%);
-`
+`;
 
-const ProfileImage = props => (
+const ProfileImage = (props) => (
   <StaticQuery
     query={graphql`
       query {
@@ -37,10 +37,10 @@ const ProfileImage = props => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <StyledImage fixed={data.file.childImageSharp.fixed} {...props} />
     )}
   />
-)
+);
 
-export default ProfileImage
+export default ProfileImage;

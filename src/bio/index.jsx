@@ -1,3 +1,3 @@
-import Bio from "./bio.js"
+import Bio from "./bio.js";
 
-export default Bio
+export default Bio;

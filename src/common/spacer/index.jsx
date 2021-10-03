@@ -1,3 +1,3 @@
-import Spacer from "./spacer.js"
+import Spacer from "./spacer.js";
 
-export default Spacer
+export default Spacer;

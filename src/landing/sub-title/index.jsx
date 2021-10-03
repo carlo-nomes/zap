@@ -1,3 +1,3 @@
-import SubTitle from "./sub-title"
+import SubTitle from "./sub-title";
 
-export default SubTitle
+export default SubTitle;

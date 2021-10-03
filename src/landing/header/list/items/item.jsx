@@ -1,15 +1,15 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
-import Button from "common/button"
+import Button from "common/button";
 
 const ItemWrapper = styled.li`
   display: block;
   text-decoration: none;
   margin: 5px;
-`
+`;
 
-const Item = props => (
+const Item = (props) => (
   <ItemWrapper>
     <Button.Link
       href=""
@@ -19,6 +19,6 @@ const Item = props => (
       {...props}
     />
   </ItemWrapper>
-)
+);
 
-export default Item
+export default Item;
