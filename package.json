@@ -19,7 +19,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "format": "prettier --write src/**/*.{js,jsx}",
+    "format": "prettier --write './src/**/*.{js,jsx}'",
     "deploy": "gh-pages -d public"
   },
   "repository": {
