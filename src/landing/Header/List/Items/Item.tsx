@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styled from "styled-components";
 
 import Button from "../../../../common/Button";
@@ -9,9 +9,14 @@ const ItemWrapper = styled.li`
   margin: 5px;
 `;
 
-const Item = (props) => (
+type Props = {
+  href: string;
+  "aria-label": string;
+  children: ReactNode;
+};
+const Item = (props: Props) => (
   <ItemWrapper>
-    <Button.Link href="" target="_blank" rel="noopener noreferrer" size="40px" {...props} />
+    <Button as="a" target="_blank" rel="noopener noreferrer" size="40px" {...props} />
   </ItemWrapper>
 );
 

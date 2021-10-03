@@ -1,6 +1,7 @@
 import React from "react";
-import emojis from "../emojis";
 import styled from "styled-components";
+
+import { HearNoEvil, SeeNoEvil } from "./emojis";
 
 const Hidden = styled.div`
   position: absolute;
@@ -16,7 +17,7 @@ const Hidden = styled.div`
   font-size: 50px;
 `;
 
-const usePeekABoo = (delay) => {
+const usePeekABoo = (delay: number) => {
   const [peekABoo, setPeekABoo] = React.useState(false);
 
   React.useEffect(() => {
@@ -29,7 +30,7 @@ const usePeekABoo = (delay) => {
 
 const PeekABoo = ({ delay = 3000 }) => {
   const peekABoo = usePeekABoo(delay);
-  return <Hidden>{peekABoo ? <emojis.HearNoEvil /> : <emojis.SeeNoEvil />}</Hidden>;
+  return <Hidden>{peekABoo ? <HearNoEvil /> : <SeeNoEvil />}</Hidden>;
 };
 
 export default PeekABoo;

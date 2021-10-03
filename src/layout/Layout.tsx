@@ -18,7 +18,11 @@ const Wrapper = styled.div`
   color: ${({ theme }) => theme.colors.text};
 `;
 
-const Layout = ({ children }) => (
+type Props = {
+  children: React.ReactNode;
+};
+
+const Layout = ({ children }: Props) => (
   <ThemeProvider theme={theme}>
     <Wrapper>{children}</Wrapper>
   </ThemeProvider>

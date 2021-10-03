@@ -52,8 +52,12 @@ const ChevronDown = () => (
   </svg>
 );
 
-const Arrow = (props) => (
-  <Link aria-label="Next section" {...props}>
+type Props = {
+  href: string;
+};
+
+const Arrow = ({ href }: Props) => (
+  <Link aria-label="Next section" href={href}>
     <ChevronDown />
     <ChevronDown />
   </Link>

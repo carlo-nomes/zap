@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styled from "styled-components";
 import { useScrollLocation } from "./hooks";
 
@@ -12,7 +12,10 @@ const Main = styled.main`
   scroll-behavior: smooth;
 `;
 
-const SectionContext = React.createContext();
+type SectionContextType = {
+  registerSection: (v: { id: string; node: any }) => void;
+};
+const SectionContext = React.createContext<SectionContextType>({ registerSection: () => {} });
 const useSectionContext = () => {
   const context = React.useContext(SectionContext);
 
@@ -21,12 +24,16 @@ const useSectionContext = () => {
   return context;
 };
 
-const SectionContainer = (props) => {
+type Props = {
+  children: ReactNode;
+};
+
+const SectionContainer = ({ children }: Props) => {
   const { registerSection, updateScrollLocation } = useScrollLocation();
 
   return (
     <SectionContext.Provider value={{ registerSection }}>
-      <Main onScroll={updateScrollLocation} {...props} />
+      <Main onScroll={updateScrollLocation}>{children}</Main>
     </SectionContext.Provider>
   );
 };

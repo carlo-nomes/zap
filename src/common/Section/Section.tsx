@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styled from "styled-components";
 
 import { useSectionContext } from "./SectionContainer";
@@ -8,15 +8,21 @@ const Section = styled.section`
   height: 100%;
 
   display: flex;
-  flex-direction: ${({ direction }) => direction || "column"};
+  flex-direction: column;
 
   position: relative;
   scroll-snap-align: start;
 
-  background-color: ${({ color, theme }) => theme.colors[color] || color};
+  background-color: ${({ color, theme }) => (color && theme.colors[color]) || color};
 `;
 
-const SectionWrapper = (props) => {
+type Props = {
+  id: string;
+  color?: string;
+  children: ReactNode;
+};
+
+const SectionWrapper = (props: Props) => {
   // Cannot change id after init
   const { current: id } = React.useRef(props.id);
   if (id !== props.id && process.env.NODE_ENV === "development") {
@@ -24,13 +30,13 @@ const SectionWrapper = (props) => {
   }
 
   const { registerSection } = useSectionContext();
-  const [node, setRef] = React.useState(null);
+  const [node, setRef] = React.useState<HTMLElement | null>(null);
 
   React.useEffect(() => {
     if (id) registerSection({ id, node });
   }, [node, id]);
 
-  return <Section ref={setRef} {...props} id={id} />;
+  return <Section ref={setRef} {...props} />;
 };
 
 export default SectionWrapper;
