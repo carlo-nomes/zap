@@ -33,7 +33,7 @@ const Text = styled.p`
 `;
 
 const Bio = () => (
-  <Section id="bio" color="primary">
+  <Section id="bio" color="var(--colors-primary)">
     <Spacer />
     <Wrapper>
       <Text>

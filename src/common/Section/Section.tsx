@@ -13,7 +13,7 @@ const Section = styled.section`
   position: relative;
   scroll-snap-align: start;
 
-  background-color: ${({ color, theme }) => (color && theme.colors[color]) || color};
+  background-color: ${({ color }) => color};
 `;
 
 type Props = {

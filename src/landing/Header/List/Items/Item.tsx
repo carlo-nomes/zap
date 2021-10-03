@@ -1,7 +1,12 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
 
-import Button from "../../../../common/Button";
+import AppButton from "../../../../common/Button";
+
+const Button = styled(AppButton)`
+  width: 2.5rem;
+  height: 2.5rem;
+`;
 
 const ItemWrapper = styled.li`
   display: block;
@@ -16,7 +21,7 @@ type Props = {
 };
 const Item = (props: Props) => (
   <ItemWrapper>
-    <Button as="a" target="_blank" rel="noopener noreferrer" size="40px" {...props} />
+    <Button as="a" target="_blank" rel="noopener noreferrer" {...props} />
   </ItemWrapper>
 );
 

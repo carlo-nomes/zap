@@ -9,7 +9,7 @@ import SubTitle from "./SubTitle";
 import Header from "./Header";
 
 const Landing = () => (
-  <Section id="landing" color="light">
+  <Section id="landing" color="var(--colors-gray-100)">
     <Header />
     <Spacer />
     <Title />
