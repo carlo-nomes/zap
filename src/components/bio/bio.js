@@ -34,7 +34,7 @@ const Text = styled.p`
 `
 
 const Bio = () => (
-  <Section id="bio" color="#f4d75a">
+  <Section id="bio" color="primary">
     <Spacer />
     <Wrapper>
       <ProfileImage />

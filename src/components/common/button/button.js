@@ -23,7 +23,9 @@ const styleElement = el => styled(el)`
     background-color: #c4c4c4;
   }
 
-  &:active {
+  &:active,
+  &::focus {
+    outline: none;
     box-shadow: rgba(0, 0, 0, 0.2) 0 2px 2px inset;
   }
 `
