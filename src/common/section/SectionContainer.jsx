@@ -24,7 +24,7 @@ const useSectionContext = () => {
   return context;
 };
 
-const SectionContainer = props => {
+const SectionContainer = (props) => {
   const { registerSection, updateScrollLocation } = useScrollLocation();
 
   return (

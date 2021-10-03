@@ -9,7 +9,7 @@ const ItemWrapper = styled.li`
   margin: 5px;
 `;
 
-const Item = props => (
+const Item = (props) => (
   <ItemWrapper>
     <Button.Link
       href=""
