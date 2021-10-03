@@ -30,6 +30,9 @@
     "format": "prettier --write './src/**/*.{js,jsx,ts,tsx,json}'",
     "deploy": "gh-pages -d public"
   },
+  "prettier": {
+    "printWidth": 120
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/cnomes/zap"
