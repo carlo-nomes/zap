@@ -15,13 +15,13 @@ const Main = styled.main`
 const SCROLL_DEBOUNCE_TIME = 100;
 
 const SectionContext = React.createContext({
-  sections: {} as Record<string, HTMLElement | null>,
-  registerSection: (_id: string, _node: HTMLElement | null) => {},
+  sections: {} as Record<string, HTMLElement>,
+  registerSection: (_id: string, _node: HTMLElement) => {},
 });
 
 const SectionContainer = ({ children }: { children: ReactNode }) => {
-  const [sections, setSections] = useState<Record<string, HTMLElement | null>>({});
-  const registerSection = (id: string, node: HTMLElement | null) => setSections((prev) => ({ ...prev, [id]: node }));
+  const [sections, setSections] = useState<Record<string, HTMLElement>>({});
+  const registerSection = (id: string, node: HTMLElement) => setSections((prev) => ({ ...prev, [id]: node }));
 
   const [hash, setHash] = useState<string>("");
   // Keep hash in sync
@@ -41,9 +41,14 @@ const SectionContainer = ({ children }: { children: ReactNode }) => {
   }, [hash, sections]);
 
   const updateScrollLocation = debounce(() => {
-    const id = Object.values(sections).find((element) => element?.getBoundingClientRect().top === 0)?.id || "";
-    window.location.hash = `#${id}`;
-    setHash(id);
+    const elementInView = Object.values(sections).find((element) => {
+      const { top, bottom } = element.getBoundingClientRect();
+      return top <= 0 && bottom > 0;
+    });
+
+    if (!elementInView) return;
+    window.location.hash = `#${elementInView.id}`;
+    setHash(elementInView.id);
   }, SCROLL_DEBOUNCE_TIME);
 
   return (
@@ -55,9 +60,6 @@ const SectionContainer = ({ children }: { children: ReactNode }) => {
 
 const useSectionContext = () => {
   const context = React.useContext(SectionContext);
-
-  if (!context) throw Error("useSectionContext is not available outside of SectionContainer");
-
   return context;
 };
 
