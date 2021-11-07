@@ -16,7 +16,7 @@ const SCROLL_DEBOUNCE_TIME = 100;
 
 const SectionContext = React.createContext({
   sections: {} as Record<string, HTMLElement | null>,
-  registerSection: (id: string, node: HTMLElement | null) => {},
+  registerSection: (_id: string, _node: HTMLElement | null) => {},
 });
 
 const SectionContainer = ({ children }: { children: ReactNode }) => {

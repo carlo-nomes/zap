@@ -2,7 +2,7 @@ import React from "react";
 
 import Item from "./Item";
 
-export default () => (
+const LinkedIn = () => (
   <Item href="https://www.linkedin.com/in/carlo-nomes/" aria-label="LinkedIn">
     <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -12,3 +12,5 @@ export default () => (
     </svg>
   </Item>
 );
+
+export default LinkedIn;
