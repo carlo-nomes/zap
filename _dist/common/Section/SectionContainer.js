@@ -13,7 +13,7 @@ const Main = styled.main`
 const SCROLL_DEBOUNCE_TIME = 100;
 const SectionContext = React.createContext({
   sections: {},
-  registerSection: (id, node) => {
+  registerSection: (_id, _node) => {
   }
 });
 const SectionContainer = ({children}) => {
