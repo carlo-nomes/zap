@@ -1,7 +1,7 @@
-import React from "react";
+import React, { HTMLProps } from "react";
 
-const ConstructionSign = () => (
-  <span role="img" aria-label="Construction Sign">
+const ConstructionSign = (props: HTMLProps<HTMLSpanElement>) => (
+  <span role="img" aria-label="Construction Sign" {...props}>
     🚧
   </span>
 );

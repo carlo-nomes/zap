@@ -1,7 +1,7 @@
-import React from "react";
+import React, { HTMLProps } from "react";
 
-const HearNoEvil = () => (
-  <span role="img" aria-label="Hear No Evil">
+const HearNoEvil = (props: HTMLProps<HTMLSpanElement>) => (
+  <span role="img" aria-label="Hear No Evil" {...props}>
     🙉
   </span>
 );
