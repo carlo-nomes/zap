@@ -1,7 +1,7 @@
-import React from "react";
+import React, { HTMLProps } from "react";
 
-const Wave = () => (
-  <span role="img" aria-label="Waving Hand">
+const Wave = (props: HTMLProps<HTMLSpanElement>) => (
+  <span role="img" aria-label="Waving Hand" {...props}>
     👋
   </span>
 );
