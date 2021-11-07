@@ -33,7 +33,8 @@ const SectionWrapper = (props: Props) => {
   const [node, setRef] = React.useState<HTMLElement | null>(null);
 
   React.useEffect(() => {
-    if (id) registerSection(id, node);
+    if (!id || !node) return;
+    registerSection(id, node);
   }, [node, id]);
 
   return <Section ref={setRef} {...props} />;
