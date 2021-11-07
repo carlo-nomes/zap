@@ -4,6 +4,7 @@
   "description": "Portfolio site for @Carlo.Nomes",
   "version": "1.0.0",
   "author": "Carlo Nomes <carlo@zap.dev>",
+  "homepage": "https://carlo-nomes.github.io/zap",
   "license": "MIT",
   "dependencies": {
     "@types/lodash.debounce": "^4.0.6",
