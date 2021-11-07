@@ -5,6 +5,9 @@ import AppSection from "../common/Section";
 
 import { Wave as AppWave } from "../common/emojis";
 
+import Arrow from "../common/Arrow";
+import Spacer from "../common/Spacer";
+
 const Section = styled(AppSection)`
   align-items: center;
   justify-content: center;
@@ -45,6 +48,7 @@ const Q = styled.q`
 
 const Bio = () => (
   <Section id="bio" color="var(--colors-primary)">
+    <Spacer />
     <Wrapper>
       <Wave />
       <Text>
@@ -65,6 +69,8 @@ const Bio = () => (
         communication between all stakeholders and team members, regardless of the size of the project.
       </Text>
     </Wrapper>
+    <Spacer />
+    <Arrow href="#timeline" />
   </Section>
 );
 
