@@ -2,7 +2,7 @@ import Item from "./Item";
 import Codepen from "./Codepen";
 import GitHub from "./Github";
 import Instagram from "./Instagram";
-import LinkedIn from "./Linkedin";
+import LinkedIn from "./LinkedIn";
 import Twitter from "./Twitter";
 import Medium from "./Medium";
 

@@ -2,7 +2,7 @@ import React from "react";
 
 import Item from "./Item";
 
-export default () => (
+const GitHub = () => (
   <Item href="https://github.com/carlo-nomes/" aria-label="GitHub">
     <svg viewBox="0 0 496 512" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -12,3 +12,5 @@ export default () => (
     </svg>
   </Item>
 );
+
+export default GitHub;

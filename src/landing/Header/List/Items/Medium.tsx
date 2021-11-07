@@ -2,7 +2,7 @@ import React from "react";
 
 import Item from "./Item";
 
-export default () => (
+const Medium = () => (
   <Item href="https://medium.com/@carlo.nomes/" aria-label="Medium">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
       <path
@@ -12,3 +12,5 @@ export default () => (
     </svg>
   </Item>
 );
+
+export default Medium;

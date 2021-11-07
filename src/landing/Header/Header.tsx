@@ -12,7 +12,7 @@ const Wrapper = styled.header`
   justify-content: flex-end;
 `;
 
-export default () => (
+const Header = () => (
   <Wrapper>
     <List>
       <Items.GitHub />
@@ -24,3 +24,5 @@ export default () => (
     </List>
   </Wrapper>
 );
+
+export default Header;

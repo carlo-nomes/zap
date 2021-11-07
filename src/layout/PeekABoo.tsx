@@ -28,7 +28,9 @@ const usePeekABoo = (delay: number) => {
   return peekABoo;
 };
 
-const PeekABoo = ({ delay = 3000 }) => {
+type Props = { delay?: number };
+
+const PeekABoo = ({ delay = 3000 }: Props) => {
   const peekABoo = usePeekABoo(delay);
   return <Hidden>{peekABoo ? <HearNoEvil /> : <SeeNoEvil />}</Hidden>;
 };

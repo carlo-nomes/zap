@@ -2,7 +2,7 @@ import React from "react";
 
 import Item from "./Item";
 
-export default () => (
+const CodePen = () => (
   <Item href="https://codepen.io/carlo-nomes/" aria-label="CodePen">
     <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -12,3 +12,5 @@ export default () => (
     </svg>
   </Item>
 );
+
+export default CodePen;

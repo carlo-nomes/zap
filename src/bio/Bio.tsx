@@ -38,9 +38,10 @@ const Bio = () => (
     <Wrapper>
       <Text>
         <Wave />
-        &nbsp; Hi, I'm Carlo.
+        &nbsp;Hi, I&apos;m Carlo.
         <br />
-        I'm an Antwerp based developer, helping companies create amazing webapps using the latest tools and techniques.
+        I&apos;m an Antwerp based developer, helping companies create amazing webapps using the latest tools and
+        techniques.
       </Text>
     </Wrapper>
     <Spacer />
