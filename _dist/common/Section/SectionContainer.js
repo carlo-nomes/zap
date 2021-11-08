@@ -34,9 +34,14 @@ const SectionContainer = ({children}) => {
       sections[hash]?.scrollIntoView();
   }, [hash, sections]);
   const updateScrollLocation = debounce(() => {
-    const id = Object.values(sections).find((element) => element?.getBoundingClientRect().top === 0)?.id || "";
-    window.location.hash = `#${id}`;
-    setHash(id);
+    const elementInView = Object.values(sections).find((element) => {
+      const {top, bottom} = element.getBoundingClientRect();
+      return top <= 0 && bottom > 0;
+    });
+    if (!elementInView)
+      return;
+    window.location.hash = `#${elementInView.id}`;
+    setHash(elementInView.id);
   }, SCROLL_DEBOUNCE_TIME);
   return /* @__PURE__ */ React.createElement(SectionContext.Provider, {
     value: {sections, registerSection}
@@ -46,8 +51,6 @@ const SectionContainer = ({children}) => {
 };
 const useSectionContext = () => {
   const context = React.useContext(SectionContext);
-  if (!context)
-    throw Error("useSectionContext is not available outside of SectionContainer");
   return context;
 };
 export default SectionContainer;

@@ -21,8 +21,9 @@ const SectionWrapper = (props) => {
   const {registerSection} = useSectionContext();
   const [node, setRef] = React.useState(null);
   React.useEffect(() => {
-    if (id)
-      registerSection(id, node);
+    if (!id || !node)
+      return;
+    registerSection(id, node);
   }, [node, id]);
   return /* @__PURE__ */ React.createElement(Section, {
     ref: setRef,
