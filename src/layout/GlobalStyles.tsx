@@ -3,15 +3,15 @@ import { normalize } from "styled-normalize";
 
 const variables = css`
   // Gray Palette
-  --colors-gray-100: hsl(200, 100%, 97%);
-  --colors-gray-200: hsl(200, 50%, 85%);
-  --colors-gray-300: hsl(200, 28%, 70%);
-  --colors-gray-400: hsl(200, 15%, 50%);
-  --colors-gray-500: hsl(200, 25%, 40%);
-  --colors-gray-600: hsl(200, 30%, 30%);
-  --colors-gray-700: hsl(200, 40%, 20%);
-  --colors-gray-800: hsl(200, 60%, 15%);
-  --colors-gray-800: hsl(200, 60%, 5%);
+  --colors-gray-100: hsl(0, 5%, 97%);
+  --colors-gray-200: hsl(0, 5%, 80%);
+  --colors-gray-300: hsl(0, 5%, 60%);
+  --colors-gray-400: hsl(0, 5%, 30%);
+  --colors-gray-500: hsl(0, 5%, 25%);
+  --colors-gray-600: hsl(0, 5%, 20%);
+  --colors-gray-700: hsl(0, 5%, 15%);
+  --colors-gray-800: hsl(0, 5%, 10%);
+  --colors-gray-900: hsl(0, 5%, 5%);
   --colors-gray: var(--colors-gray-500);
 
   // Primary Palette
@@ -21,6 +21,10 @@ const variables = css`
   --colors-primary-700: hsl(48, 87%, 20%);
   --colors-primary-900: hsl(48, 87%, 10%);
   --colors-primary: var(--colors-primary-500);
+
+  // Secondary Palette
+  --colors-secondary-500: hsl(3, 51%, 47%);
+  --colors-secondary: var(--colors-secondary-500);
 
   --font-family-sans: "Open Sans", sans-serif;
 
