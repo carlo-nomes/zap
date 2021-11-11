@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 
 import { useScrollContext } from "./ScrollContext";
-import { isFullElementInView } from "./util";
+import { isElementInView } from "./util";
 
 const useElementInView = <ElementType extends HTMLElement>() => {
   const { addListener, removeListener } = useScrollContext();
@@ -9,7 +9,7 @@ const useElementInView = <ElementType extends HTMLElement>() => {
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
-    const updateIsInView = () => element.current && setIsInView(isFullElementInView(element.current));
+    const updateIsInView = () => element.current && setIsInView(isElementInView(element.current));
     addListener(updateIsInView);
     return () => removeListener(updateIsInView);
   }, [addListener, removeListener]);

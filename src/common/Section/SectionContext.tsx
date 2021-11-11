@@ -1,15 +1,9 @@
 import React, { ReactNode, useCallback, useEffect, useReducer } from "react";
-import styled from "styled-components";
 
 import { useScrollContext } from "../ScrollContext";
 import { isElementInView } from "../ScrollContext/util";
 
 import useHash from "../useHash";
-import Section from "./Section";
-
-const EndSection = styled(Section)`
-  height: 0;
-`;
 
 const SectionContext = React.createContext({
   sections: {} as Record<string, HTMLElement>,
@@ -64,12 +58,7 @@ const SectionContextProvider = ({ children }: { children: ReactNode }) => {
     return () => removeListener(updateHash);
   }, [addListener, removeListener, sections, setHash]);
 
-  return (
-    <SectionContext.Provider value={{ sections, addSection, removeSection }}>
-      {children}
-      <EndSection id="end" />
-    </SectionContext.Provider>
-  );
+  return <SectionContext.Provider value={{ sections, addSection, removeSection }}>{children}</SectionContext.Provider>;
 };
 
 export default SectionContextProvider;
