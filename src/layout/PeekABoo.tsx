@@ -23,7 +23,7 @@ const usePeekABoo = (delay: number) => {
   React.useEffect(() => {
     const interval = setInterval(() => setPeekABoo((prevState) => !prevState), delay);
     return () => clearInterval(interval);
-  }, []);
+  }, [delay]);
 
   return peekABoo;
 };
