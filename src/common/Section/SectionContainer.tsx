@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 import debounce from "lodash.debounce";
 
@@ -21,7 +21,10 @@ const SectionContext = React.createContext({
 
 const SectionContainer = ({ children }: { children: ReactNode }) => {
   const [sections, setSections] = useState<Record<string, HTMLElement>>({});
-  const registerSection = (id: string, node: HTMLElement) => setSections((prev) => ({ ...prev, [id]: node }));
+  const registerSection = useCallback(
+    (id: string, node: HTMLElement) => setSections((prev) => ({ ...prev, [id]: node })),
+    []
+  );
 
   const [hash, setHash] = useState<string>("");
   // Keep hash in sync
