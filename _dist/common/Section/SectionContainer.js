@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "../../../_snowpack/pkg/react.js";
+import React, {useCallback, useEffect, useState} from "../../../_snowpack/pkg/react.js";
 import styled from "../../../_snowpack/pkg/styled-components.js";
 import debounce from "../../../_snowpack/pkg/lodash.debounce.js";
 const Main = styled.main`
@@ -18,7 +18,7 @@ const SectionContext = React.createContext({
 });
 const SectionContainer = ({children}) => {
   const [sections, setSections] = useState({});
-  const registerSection = (id, node) => setSections((prev) => ({...prev, [id]: node}));
+  const registerSection = useCallback((id, node) => setSections((prev) => ({...prev, [id]: node})), []);
   const [hash, setHash] = useState("");
   useEffect(() => {
     if (!window)
