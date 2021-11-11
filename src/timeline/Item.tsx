@@ -1,6 +1,8 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
 
+import { useElementInView } from "../common/ScrollContext";
+
 const Wrapper = styled.li`
   list-style: none;
 
@@ -21,6 +23,17 @@ const Wrapper = styled.li`
       align-self: flex-start;
       text-align: left;
     }
+  }
+
+  opacity: 0;
+  margin: 1rem 0 -1rem 0;
+
+  transition: opacity var(--transition-duration-default) ease-in-out,
+    margin var(--transition-duration-default) ease-in-out;
+
+  &.in-view {
+    opacity: 1;
+    margin: 0;
   }
 `;
 
@@ -54,13 +67,17 @@ type Props = {
   children: ReactNode;
 };
 
-const Item = ({ title, subtitle, time, children }: Props) => (
-  <Wrapper>
-    <TitleWrapper>{title}</TitleWrapper>
-    <SubTitleWrapper>{subtitle}</SubTitleWrapper>
-    <TimeWrapper>{time}</TimeWrapper>
-    <Text>{children}</Text>
-  </Wrapper>
-);
+const Item = ({ title, subtitle, time, children }: Props) => {
+  const [isInView, element] = useElementInView<HTMLLIElement>();
+
+  return (
+    <Wrapper ref={element} className={isInView ? "in-view" : ""}>
+      <TitleWrapper>{title}</TitleWrapper>
+      <SubTitleWrapper>{subtitle}</SubTitleWrapper>
+      <TimeWrapper>{time}</TimeWrapper>
+      <Text>{children}</Text>
+    </Wrapper>
+  );
+};
 
 export default Item;

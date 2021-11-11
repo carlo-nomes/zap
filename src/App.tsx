@@ -1,21 +1,24 @@
 import React from "react";
 
-import { SectionContainer } from "./common/Section";
+import styled from "styled-components";
 
+import ScrollContext from "./common/ScrollContext";
+import { SectionContext } from "./common/Section";
+
+import Layout from "./layout";
 import Landing from "./landing";
 import Bio from "./bio";
-import Layout from "./layout";
 import Timeline from "./timeline";
 
 const App = () => {
   return (
-    <Layout>
-      <SectionContainer>
+    <ScrollContext Container={Layout}>
+      <SectionContext>
         <Landing />
         <Bio />
         <Timeline />
-      </SectionContainer>
-    </Layout>
+      </SectionContext>
+    </ScrollContext>
   );
 };
 

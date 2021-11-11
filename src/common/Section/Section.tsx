@@ -1,7 +1,7 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useRef } from "react";
 import styled from "styled-components";
 
-import { useSectionContext } from "./SectionContainer";
+import { useSectionContext } from "./SectionContext";
 
 const Section = styled.section`
   width: 100%;
@@ -19,25 +19,20 @@ const Section = styled.section`
 type Props = {
   id: string;
   color?: string;
-  children: ReactNode;
+  children?: ReactNode;
 };
 
-const SectionWrapper = (props: Props) => {
-  // Cannot change id after init
-  const { current: id } = React.useRef(props.id);
-  if (id !== props.id && process.env.NODE_ENV === "development") {
-    console.warn("props.id can't change after initialisation of Section component");
-  }
-
-  const { registerSection } = useSectionContext();
-  const [node, setRef] = React.useState<HTMLElement | null>(null);
+const SectionWrapper = ({ id, ...props }: Props) => {
+  const { addSection, removeSection } = useSectionContext();
+  const sectionRef = useRef<HTMLElement | null>(null);
 
   React.useEffect(() => {
-    if (!id || !node) return;
-    registerSection(id, node);
-  }, [node, id, registerSection]);
+    if (!sectionRef.current) return;
+    addSection(id, sectionRef.current);
+    return () => removeSection(id);
+  }, [id, addSection, removeSection]);
 
-  return <Section ref={setRef} {...props} />;
+  return <Section ref={sectionRef} {...props} />;
 };
 
 export default SectionWrapper;

@@ -1,5 +1,5 @@
-import SectionContainer, { useSectionContext } from "./SectionContainer";
+import SectionContext, { useSectionContext } from "./SectionContext";
 import Section from "./Section";
 
-export { SectionContainer, useSectionContext };
+export { SectionContext, useSectionContext };
 export default Section;
