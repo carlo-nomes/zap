@@ -1,12 +1,7 @@
 import React, {useCallback, useEffect, useReducer} from "../../../_snowpack/pkg/react.js";
-import styled from "../../../_snowpack/pkg/styled-components.js";
 import {useScrollContext} from "../ScrollContext/index.js";
 import {isElementInView} from "../ScrollContext/util.js";
 import useHash from "../useHash.js";
-import Section from "./Section.js";
-const EndSection = styled(Section)`
-  height: 0;
-`;
 const SectionContext = React.createContext({
   sections: {},
   addSection: (_id, _node) => {
@@ -54,8 +49,6 @@ const SectionContextProvider = ({children}) => {
   }, [addListener, removeListener, sections, setHash]);
   return /* @__PURE__ */ React.createElement(SectionContext.Provider, {
     value: {sections, addSection, removeSection}
-  }, children, /* @__PURE__ */ React.createElement(EndSection, {
-    id: "end"
-  }));
+  }, children);
 };
 export default SectionContextProvider;

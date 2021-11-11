@@ -8,7 +8,7 @@ const Button = styled(AppButton)`
 const ItemWrapper = styled.li`
   display: block;
   text-decoration: none;
-  margin: 5px;
+  margin: 0.25rem;
 `;
 const Item = (props) => /* @__PURE__ */ React.createElement(ItemWrapper, null, /* @__PURE__ */ React.createElement(Button, {
   as: "a",

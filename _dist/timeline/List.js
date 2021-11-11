@@ -12,7 +12,7 @@ const List = styled.ul`
   align-items: center;
 
   margin: 0;
-  padding: 0;
+  padding: 2rem 0;
 
   @media screen and (max-width: 60rem) {
     margin-left: 2.5rem;

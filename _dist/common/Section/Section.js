@@ -10,8 +10,6 @@ const Section = styled.section`
 
   position: relative;
   scroll-snap-align: start;
-
-  background-color: ${({color}) => color};
 `;
 const SectionWrapper = ({id, ...props}) => {
   const {addSection, removeSection} = useSectionContext();
