@@ -1,7 +1,5 @@
 import React from "react";
 
-import styled from "styled-components";
-
 import ScrollContext from "./common/ScrollContext";
 import { SectionContext } from "./common/Section";
 
