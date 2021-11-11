@@ -1,16 +1,17 @@
 import React from "../../_snowpack/pkg/react.js";
 import styled from "../../_snowpack/pkg/styled-components.js";
 import GlobalStyle from "./GlobalStyles.js";
-const Wrapper = styled.div`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  overflow: hidden;
+const Wrapper = styled.main`
+  width: 100vw;
+  height: 100vh;
 
-  display: flex;
-  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 `;
-const Layout = ({children}) => /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(GlobalStyle, null), /* @__PURE__ */ React.createElement(Wrapper, null, children));
+const Layout = ({children, ...props}) => /* @__PURE__ */ React.createElement(Wrapper, {
+  ...props
+}, /* @__PURE__ */ React.createElement(GlobalStyle, null), children);
 export default Layout;

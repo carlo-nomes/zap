@@ -50,6 +50,10 @@ const Timeline = () => /* @__PURE__ */ React.createElement(Section, {
   subtitle: "National Bank of Belgium",
   time: "October 2018 – May 2019"
 }, "The frontend framework for NBB."), /* @__PURE__ */ React.createElement(Item, {
+  title: "Certified Scrum Masterr",
+  subtitle: "Scrum Alliance",
+  time: "Februari 2019"
+}, "Got my first certification from Scrum Alliance."), /* @__PURE__ */ React.createElement(Item, {
   title: "Digitale Methode",
   subtitle: "Calibrate - Signpost",
   time: "November 2019 – March 2020"

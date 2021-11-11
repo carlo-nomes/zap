@@ -1,6 +1,6 @@
-import React from "../../../_snowpack/pkg/react.js";
+import React, {useRef} from "../../../_snowpack/pkg/react.js";
 import styled from "../../../_snowpack/pkg/styled-components.js";
-import {useSectionContext} from "./SectionContainer.js";
+import {useSectionContext} from "./SectionContext.js";
 const Section = styled.section`
   width: 100%;
   height: 100%;
@@ -13,20 +13,17 @@ const Section = styled.section`
 
   background-color: ${({color}) => color};
 `;
-const SectionWrapper = (props) => {
-  const {current: id} = React.useRef(props.id);
-  if (id !== props.id && process.env.NODE_ENV === "development") {
-    console.warn("props.id can't change after initialisation of Section component");
-  }
-  const {registerSection} = useSectionContext();
-  const [node, setRef] = React.useState(null);
+const SectionWrapper = ({id, ...props}) => {
+  const {addSection, removeSection} = useSectionContext();
+  const sectionRef = useRef(null);
   React.useEffect(() => {
-    if (!id || !node)
+    if (!sectionRef.current)
       return;
-    registerSection(id, node);
-  }, [node, id, registerSection]);
+    addSection(id, sectionRef.current);
+    return () => removeSection(id);
+  }, [id, addSection, removeSection]);
   return /* @__PURE__ */ React.createElement(Section, {
-    ref: setRef,
+    ref: sectionRef,
     ...props
   });
 };

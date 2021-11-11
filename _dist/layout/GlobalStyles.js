@@ -14,11 +14,7 @@ const variables = css`
   --colors-gray: var(--colors-gray-500);
 
   // Primary Palette
-  --colors-primary-100: hsl(48, 87%, 97%);
-  --colors-primary-300: hsl(48, 87%, 70%);
   --colors-primary-500: hsl(48, 87%, 65%);
-  --colors-primary-700: hsl(48, 87%, 20%);
-  --colors-primary-900: hsl(48, 87%, 10%);
   --colors-primary: var(--colors-primary-500);
 
   // Secondary Palette

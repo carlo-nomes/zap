@@ -1,6 +1,6 @@
 {
   "imports": {
-    "lodash.debounce": "./lodash.debounce.js",
+    "lodash": "./lodash.js",
     "react": "./react.js",
     "react-dom": "./react-dom.js",
     "styled-components": "./styled-components.js",

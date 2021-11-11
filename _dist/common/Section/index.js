@@ -1,4 +1,4 @@
-import SectionContainer, {useSectionContext} from "./SectionContainer.js";
+import SectionContext, {useSectionContext} from "./SectionContext.js";
 import Section from "./Section.js";
-export {SectionContainer, useSectionContext};
+export {SectionContext, useSectionContext};
 export default Section;

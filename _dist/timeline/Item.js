@@ -1,5 +1,6 @@
 import React from "../../_snowpack/pkg/react.js";
 import styled from "../../_snowpack/pkg/styled-components.js";
+import {useElementInView} from "../common/ScrollContext/index.js";
 const Wrapper = styled.li`
   list-style: none;
 
@@ -21,6 +22,17 @@ const Wrapper = styled.li`
       text-align: left;
     }
   }
+
+  opacity: 0;
+  margin: 1rem 0 -1rem 0;
+
+  transition: opacity var(--transition-duration-default) ease-in-out,
+    margin var(--transition-duration-default) ease-in-out;
+
+  &.in-view {
+    opacity: 1;
+    margin: 0;
+  }
 `;
 const TitleWrapper = styled.h3`
   color: var(--colors-primary);
@@ -41,5 +53,11 @@ const TimeWrapper = styled.i`
 const Text = styled.p`
   margin: 0;
 `;
-const Item = ({title, subtitle, time, children}) => /* @__PURE__ */ React.createElement(Wrapper, null, /* @__PURE__ */ React.createElement(TitleWrapper, null, title), /* @__PURE__ */ React.createElement(SubTitleWrapper, null, subtitle), /* @__PURE__ */ React.createElement(TimeWrapper, null, time), /* @__PURE__ */ React.createElement(Text, null, children));
+const Item = ({title, subtitle, time, children}) => {
+  const [isInView, element] = useElementInView();
+  return /* @__PURE__ */ React.createElement(Wrapper, {
+    ref: element,
+    className: isInView ? "in-view" : ""
+  }, /* @__PURE__ */ React.createElement(TitleWrapper, null, title), /* @__PURE__ */ React.createElement(SubTitleWrapper, null, subtitle), /* @__PURE__ */ React.createElement(TimeWrapper, null, time), /* @__PURE__ */ React.createElement(Text, null, children));
+};
 export default Item;
