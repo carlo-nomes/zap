@@ -12,11 +12,12 @@ const Section = styled(AppSection)`
   min-height: 100vh;
   position: relative;
 
+  background-color: var(--colors-gray-600);
   color: var(--colors-gray-100);
 `;
 
 const Timeline = () => (
-  <Section id="timeline" color="var(--colors-gray-600)">
+  <Section id="timeline">
     <Title>Timeline</Title>
     <Line />
     <List>

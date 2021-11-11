@@ -36,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
   :root {
     ${variables}
 
-    background: var(--colors-primary);
+    background: var(--colors-gray-100);
     color: var(--colors-gray-900);
 
     font-family: var(--font-family-sans);

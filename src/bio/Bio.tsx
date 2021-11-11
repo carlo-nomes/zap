@@ -2,44 +2,25 @@ import React from "react";
 import styled from "styled-components";
 
 import AppSection from "../common/Section";
-
 import { Wave as AppWave } from "../common/emojis";
-
 import Arrow from "../common/Arrow";
-import Spacer from "../common/Spacer";
-import { useElementInView } from "../common/ScrollContext";
 
 const Section = styled(AppSection)`
-  align-items: center;
-  justify-content: center;
-  overflow: auto;
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-
-  opacity: 0;
-  margin: 10rem 0 -10rem 0;
-
-  transition: opacity var(--transition-duration-long) ease-in-out, margin var(--transition-duration-long) ease-in-out;
-
-  &.in-view {
-    opacity: 1;
-    margin: 0;
-  }
+  background-color: var(--colors-primary);
 `;
 
 const Wave = styled(AppWave)`
-  flex: 1;
   margin: 1rem;
-  margin-top: 0;
 
   text-align: center;
   font-size: 2rem;
 `;
 
 const Text = styled.p`
+  flex: 1;
+
+  box-sizing: border-box;
+  padding: 1rem;
   max-width: 50rem;
 
   font-size: 1.5rem;
@@ -47,44 +28,35 @@ const Text = styled.p`
     font-size: 1rem;
   }
 
-  margin: 0;
-  box-sizing: border-box;
+  q {
+    display: inline-block;
+    margin: 0.5rem 0;
+    font-weight: bold;
+  }
 `;
 
-const Q = styled.q`
-  font-weight: bold;
-`;
-
-const Bio = () => {
-  const [inView, element] = useElementInView<HTMLDivElement>();
-
-  return (
-    <Section id="bio" color="var(--colors-primary)">
-      <Spacer />
-      <Wrapper className={inView ? "in-view" : ""} ref={element}>
-        <Wave />
-        <Text>
-          Hi there,
-          <br />
-          my name is Carlo.
-          <br />
-          <br />I am a full-stack JavaScript developer and UX/UI enthusiast and have been using my passion for
-          technology to help organizations create amazing web applications since 2017.
-          <br />
-          <br />
-          My credo is:
-          <br />
-          <Q>For every problem, there exists an elegant solution.</Q>
-          <br />I get to these solutions by using the latest and greatest tools/techniques available. Through persistent
-          learning and critical reflection, I maintain a current view of what is needed to make a project succeed.
-          <br />I believe that every successful project requires agility and an open, honest and clear line of
-          communication between all stakeholders and team members, regardless of the size of the project.
-        </Text>
-      </Wrapper>
-      <Spacer />
-      <Arrow href="#timeline" />
-    </Section>
-  );
-};
+const Bio = () => (
+  <Section id="bio">
+    <Wave />
+    <Text>
+      Hi there,
+      <br />
+      my name is Carlo.
+      <br />
+      <br />I am a full-stack JavaScript developer and UX/UI enthusiast and have been using my passion for technology to
+      help organizations create amazing web applications since 2017.
+      <br />
+      <br />
+      My credo is:
+      <br />
+      <q>For every problem, there exists an elegant solution.</q>
+      <br />I get to these solutions by using the latest and greatest tools/techniques available. Through persistent
+      learning and critical reflection, I maintain a current view of what is needed to make a project succeed.
+      <br />I believe that every successful project requires agility and an open, honest and clear line of communication
+      between all stakeholders and team members, regardless of the size of the project.
+    </Text>
+    <Arrow href="#timeline" />
+  </Section>
+);
 
 export default Bio;

@@ -11,7 +11,7 @@ const Button = styled(AppButton)`
 const ItemWrapper = styled.li`
   display: block;
   text-decoration: none;
-  margin: 5px;
+  margin: 0.25rem;
 `;
 
 type Props = {

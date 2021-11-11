@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { useSectionContext } from "./SectionContext";
 
-const Section = styled.section`
+const Section = styled.section<{ index: number }>`
   width: 100%;
   height: 100%;
 
@@ -12,13 +12,10 @@ const Section = styled.section`
 
   position: relative;
   scroll-snap-align: start;
-
-  background-color: ${({ color }) => color};
 `;
 
 type Props = {
   id: string;
-  color?: string;
   children?: ReactNode;
 };
 
