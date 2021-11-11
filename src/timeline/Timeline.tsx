@@ -56,6 +56,10 @@ const Timeline = () => (
         The frontend framework for NBB.
       </Item>
 
+      <Item title="Certified Scrum Masterr" subtitle="Scrum Alliance" time="Februari 2019">
+        Got my first certification from Scrum Alliance.
+      </Item>
+
       <Item title="Digitale Methode" subtitle="Calibrate - Signpost" time="November 2019 – March 2020">
         The digitalization of the secondary education curriculum.
       </Item>
