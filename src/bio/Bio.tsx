@@ -4,12 +4,17 @@ import styled from "styled-components";
 import AppSection from "../common/Section";
 import { Wave as AppWave } from "../common/emojis";
 import Arrow from "../common/Arrow";
+import Spacer from "../common/Spacer";
 
 const Section = styled(AppSection)`
   background-color: var(--colors-primary);
+
+  align-items: center;
+  justify-content: space-between;
 `;
 
 const Wave = styled(AppWave)`
+  float: left;
   margin: 1rem;
 
   text-align: center;
@@ -17,8 +22,6 @@ const Wave = styled(AppWave)`
 `;
 
 const Text = styled.p`
-  flex: 1;
-
   box-sizing: border-box;
   padding: 1rem;
   max-width: 50rem;
@@ -37,6 +40,7 @@ const Text = styled.p`
 
 const Bio = () => (
   <Section id="bio">
+    <Spacer />
     <Wave />
     <Text>
       Hi there,
@@ -55,6 +59,7 @@ const Bio = () => (
       <br />I believe that every successful project requires agility and an open, honest and clear line of communication
       between all stakeholders and team members, regardless of the size of the project.
     </Text>
+    <Spacer />
     <Arrow href="#timeline" />
   </Section>
 );
