@@ -24,7 +24,7 @@ const SectionWrapper = (props) => {
     if (!id || !node)
       return;
     registerSection(id, node);
-  }, [node, id]);
+  }, [node, id, registerSection]);
   return /* @__PURE__ */ React.createElement(Section, {
     ref: setRef,
     ...props
