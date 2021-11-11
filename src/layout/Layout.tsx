@@ -1,29 +1,24 @@
-import React from "react";
+import React, { HTMLAttributes } from "react";
 import styled from "styled-components";
 
 import GlobalStyle from "./GlobalStyles";
 
-const Wrapper = styled.div`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  overflow: hidden;
+const Wrapper = styled.main`
+  width: 100vw;
+  height: 100vh;
 
-  display: flex;
-  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 `;
 
-type Props = {
-  children: React.ReactNode;
-};
-
-const Layout = ({ children }: Props) => (
-  <>
+const Layout = ({ children, ...props }: HTMLAttributes<HTMLElement>) => (
+  <Wrapper {...props}>
     <GlobalStyle />
-    <Wrapper>{children}</Wrapper>
-  </>
+    {children}
+  </Wrapper>
 );
 
 export default Layout;
