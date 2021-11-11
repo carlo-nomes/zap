@@ -25,6 +25,7 @@ const variables = css`
   --font-family-sans: "Open Sans", sans-serif;
 
   --transition-duration-default: 500ms;
+  --transition-duration-long: 1000ms;
 
   --spacing-default: 1rem;
 `;
