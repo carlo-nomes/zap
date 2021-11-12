@@ -6,27 +6,36 @@ const Wrapper = styled.div`
 `;
 
 type Coordinates = { x: number; y: number };
-type Curve = { cp: Coordinates; start: Coordinates; end: Coordinates };
 
-const NUMBER_OF_CURVES = 10;
+const SMOOTH = 0.05;
 const MIN_DEPTH = 0;
-const MAX_DEPTH = 0.125;
-const HALF_DEPTH = (MIN_DEPTH + MAX_DEPTH) / 2;
+const MAX_DEPTH = 0.15;
+const HALF_DEPTH = (MAX_DEPTH - MIN_DEPTH) / 2;
+
+const getRandomInt = (min: number, max: number, round: number = 1000) => {
+  return Math.round((min + Math.random() * (max - min)) * round) / round;
+};
 
 const getPath = () => {
-  const curves: Curve[] = [];
-  const step = 1 / NUMBER_OF_CURVES / 2;
-  for (let i = 0; i < NUMBER_OF_CURVES; i++) {
-    const start = i === 0 ? { x: 0, y: HALF_DEPTH } : curves[i - 1].end;
+  const numberOfCurves = Math.round(getRandomInt(3, 7));
+  const STEP = 1 / numberOfCurves;
 
-    const cp = { x: start.x + step, y: i % 2 ? MAX_DEPTH : MIN_DEPTH };
+  const start: Coordinates = { x: 0, y: getRandomInt(MIN_DEPTH, MAX_DEPTH) };
+  const curves: { cp: Coordinates; end: Coordinates }[] = [];
+  for (let i = 0; i < numberOfCurves; i++) {
+    const step = STEP / 2;
+    const max = getRandomInt(HALF_DEPTH + SMOOTH, MAX_DEPTH);
+    const min = getRandomInt(MIN_DEPTH, HALF_DEPTH - SMOOTH);
+
+    const cp = { x: (curves[i - 1]?.end || start).x + step, y: i % 2 ? min : max };
     const end = { x: cp.x + step, y: HALF_DEPTH };
 
-    curves.push({ start, cp, end });
+    curves.push({ cp, end });
   }
+  const end = { x: 1, y: getRandomInt(MIN_DEPTH, MAX_DEPTH) };
 
   const curvesString = curves.map(({ cp, end }) => `Q${cp.x},${cp.y} ${end.x},${end.y}`);
-  return `M0,${HALF_DEPTH} ${curvesString.join(" ")} L1,${HALF_DEPTH} L1,1 L0,1 Z`;
+  return `M${start.x},${start.y} ${curvesString.join("")} L${end.x},${end.y} L1,1 L0,1 Z`;
 };
 
 type WaveSvgProps = {
