@@ -1,21 +1,50 @@
 import React from "../../_snowpack/pkg/react.js";
 import styled from "../../_snowpack/pkg/styled-components.js";
 import AppSection from "../common/Section/index.js";
+import WaveBackground from "../common/WaveBackground.js";
 import Item from "./Item.js";
-import Line from "./Line.js";
 import List from "./List.js";
 import Title from "./Title.js";
 const Section = styled(AppSection)`
   height: auto;
   min-height: 100vh;
   position: relative;
+  overflow: hidden;
 
-  background-color: var(--colors-gray-600);
   color: var(--colors-gray-100);
+  background: var(--colors-gray-600);
+`;
+const Line = styled.div`
+  position: absolute;
+  top: 10rem;
+  right: calc(50% - 0.25rem);
+  @media screen and (max-width: 60rem) {
+    left: 1rem;
+  }
+
+  width: 0.5rem;
+  height: 100%;
+
+  background: linear-gradient(
+    to bottom,
+    var(--colors-primary),
+    var(--colors-primary) 10rem,
+    var(--colors-tertiary),
+    var(--colors-secondary)
+  );
 `;
 const Timeline = () => /* @__PURE__ */ React.createElement(Section, {
   id: "timeline"
-}, /* @__PURE__ */ React.createElement(Title, null, "Timeline"), /* @__PURE__ */ React.createElement(Line, null), /* @__PURE__ */ React.createElement(List, null, /* @__PURE__ */ React.createElement(Item, {
+}, /* @__PURE__ */ React.createElement(WaveBackground, {
+  id: "timeline-title",
+  position: "bottom",
+  amount: 5,
+  min: 0.5,
+  max: 1,
+  as: Title
+}, "Timeline"), /* @__PURE__ */ React.createElement(Line, {
+  className: "line"
+}), /* @__PURE__ */ React.createElement(List, null, /* @__PURE__ */ React.createElement(Item, {
   title: "IT-management",
   subtitle: "KS Joma",
   time: "2012"

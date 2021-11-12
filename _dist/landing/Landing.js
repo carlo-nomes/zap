@@ -15,9 +15,6 @@ const Wrapper = styled.div`
   top: 50%;
   transform: translateY(-50%);
   width: 100%;
-
-  display: flex;
-  flex-direction: column;
 `;
 const Landing = () => /* @__PURE__ */ React.createElement(Section, {
   id: "landing"
