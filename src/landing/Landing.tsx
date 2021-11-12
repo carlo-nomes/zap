@@ -11,7 +11,6 @@ import Header from "./Header";
 
 const Section = styled(AppSection)`
   background-color: var(--color-grey-100);
-  position: relative;
 `;
 
 const Wrapper = styled.div`
