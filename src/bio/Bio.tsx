@@ -5,14 +5,13 @@ import AppSection from "../common/Section";
 import { Wave as AppWave } from "../common/emojis";
 import Arrow from "../common/Arrow";
 import Spacer from "../common/Spacer";
-import ClipPath from "../common/WaveClipPath";
+import WaveBackground from "../common/WaveBackground";
 
 const Section = styled(AppSection)`
   align-items: center;
   justify-content: space-between;
 
   background-color: var(--colors-primary);
-  clip-path: url(#wave);
 `;
 
 const Wave = styled(AppWave)`
@@ -41,8 +40,7 @@ const Text = styled.p`
 `;
 
 const Bio = () => (
-  <Section id="bio">
-    <ClipPath id="wave" />
+  <WaveBackground id="bio" as={Section}>
     <Spacer />
     <Wave />
     <Text>
@@ -64,7 +62,7 @@ const Bio = () => (
     </Text>
     <Spacer />
     <Arrow href="#timeline" />
-  </Section>
+  </WaveBackground>
 );
 
 export default Bio;
