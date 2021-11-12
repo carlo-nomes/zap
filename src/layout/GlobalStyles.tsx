@@ -22,6 +22,10 @@ const variables = css`
   --colors-secondary-500: hsl(3, 51%, 47%);
   --colors-secondary: var(--colors-secondary-500);
 
+  // Tertiary Palette
+  --colors-tertiary-500: hsl(152, 87%, 27%);
+  --colors-tertiary: var(--colors-tertiary-500);
+
   --font-family-sans: "Open Sans", sans-serif;
 
   --transition-duration-default: 500ms;

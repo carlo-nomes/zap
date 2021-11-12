@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useMemo } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -6,56 +6,48 @@ const Wrapper = styled.div`
 `;
 
 type Coordinates = { x: number; y: number };
-type Curve = { cp: Coordinates; start: Coordinates; end: Coordinates };
 
-const NUMBER_OF_CURVES = 10;
-const MIN_DEPTH = 0;
-const MAX_DEPTH = 0.125;
-const HALF_DEPTH = (MIN_DEPTH + MAX_DEPTH) / 2;
+const getPath = (position: "top" | "bottom", amount: number, min: number, max: number) => {
+  const hd = (max + min) / 2;
+  const step = 0.5 / amount;
 
-const getPath = () => {
-  const curves: Curve[] = [];
-  const step = 1 / NUMBER_OF_CURVES / 2;
-  for (let i = 0; i < NUMBER_OF_CURVES; i++) {
-    const start = i === 0 ? { x: 0, y: HALF_DEPTH } : curves[i - 1].end;
-
-    const cp = { x: start.x + step, y: i % 2 ? MAX_DEPTH : MIN_DEPTH };
-    const end = { x: cp.x + step, y: HALF_DEPTH };
-
-    curves.push({ start, cp, end });
+  const start: Coordinates = { x: 0, y: hd };
+  const curves: { cp: Coordinates; end: Coordinates }[] = [];
+  for (let i = 0; i < amount; i++) {
+    const cp = { x: (curves[i - 1]?.end || start).x + step, y: i % 2 ? min : max };
+    const end = { x: cp.x + step, y: hd };
+    curves.push({ cp, end });
   }
+  const end = { x: 1, y: hd };
 
-  const curvesString = curves.map(({ cp, end }) => `Q${cp.x},${cp.y} ${end.x},${end.y}`);
-  return `M0,${HALF_DEPTH} ${curvesString.join(" ")} L1,${HALF_DEPTH} L1,1 L0,1 Z`;
-};
-
-type WaveSvgProps = {
-  id: string;
-};
-const WaveSvg = ({ id }: WaveSvgProps) => {
-  const pathValue = getPath();
-  return (
-    <svg height="0" width="0">
-      <defs>
-        <clipPath id={`${id}-wave-clip-path`} clipPathUnits="objectBoundingBox">
-          <path d={pathValue}></path>
-        </clipPath>
-      </defs>
-    </svg>
-  );
+  const curvesString = curves.map(({ cp, end }) => `Q${cp.x},${cp.y} ${end.x},${end.y}`).join(" ");
+  if (position === "bottom") return `M${start.x},${start.y} ${curvesString} L${end.x},${end.y} L1,0 L0,0 Z`;
+  return `M${start.x},${start.y} ${curvesString} L${end.x},${end.y} L1,1 L0,1 Z`;
 };
 
 type Props = {
   id: string;
+  position: "top" | "bottom";
+  amount: number;
+  min: number;
+  max: number;
   className?: string;
   children?: React.ReactNode;
   as: (props: any, context?: any) => ReactElement<any, any> | null;
 };
 
-const WaveBackground = ({ children, ...props }: Props) => {
+const WaveBackground = ({ children, position, amount, min, max, ...props }: Props) => {
+  const path = useMemo(() => getPath(position, amount, min, max), [position, amount, min, max]);
   return (
     <Wrapper {...props}>
-      <WaveSvg id={props.id} />
+      <svg height="0" width="0">
+        <defs>
+          <clipPath id={`${props.id}-wave-clip-path`} clipPathUnits="objectBoundingBox">
+            <path d={path}></path>
+          </clipPath>
+        </defs>
+      </svg>
+
       {children}
     </Wrapper>
   );
