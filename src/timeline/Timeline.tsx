@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 import AppSection from "../common/Section";
+import WaveBackground from "../common/WaveBackground";
 import Item from "./Item";
-import Line from "./Line";
 import List from "./List";
 import Title from "./Title";
 
@@ -11,16 +11,39 @@ const Section = styled(AppSection)`
   height: auto;
   min-height: 100vh;
   position: relative;
+  overflow: hidden;
 
   color: var(--colors-gray-100);
   background: var(--colors-gray-600);
 `;
 
+const Line = styled.div`
+  position: absolute;
+  top: 10rem;
+  right: calc(50% - 0.25rem);
+  @media screen and (max-width: 60rem) {
+    left: 1rem;
+  }
+
+  width: 0.5rem;
+  height: 100%;
+
+  background: linear-gradient(
+    to bottom,
+    var(--colors-primary),
+    var(--colors-primary) 10rem,
+    var(--colors-tertiary),
+    var(--colors-secondary)
+  );
+`;
+
 const Timeline = () => (
   <Section id="timeline">
-    <Title>Timeline</Title>
+    <WaveBackground id="timeline-title" position="bottom" amount={5} min={0.5} max={1} as={Title}>
+      Timeline
+    </WaveBackground>
+    <Line className="line" />
     <List>
-      <Line />
       <Item title="IT-management" subtitle="KS Joma" time="2012">
         High school diploma with certificate of business management.
       </Item>

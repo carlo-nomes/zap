@@ -40,7 +40,7 @@ const Text = styled.p`
 `;
 
 const Bio = () => (
-  <WaveBackground id="bio" as={Section}>
+  <WaveBackground id="bio" position="top" amount={3} min={0} max={0.15} as={Section}>
     <Spacer />
     <Wave />
     <Text>

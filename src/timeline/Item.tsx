@@ -7,7 +7,6 @@ const Wrapper = styled.li`
   list-style: none;
 
   box-sizing: border-box;
-  margin: 1rem;
   padding: 1rem;
 
   align-self: flex-start;
