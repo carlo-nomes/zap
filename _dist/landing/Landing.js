@@ -8,7 +8,6 @@ import SubTitle from "./SubTitle.js";
 import Header from "./Header/index.js";
 const Section = styled(AppSection)`
   background-color: var(--color-grey-100);
-  position: relative;
 `;
 const Wrapper = styled.div`
   position: fixed;
