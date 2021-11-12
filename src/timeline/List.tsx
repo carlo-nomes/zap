@@ -1,23 +1,18 @@
 import styled from "styled-components";
 
 const List = styled.ul`
-  z-index: 100;
-
+  box-sizing: border-box;
   width: 100%;
-  max-width: 75rem;
+  max-width: 60rem;
+  margin: 0;
+  padding: 0;
 
   align-self: center;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  margin: 0;
-  padding: 2rem 0;
-
-  @media screen and (max-width: 60rem) {
-    margin-left: 2.5rem;
-  }
+  position: relative;
 `;
 
 export default List;

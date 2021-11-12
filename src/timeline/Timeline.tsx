@@ -12,15 +12,15 @@ const Section = styled(AppSection)`
   min-height: 100vh;
   position: relative;
 
-  background-color: var(--colors-gray-600);
   color: var(--colors-gray-100);
+  background: var(--colors-gray-600);
 `;
 
 const Timeline = () => (
   <Section id="timeline">
     <Title>Timeline</Title>
-    <Line />
     <List>
+      <Line />
       <Item title="IT-management" subtitle="KS Joma" time="2012">
         High school diploma with certificate of business management.
       </Item>
