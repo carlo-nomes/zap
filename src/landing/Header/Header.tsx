@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import List, { Items } from "./List";
+import * as Socials from "../../common/Socials";
 
 const Wrapper = styled.header`
   align-self: stretch;
@@ -12,15 +12,25 @@ const Wrapper = styled.header`
   justify-content: flex-end;
 `;
 
+const List = styled.ul`
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  width: auto;
+  margin: 0;
+  padding: 10px;
+`;
+
 const Header = () => (
   <Wrapper>
     <List>
-      <Items.GitHub />
-      <Items.Codepen />
-      <Items.Medium />
-      <Items.LinkedIn />
-      <Items.Instagram />
-      <Items.Twitter />
+      <Socials.GitHub />
+      <Socials.Codepen />
+      <Socials.Medium />
+      <Socials.LinkedIn />
+      <Socials.Instagram />
+      <Socials.Twitter />
     </List>
   </Wrapper>
 );

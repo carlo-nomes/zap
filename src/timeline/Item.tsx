@@ -27,8 +27,8 @@ const Wrapper = styled.li`
   opacity: 0;
   margin: 1rem 0 -1rem 0;
 
-  transition: opacity var(--transition-duration-default) ease-in-out,
-    margin var(--transition-duration-default) ease-in-out;
+  transition: opacity var(--transition-duration-default) ease-in-out 500ms,
+    margin var(--transition-duration-default) ease-in-out 500ms;
 
   &.in-view {
     opacity: 1;
