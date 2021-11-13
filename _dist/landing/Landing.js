@@ -11,6 +11,7 @@ const Section = styled(AppSection)`
 `;
 const Wrapper = styled.div`
   position: fixed;
+  pointer-events: none;
 
   top: 50%;
   transform: translateY(-50%);
