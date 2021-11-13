@@ -11,28 +11,30 @@ const Section = styled(AppSection)`
   height: auto;
   min-height: 100vh;
   position: relative;
-  overflow: hidden;
 
   color: var(--colors-gray-100);
   background: var(--colors-gray-600);
 `;
 
 const Line = styled.div`
-  position: absolute;
-  top: 10rem;
-  right: calc(50% - 0.25rem);
   @media screen and (max-width: 60rem) {
     display: none;
   }
 
+  position: absolute;
+  z-index: 300;
+  top: 10rem;
+  bottom: -10rem;
+  right: calc(50% - 0.25rem);
+
   width: 0.5rem;
-  height: 100%;
 
   background: linear-gradient(
     to bottom,
     var(--colors-primary),
     var(--colors-primary) 10rem,
     var(--colors-tertiary),
+    var(--colors-secondary),
     var(--colors-secondary)
   );
 `;
@@ -42,7 +44,7 @@ const Timeline = () => (
     <WaveBackground id="timeline-title" position="bottom" amount={5} min={0.5} max={1} as={Title}>
       Timeline
     </WaveBackground>
-    <Line className="line" />
+    <Line />
     <List>
       <Item title="IT-management" subtitle="KS Joma" time="2012">
         High school diploma with certificate of business management.

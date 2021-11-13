@@ -7,6 +7,7 @@ import Layout from "./layout";
 import Landing from "./landing";
 import Bio from "./bio";
 import Timeline from "./timeline";
+import Contact from "./contact";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Landing />
         <Bio />
         <Timeline />
+        <Contact />
       </SectionContext>
     </ScrollContext>
   );

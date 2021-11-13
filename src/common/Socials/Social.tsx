@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
 
-import AppButton from "../../../../common/Button";
+import AppButton from "../Button";
 
 const Button = styled(AppButton)`
   width: 2.5rem;
@@ -19,10 +19,10 @@ type Props = {
   "aria-label": string;
   children: ReactNode;
 };
-const Item = (props: Props) => (
+const Social = (props: Props) => (
   <ItemWrapper>
     <Button as="a" target="_blank" rel="noopener noreferrer" {...props} />
   </ItemWrapper>
 );
 
-export default Item;
+export default Social;
