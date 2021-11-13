@@ -1,6 +1,6 @@
-import React from "../../../../../_snowpack/pkg/react.js";
-import Item from "./Item.js";
-const Twitter = () => /* @__PURE__ */ React.createElement(Item, {
+import React from "../../../_snowpack/pkg/react.js";
+import Social from "./Social.js";
+const Twitter = () => /* @__PURE__ */ React.createElement(Social, {
   href: "https://twitter.com/CarloNomes/",
   "aria-label": "Twitter"
 }, /* @__PURE__ */ React.createElement("svg", {

@@ -1,6 +1,6 @@
-import React from "../../../../../_snowpack/pkg/react.js";
-import Item from "./Item.js";
-const CodePen = () => /* @__PURE__ */ React.createElement(Item, {
+import React from "../../../_snowpack/pkg/react.js";
+import Social from "./Social.js";
+const CodePen = () => /* @__PURE__ */ React.createElement(Social, {
   href: "https://codepen.io/carlo-nomes/",
   "aria-label": "CodePen"
 }, /* @__PURE__ */ React.createElement("svg", {

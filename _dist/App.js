@@ -5,9 +5,10 @@ import Layout from "./layout/index.js";
 import Landing from "./landing/index.js";
 import Bio from "./bio/index.js";
 import Timeline from "./timeline/index.js";
+import Contact from "./contact/index.js";
 const App = () => {
   return /* @__PURE__ */ React.createElement(ScrollContext, {
     Container: Layout
-  }, /* @__PURE__ */ React.createElement(SectionContext, null, /* @__PURE__ */ React.createElement(Landing, null), /* @__PURE__ */ React.createElement(Bio, null), /* @__PURE__ */ React.createElement(Timeline, null)));
+  }, /* @__PURE__ */ React.createElement(SectionContext, null, /* @__PURE__ */ React.createElement(Landing, null), /* @__PURE__ */ React.createElement(Bio, null), /* @__PURE__ */ React.createElement(Timeline, null), /* @__PURE__ */ React.createElement(Contact, null)));
 };
 export default App;

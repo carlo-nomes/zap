@@ -9,27 +9,29 @@ const Section = styled(AppSection)`
   height: auto;
   min-height: 100vh;
   position: relative;
-  overflow: hidden;
 
   color: var(--colors-gray-100);
   background: var(--colors-gray-600);
 `;
 const Line = styled.div`
-  position: absolute;
-  top: 10rem;
-  right: calc(50% - 0.25rem);
   @media screen and (max-width: 60rem) {
-    left: 1rem;
+    display: none;
   }
 
+  position: absolute;
+  z-index: 300;
+  top: 10rem;
+  bottom: -10rem;
+  right: calc(50% - 0.25rem);
+
   width: 0.5rem;
-  height: 100%;
 
   background: linear-gradient(
     to bottom,
     var(--colors-primary),
     var(--colors-primary) 10rem,
     var(--colors-tertiary),
+    var(--colors-secondary),
     var(--colors-secondary)
   );
 `;
@@ -42,9 +44,7 @@ const Timeline = () => /* @__PURE__ */ React.createElement(Section, {
   min: 0.5,
   max: 1,
   as: Title
-}, "Timeline"), /* @__PURE__ */ React.createElement(Line, {
-  className: "line"
-}), /* @__PURE__ */ React.createElement(List, null, /* @__PURE__ */ React.createElement(Item, {
+}, "Timeline"), /* @__PURE__ */ React.createElement(Line, null), /* @__PURE__ */ React.createElement(List, null, /* @__PURE__ */ React.createElement(Item, {
   title: "IT-management",
   subtitle: "KS Joma",
   time: "2012"
