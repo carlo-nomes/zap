@@ -22,7 +22,7 @@ const Line = styled.div`
   top: 10rem;
   right: calc(50% - 0.25rem);
   @media screen and (max-width: 60rem) {
-    left: 1rem;
+    display: none;
   }
 
   width: 0.5rem;
