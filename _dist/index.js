@@ -51,7 +51,7 @@ function print() { __p += __j.call(arguments, '') }
   --colors-gray: var(--colors-gray-500);
 
   // Primary Palette
-  --colors-primary-500: hsl(48, 87%, 65%);
+  --colors-primary-500: #f3d458;
   --colors-primary: var(--colors-primary-500);
 
   // Secondary Palette
