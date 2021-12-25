@@ -90,6 +90,15 @@ const Timeline = () => (
       <Item icon={<Tools />} title="Digitale Methode" subtitle="Calibrate - Signpost" time="November 2019 – March 2020">
         The digitalization of the secondary education curriculum.
       </Item>
+
+      <Item
+        icon={<Tools />}
+        title="Samenwerkingsplatform Uitbraak Management"
+        subtitle="KPMG - Agentschap Zorg & Gezondheid"
+        time="March 2021 - Current"
+      >
+        The Flemish platform for cooperation between the different stakeholders of the COVID-19 crisis.
+      </Item>
     </List>
   </Section>
 );
