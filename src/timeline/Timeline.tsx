@@ -15,6 +15,8 @@ const Section = styled(AppSection)`
 
   color: var(--colors-gray-100);
   background: var(--colors-gray-600);
+
+  scroll-snap-type: y proximity;
 `;
 
 const Line = styled.div`
