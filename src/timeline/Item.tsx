@@ -10,17 +10,42 @@ const Wrapper = styled.li`
   padding: 1rem;
 
   align-self: flex-start;
-  @media screen and (min-width: 60rem) {
-    max-width: 25rem;
+  width: 100%;
+  grid-template:
+    "title icon"
+    "subtitle subtitle"
+    "time time"
+    "content content"
+    / 1fr 1.5rem;
+  grid-gap: 0.25rem;
 
-    &:nth-child(even) {
-      align-self: flex-end;
-      text-align: right;
-    }
+  display: grid;
+  @media screen and (min-width: 60rem) {
+    max-width: 30rem;
 
     &:nth-child(odd) {
       align-self: flex-start;
+
+      grid-template:
+        "icon title"
+        "_ subtitle"
+        "_ time"
+        "_ content"
+        / 1.5rem 1fr;
+
       text-align: left;
+    }
+
+    &:nth-child(even) {
+      align-self: flex-end;
+
+      grid-template:
+        "title icon"
+        "subtitle _"
+        "time _"
+        "content _"
+        / 1fr 1.5rem;
+      text-align: right;
     }
   }
 
@@ -36,45 +61,67 @@ const Wrapper = styled.li`
   }
 `;
 
+const IconWrapper = styled.div`
+  grid-area: icon;
+
+  color: var(--colors-gray-400);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.75rem;
+`;
+
 const TitleWrapper = styled.h3`
+  grid-area: title;
+
   color: var(--colors-primary);
   font-size: 1.5rem;
   margin: 0;
 `;
 
 const SubTitleWrapper = styled.h4`
+  grid-area: subtitle;
+
   color: var(--colors-secondary);
   font-size: 1rem;
   margin: 0;
 `;
 
 const TimeWrapper = styled.i`
+  grid-area: time;
+
   font-weight: lighter;
 
   color: var(--colors-primary);
   font-size: 0.75rem;
 `;
 
-const Text = styled.p`
+const ContentWrapper = styled.p`
+  grid-area: content;
+
   margin: 0;
 `;
 
 type Props = {
+  icon?: ReactNode;
   title: ReactNode;
   subtitle?: ReactNode;
   time?: string;
   children: ReactNode;
 };
 
-const Item = ({ title, subtitle, time, children }: Props) => {
+const Item = ({ icon, title, subtitle, time, children }: Props) => {
   const [isInView, element] = useElementInView<HTMLLIElement>();
 
   return (
     <Wrapper ref={element} className={isInView ? "in-view" : ""}>
+      <IconWrapper>{icon}</IconWrapper>
       <TitleWrapper>{title}</TitleWrapper>
       <SubTitleWrapper>{subtitle}</SubTitleWrapper>
       <TimeWrapper>{time}</TimeWrapper>
-      <Text>{children}</Text>
+      <ContentWrapper>{children}</ContentWrapper>
     </Wrapper>
   );
 };
