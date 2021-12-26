@@ -17,7 +17,7 @@ const Section = styled.section<{ index: number }>`
 type Props = {
   id: string;
   children?: ReactNode;
-};
+} & React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
 const SectionWrapper = ({ id, ...props }: Props) => {
   const { addSection, removeSection } = useSectionContext();
@@ -29,7 +29,7 @@ const SectionWrapper = ({ id, ...props }: Props) => {
     return () => removeSection(id);
   }, [id, addSection, removeSection]);
 
-  return <Section ref={sectionRef} {...props} />;
+  return <Section ref={sectionRef} id={id} {...props} />;
 };
 
 export default SectionWrapper;

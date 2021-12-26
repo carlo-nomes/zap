@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 const Wrapper = styled.li`
   list-style: none;
-  scroll-snap-align: end;
 
   box-sizing: border-box;
   padding: 1rem;
