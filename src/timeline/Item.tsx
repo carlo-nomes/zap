@@ -1,5 +1,37 @@
 import React, { ReactNode } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const smallItem = css`
+  align-self: stretch;
+  grid-template:
+    "title icon"
+    "subtitle _"
+    "time _"
+    "content content"
+    / 1fr 1.5rem;
+`;
+
+const leftItem = css`
+  align-self: flex-start;
+  grid-template:
+    "icon title"
+    "_ subtitle"
+    "_ time"
+    "_ content"
+    / 1.5rem 1fr;
+  text-align: left;
+`;
+
+const rightItem = css`
+  align-self: flex-end;
+  grid-template:
+    "title icon"
+    "subtitle _"
+    "time _"
+    "content _"
+    / 1fr 1.5rem;
+  text-align: right;
+`;
 
 const Wrapper = styled.li`
   list-style: none;
@@ -7,43 +39,19 @@ const Wrapper = styled.li`
   box-sizing: border-box;
   padding: 1rem;
 
-  align-self: flex-start;
-  width: 100%;
-  grid-template:
-    "title icon"
-    "subtitle subtitle"
-    "time time"
-    "content content"
-    / 1fr 1.5rem;
-  grid-gap: 0.25rem;
-
   display: grid;
+  ${smallItem}
+  grid-column-gap: 0.5rem;
+
   @media screen and (min-width: 60rem) {
-    max-width: 30rem;
+    width: 50%;
 
     &:nth-child(odd) {
-      align-self: flex-start;
-
-      grid-template:
-        "icon title"
-        "_ subtitle"
-        "_ time"
-        "_ content"
-        / 1.5rem 1fr;
-
-      text-align: left;
+      ${leftItem}
     }
 
     &:nth-child(even) {
-      align-self: flex-end;
-
-      grid-template:
-        "title icon"
-        "subtitle _"
-        "time _"
-        "content _"
-        / 1fr 1.5rem;
-      text-align: right;
+      ${rightItem}
     }
   }
 `;
