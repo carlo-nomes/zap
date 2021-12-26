@@ -1,6 +1,6 @@
-import React from "react";
+import React, { SVGProps } from "react";
 
-const Diploma = () => (
+const Diploma = (props: SVGProps<SVGSVGElement>) => (
   <svg
     aria-hidden="true"
     focusable="false"
@@ -8,6 +8,7 @@ const Diploma = () => (
     role="img"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 640 512"
+    {...props}
   >
     <path
       fill="currentColor"

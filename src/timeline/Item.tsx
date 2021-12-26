@@ -8,6 +8,7 @@ const smallItem = css`
     "subtitle _"
     "time _"
     "content content"
+    "footer footer"
     / 1fr 1.5rem;
 `;
 
@@ -18,6 +19,7 @@ const leftItem = css`
     "_ subtitle"
     "_ time"
     "_ content"
+    "_ footer"
     / 1.5rem 1fr;
   text-align: left;
 `;
@@ -29,6 +31,7 @@ const rightItem = css`
     "subtitle _"
     "time _"
     "content _"
+    "footer _"
     / 1fr 1.5rem;
   text-align: right;
 `;
@@ -59,7 +62,7 @@ const Wrapper = styled.li`
 const IconWrapper = styled.div`
   grid-area: icon;
 
-  color: var(--colors-gray-400);
+  color: var(--colors-gray-300);
 
   display: flex;
   align-items: center;
@@ -99,15 +102,28 @@ const ContentWrapper = styled.p`
   margin: 0;
 `;
 
+const FooterWrapper = styled.div`
+  grid-area: footer;
+
+  color: var(--colors-gray-300);
+
+  margin: 0rem -0.5rem;
+  > * {
+    height: 1.5rem;
+    margin: 0.5rem;
+  }
+`;
+
 type Props = {
   icon?: ReactNode;
   title: ReactNode;
   subtitle?: ReactNode;
   time?: string;
-  children: ReactNode;
+  children?: ReactNode;
+  footer?: ReactNode;
 };
 
-const Item = ({ icon, title, subtitle, time, children }: Props) => {
+const Item = ({ icon, title, subtitle, time, children, footer }: Props) => {
   return (
     <Wrapper>
       <IconWrapper>{icon}</IconWrapper>
@@ -115,6 +131,7 @@ const Item = ({ icon, title, subtitle, time, children }: Props) => {
       <SubTitleWrapper>{subtitle}</SubTitleWrapper>
       <TimeWrapper>{time}</TimeWrapper>
       <ContentWrapper>{children}</ContentWrapper>
+      <FooterWrapper>{footer}</FooterWrapper>
     </Wrapper>
   );
 };
