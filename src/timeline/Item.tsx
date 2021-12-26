@@ -1,5 +1,40 @@
 import React, { ReactNode } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const smallItem = css`
+  align-self: stretch;
+  grid-template:
+    "title icon"
+    "subtitle _"
+    "time _"
+    "content content"
+    "footer footer"
+    / 1fr 1.5rem;
+`;
+
+const leftItem = css`
+  align-self: flex-start;
+  grid-template:
+    "icon title"
+    "_ subtitle"
+    "_ time"
+    "_ content"
+    "_ footer"
+    / 1.5rem 1fr;
+  text-align: left;
+`;
+
+const rightItem = css`
+  align-self: flex-end;
+  grid-template:
+    "title icon"
+    "subtitle _"
+    "time _"
+    "content _"
+    "footer _"
+    / 1fr 1.5rem;
+  text-align: right;
+`;
 
 const Wrapper = styled.li`
   list-style: none;
@@ -7,43 +42,19 @@ const Wrapper = styled.li`
   box-sizing: border-box;
   padding: 1rem;
 
-  align-self: flex-start;
-  width: 100%;
-  grid-template:
-    "title icon"
-    "subtitle subtitle"
-    "time time"
-    "content content"
-    / 1fr 1.5rem;
-  grid-gap: 0.25rem;
-
   display: grid;
+  ${smallItem}
+  grid-column-gap: 0.5rem;
+
   @media screen and (min-width: 60rem) {
-    max-width: 30rem;
+    width: 50%;
 
     &:nth-child(odd) {
-      align-self: flex-start;
-
-      grid-template:
-        "icon title"
-        "_ subtitle"
-        "_ time"
-        "_ content"
-        / 1.5rem 1fr;
-
-      text-align: left;
+      ${leftItem}
     }
 
     &:nth-child(even) {
-      align-self: flex-end;
-
-      grid-template:
-        "title icon"
-        "subtitle _"
-        "time _"
-        "content _"
-        / 1fr 1.5rem;
-      text-align: right;
+      ${rightItem}
     }
   }
 `;
@@ -51,7 +62,7 @@ const Wrapper = styled.li`
 const IconWrapper = styled.div`
   grid-area: icon;
 
-  color: var(--colors-gray-400);
+  color: var(--colors-gray-300);
 
   display: flex;
   align-items: center;
@@ -91,15 +102,28 @@ const ContentWrapper = styled.p`
   margin: 0;
 `;
 
+const FooterWrapper = styled.div`
+  grid-area: footer;
+
+  color: var(--colors-gray-300);
+
+  margin: 0rem -0.5rem;
+  > * {
+    height: 1.5rem;
+    margin: 0.5rem;
+  }
+`;
+
 type Props = {
   icon?: ReactNode;
   title: ReactNode;
   subtitle?: ReactNode;
   time?: string;
-  children: ReactNode;
+  children?: ReactNode;
+  footer?: ReactNode;
 };
 
-const Item = ({ icon, title, subtitle, time, children }: Props) => {
+const Item = ({ icon, title, subtitle, time, children, footer }: Props) => {
   return (
     <Wrapper>
       <IconWrapper>{icon}</IconWrapper>
@@ -107,6 +131,7 @@ const Item = ({ icon, title, subtitle, time, children }: Props) => {
       <SubTitleWrapper>{subtitle}</SubTitleWrapper>
       <TimeWrapper>{time}</TimeWrapper>
       <ContentWrapper>{children}</ContentWrapper>
+      <FooterWrapper>{footer}</FooterWrapper>
     </Wrapper>
   );
 };
