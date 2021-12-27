@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { ConstructionSign } from "../common/emojis";
+import { HighVoltage } from "../common/emojis";
 
 const Wrapper = styled.h2`
   align-self: center;
@@ -21,9 +21,9 @@ const Wrapper = styled.h2`
 
 const SubTitle = () => (
   <Wrapper>
-    <ConstructionSign />
-    under construction
-    <ConstructionSign />
+    <HighVoltage />
+    Lightning fast development
+    <HighVoltage />
   </Wrapper>
 );
 
