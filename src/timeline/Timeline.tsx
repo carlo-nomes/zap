@@ -1,41 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  Angular,
-  Arduino,
-  AWS,
-  CSS,
-  Diploma,
-  HTML,
-  Jasmine,
-  Java,
-  JavaScript,
-  Kubernetes,
-  Lambda,
-  Material,
-  NodeJs,
-  OpenSearch,
-  Podium,
-  PWA,
-  ReactIcon,
-  Redux,
-  School,
-  StyledComponents,
-  Tools,
-  TravisCI,
-  TypeScript,
-} from "../common/icons";
-import Github from "../common/icons/Github";
-import Karma from "../common/icons/Karma";
-import Linux from "../common/icons/Linux";
 
 import AppSection from "../common/Section";
 import WaveBackground from "../common/WaveBackground";
-import Item from "./Item";
+
+import useIsTopOutOfView from "./useIsTopOutOfView";
+import Title from "./Title";
 import Line from "./Line";
 import List from "./List";
-import Title from "./Title";
-import useIsTopOutOfView from "./useIsTopOutOfView";
+import Item from "./Item";
+import * as Icons from "./TimelineIcons";
 
 const Section = styled(AppSection)`
   height: auto;
@@ -61,19 +35,19 @@ const Timeline = () => {
       </WaveBackground>
       <Line />
       <List>
-        <Item icon={<School />} title="IT-management" subtitle="KS Joma" time="2012">
+        <Item icon={<Icons.School />} title="IT-management" subtitle="KS Joma" time="2012">
           High school diploma with a certificate of business management.
         </Item>
 
         <Item
-          icon={<Tools />}
+          icon={<Icons.Project />}
           title="Aan Tafel"
           time="July 2012"
           footer={
             <>
-              <HTML />
-              <CSS />
-              <JavaScript />
+              <Icons.HTML />
+              <Icons.CSS />
+              <Icons.JavaScript />
             </>
           }
         >
@@ -81,7 +55,7 @@ const Timeline = () => {
         </Item>
 
         <Item
-          icon={<School />}
+          icon={<Icons.School />}
           title="Interactive Multimedia Design"
           subtitle="Thomas More Mechelen"
           time="2012 - 2013"
@@ -89,20 +63,20 @@ const Timeline = () => {
           Junior year of a professional bachelor focussed on design.
         </Item>
 
-        <Item icon={<School />} title="Software Management" subtitle="KDG" time="2013 - 2017">
+        <Item icon={<Icons.School />} title="Software Management" subtitle="KDG" time="2013 - 2017">
           A professional bachelor with a focus on software management. Graduated with distinction.
         </Item>
 
         <Item
-          icon={<Tools />}
+          icon={<Icons.Project />}
           title="Smart Plant Monitor"
           subtitle="Optis"
           time="April 2017 - June 2017"
           footer={
             <>
-              <Arduino />
-              <NodeJs />
-              <Angular />
+              <Icons.Arduino />
+              <Icons.NodeJs />
+              <Icons.Angular />
             </>
           }
         >
@@ -110,13 +84,13 @@ const Timeline = () => {
         </Item>
 
         <Item
-          icon={<Tools />}
+          icon={<Icons.Project />}
           title="BOOQIT"
           time="August 2017 - October 2017"
           footer={
             <>
-              <NodeJs />
-              <Angular />
+              <Icons.NodeJs />
+              <Icons.Angular />
             </>
           }
         >
@@ -124,14 +98,14 @@ const Timeline = () => {
         </Item>
 
         <Item
-          icon={<Tools />}
+          icon={<Icons.Project />}
           title="Datamanager/Ruimtemonitor"
           subtitle="Omgeving Vlaanderen"
           time="October 2017 - November 2017"
           footer={
             <>
-              <Java />
-              <Linux />
+              <Icons.Java />
+              <Icons.Linux />
             </>
           }
         >
@@ -139,16 +113,16 @@ const Timeline = () => {
         </Item>
 
         <Item
-          icon={<Tools />}
+          icon={<Icons.Project />}
           title="EnCo"
           subtitle="Unbrace - Proximus"
           time="March 2018 - June 2018"
           footer={
             <>
-              <ReactIcon />
-              <TypeScript />
-              <Redux />
-              <StyledComponents />
+              <Icons.ReactJs />
+              <Icons.TypeScript />
+              <Icons.Redux />
+              <Icons.StyledComponents />
             </>
           }
         >
@@ -156,15 +130,15 @@ const Timeline = () => {
         </Item>
 
         <Item
-          icon={<Tools />}
+          icon={<Icons.Project />}
           title="Marathon"
           subtitle="B. Rekencentra NV - Aurubis"
           time="July 2018 - October 2018"
           footer={
             <>
-              <ReactIcon />
-              <TypeScript />
-              <PWA />
+              <Icons.ReactJs />
+              <Icons.TypeScript />
+              <Icons.PWA />
             </>
           }
         >
@@ -172,18 +146,18 @@ const Timeline = () => {
         </Item>
 
         <Item
-          icon={<Tools />}
+          icon={<Icons.Project />}
           title="Stark"
           subtitle="National Bank of Belgium"
           time="October 2018 - May 2019"
           footer={
             <>
-              <Angular />
-              <Material />
-              <Github />
-              <TravisCI />
-              <Jasmine />
-              <Karma />
+              <Icons.Angular />
+              <Icons.Material />
+              <Icons.Github />
+              <Icons.TravisCI />
+              <Icons.Jasmine />
+              <Icons.Karma />
             </>
           }
         >
@@ -191,46 +165,46 @@ const Timeline = () => {
         </Item>
 
         <Item
-          icon={<Diploma />}
+          icon={<Icons.Certificate />}
           title="Certified Scrum Master"
           subtitle="Agilar - Scrum Alliance"
           time="Februari 2019"
         />
 
-        <Item icon={<Diploma />} title="Leadership skills" subtitle="Being Matters" time="2019" />
+        <Item icon={<Icons.Certificate />} title="Leadership skills" subtitle="Being Matters" time="2019" />
 
         <Item
-          icon={<Tools />}
+          icon={<Icons.Project />}
           title="Digitale Methode"
           subtitle="Calibrate - Signpost"
           time="November 2019 - March 2020"
           footer={
             <>
-              <ReactIcon />
-              <TypeScript />
-              <StyledComponents />
+              <Icons.ReactJs />
+              <Icons.TypeScript />
+              <Icons.StyledComponents />
             </>
           }
         >
           A platform for the digitalization of the secondary education curriculum in Flanders.
         </Item>
 
-        <Item icon={<Podium />} title="React Summit" subtitle="React Summit Amsterdam" time="2020">
+        <Item icon={<Icons.Conference />} title="React Summit" subtitle="React Summit Amsterdam" time="2020">
           A conference for React developers. Where I took several courses by some of the top experts in the field.
         </Item>
 
         <Item
-          icon={<Tools />}
+          icon={<Icons.Project />}
           title="Holmes"
           subtitle="Agentschap Uitbetaling Groeipakket"
           time="March 2021 - Current"
           footer={
             <>
-              <Kubernetes />
-              <Java />
-              <HTML />
-              <CSS />
-              <JavaScript />
+              <Icons.Kubernetes />
+              <Icons.Java />
+              <Icons.HTML />
+              <Icons.CSS />
+              <Icons.JavaScript />
             </>
           }
         >
@@ -238,19 +212,19 @@ const Timeline = () => {
         </Item>
 
         <Item
-          icon={<Tools />}
+          icon={<Icons.Project />}
           title="Samenwerkingsplatform Uitbraak Management"
           subtitle="KPMG - Agentschap Zorg & Gezondheid"
           time="March 2021 - Current"
           footer={
             <>
-              <AWS />
-              <OpenSearch />
-              <Lambda />
-              <NodeJs />
-              <ReactIcon />
-              <TypeScript />
-              <StyledComponents />
+              <Icons.AWS />
+              <Icons.OpenSearch />
+              <Icons.Lambda />
+              <Icons.NodeJs />
+              <Icons.ReactJs />
+              <Icons.TypeScript />
+              <Icons.StyledComponents />
             </>
           }
         >
