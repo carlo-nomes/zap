@@ -6,7 +6,7 @@ import Diploma from "./Diploma";
 import HTML from "./HTML";
 import JavaScript from "./JavaScript";
 import Lambda from "./Lambda";
-import NodeJs from "./NodeJS";
+import NodeJs from "./NodeJs";
 import OpenSearch from "./OpenSearch";
 import PWA from "./PWA";
 import ReactIcon from "./ReactIcon";
