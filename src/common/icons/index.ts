@@ -1,49 +1,26 @@
-import Angular from "./Angular";
-import Arduino from "./Arduino";
-import AWS from "./AWS";
-import CSS from "./CSS";
-import Diploma from "./Diploma";
-import HTML from "./HTML";
-import JavaScript from "./JavaScript";
-import Lambda from "./Lambda";
-import NodeJs from "./NodeJs";
-import OpenSearch from "./OpenSearch";
-import PWA from "./PWA";
-import ReactIcon from "./ReactIcon";
-import Redux from "./Redux";
-import School from "./School";
-import StyledComponents from "./StyledComponents";
-import Tools from "./Tools";
-import TypeScript from "./TypeScript";
-import Java from "./Java";
-import TravisCI from "./TravisCI";
-import Jasmine from "./Jasmine";
-import Material from "./Material";
-import Kubernetes from "./Kubernetes";
-import Podium from "./Podium";
-
-export {
-  Angular,
-  Arduino,
-  AWS,
-  CSS,
-  Diploma,
-  HTML,
-  JavaScript,
-  Lambda,
-  NodeJs,
-  OpenSearch,
-  PWA,
-  ReactIcon,
-  Redux,
-  School,
-  StyledComponents,
-  Tools,
-  TypeScript,
-  Java,
-  TravisCI,
-  Jasmine,
-  Material,
-  Kubernetes,
-  Podium,
-};
+export { default as Angular } from "./Angular";
+export { default as Arduino } from "./Arduino";
+export { default as AWS } from "./AWS";
+export { default as CSS } from "./CSS";
+export { default as Diploma } from "./Diploma";
+export { default as HTML } from "./HTML";
+export { default as JavaScript } from "./JavaScript";
+export { default as Lambda } from "./Lambda";
+export { default as NodeJs } from "./NodeJs";
+export { default as OpenSearch } from "./OpenSearch";
+export { default as PWA } from "./PWA";
+export { default as ReactJs } from "./ReactJs";
+export { default as Redux } from "./Redux";
+export { default as School } from "./School";
+export { default as StyledComponents } from "./StyledComponents";
+export { default as Tools } from "./Tools";
+export { default as TypeScript } from "./TypeScript";
+export { default as Java } from "./Java";
+export { default as TravisCI } from "./TravisCI";
+export { default as Jasmine } from "./Jasmine";
+export { default as Material } from "./Material";
+export { default as Kubernetes } from "./Kubernetes";
+export { default as Podium } from "./Podium";
+export { default as Karma } from "./Karma";
+export { default as Github } from "./Github";
+export { default as Linux } from "./Linux";

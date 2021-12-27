@@ -3,7 +3,7 @@ import styled from "styled-components";
 const List = styled.ul`
   box-sizing: border-box;
   width: 100%;
-  max-width: 60rem;
+  max-width: 90rem;
   margin: 0;
   padding: 0;
 

@@ -1,10 +1,10 @@
 import React, { SVGProps } from "react";
 
-const ReactIcon = (props: SVGProps<SVGSVGElement>) => (
+const ReactJs = (props: SVGProps<SVGSVGElement>) => (
   <svg
     aria-hidden="true"
     focusable="false"
-    data-icon="react"
+    data-icon="react-js"
     role="img"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 512 512"
@@ -17,4 +17,4 @@ const ReactIcon = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-export default ReactIcon;
+export default ReactJs;

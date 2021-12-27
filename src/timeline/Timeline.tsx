@@ -1,41 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  Angular,
-  Arduino,
-  AWS,
-  CSS,
-  Diploma,
-  HTML,
-  Jasmine,
-  Java,
-  JavaScript,
-  Kubernetes,
-  Lambda,
-  Material,
-  NodeJs,
-  OpenSearch,
-  Podium,
-  PWA,
-  ReactIcon,
-  Redux,
-  School,
-  StyledComponents,
-  Tools,
-  TravisCI,
-  TypeScript,
-} from "../common/icons";
-import Github from "../common/icons/Github";
-import Karma from "../common/icons/Karma";
-import Linux from "../common/icons/Linux";
 
 import AppSection from "../common/Section";
 import WaveBackground from "../common/WaveBackground";
-import Item from "./Item";
+
+import useIsTopOutOfView from "./useIsTopOutOfView";
+import Title from "./Title";
 import Line from "./Line";
 import List from "./List";
-import Title from "./Title";
-import useIsTopOutOfView from "./useIsTopOutOfView";
+import * as Item from "./Item";
+import * as Icons from "./TimelineIcons";
 
 const Section = styled(AppSection)`
   height: auto;
@@ -61,201 +35,241 @@ const Timeline = () => {
       </WaveBackground>
       <Line />
       <List>
-        <Item icon={<School />} title="IT-management" subtitle="KS Joma" time="2012">
-          High school diploma with a certificate of business management.
-        </Item>
+        <Item.Wrapper>
+          <Item.Icon>
+            <Icons.School />
+          </Item.Icon>
+          <Item.Title>IT-management</Item.Title>
+          <Item.Subtitle>KS Joma</Item.Subtitle>
+          <Item.Time>Graduated 2012</Item.Time>
+          <Item.Content>High school diploma with a certificate of business management.</Item.Content>
+        </Item.Wrapper>
 
-        <Item
-          icon={<Tools />}
-          title="Aan Tafel"
-          time="July 2012"
-          footer={
-            <>
-              <HTML />
-              <CSS />
-              <JavaScript />
-            </>
-          }
-        >
-          A website for a local non-profit organization. Engaged to provide affordable meals to disabled people.
-        </Item>
+        <Item.Wrapper>
+          <Item.Icon>
+            <Icons.Project />
+          </Item.Icon>
+          <Item.Title>Aan Tafel</Item.Title>
+          <Item.Time>Summer 2012</Item.Time>
+          <Item.Content>
+            A website for a local non&#8209;profit organization. Engaged to provide affordable meals to disabled people.
+          </Item.Content>
+          <Item.Footer>
+            <Icons.HTML />
+            <Icons.CSS />
+            <Icons.JavaScript />
+          </Item.Footer>
+        </Item.Wrapper>
 
-        <Item
-          icon={<School />}
-          title="Interactive Multimedia Design"
-          subtitle="Thomas More Mechelen"
-          time="2012 - 2013"
-        >
-          Junior year of a professional bachelor focussed on design.
-        </Item>
+        <Item.Wrapper>
+          <Item.Icon>
+            <Icons.School />
+          </Item.Icon>
+          <Item.Title>Interactive Multimedia Design</Item.Title>
+          <Item.Subtitle>Thomas More Mechelen</Item.Subtitle>
+          <Item.Time>Finished 2013</Item.Time>
+          <Item.Content>Junior year of a professional bachelor focussed on design.</Item.Content>
+        </Item.Wrapper>
 
-        <Item icon={<School />} title="Software Management" subtitle="KDG" time="2013 - 2017">
-          A professional bachelor with a focus on software management. Graduated with distinction.
-        </Item>
+        <Item.Wrapper>
+          <Item.Icon>
+            <Icons.Project />
+          </Item.Icon>
+          <Item.Title>Smart Plant Monitor</Item.Title>
+          <Item.Subtitle>Optis</Item.Subtitle>
+          <Item.Time>Internship 2017</Item.Time>
+          <Item.Content>
+            An IoT proof-of-concept for monitoring a bonsai with an Arduino connected to a web application.
+          </Item.Content>
+          <Item.Footer>
+            <Icons.Arduino />
+            <Icons.NodeJs />
+            <Icons.Angular />
+          </Item.Footer>
+        </Item.Wrapper>
 
-        <Item
-          icon={<Tools />}
-          title="Smart Plant Monitor"
-          subtitle="Optis"
-          time="April 2017 - June 2017"
-          footer={
-            <>
-              <Arduino />
-              <NodeJs />
-              <Angular />
-            </>
-          }
-        >
-          An IoT proof-of-concept for monitoring a bonsai with an Arduino connected to a web application.
-        </Item>
+        <Item.Wrapper>
+          <Item.Icon>
+            <Icons.School />
+          </Item.Icon>
+          <Item.Title>Software Management</Item.Title>
+          <Item.Subtitle>KDG</Item.Subtitle>
+          <Item.Time>Graduated 2017</Item.Time>
+          <Item.Content>
+            A professional bachelor with a focus on software management. Graduated with distinction.
+          </Item.Content>
+        </Item.Wrapper>
 
-        <Item
-          icon={<Tools />}
-          title="BOOQIT"
-          time="August 2017 - October 2017"
-          footer={
-            <>
-              <NodeJs />
-              <Angular />
-            </>
-          }
-        >
-          A webapp for planning and monitoring medical and social transport.
-        </Item>
+        <Item.Wrapper>
+          <Item.Icon>
+            <Icons.Project />
+          </Item.Icon>
+          <Item.Title>
+            <a href="https://www.booqit.be/en/" target="_blank" rel="noopener noreferrer">
+              BOOQIT
+            </a>
+          </Item.Title>
+          <Item.Time>August 2017 &#8594; October 2017</Item.Time>
+          <Item.Content>A web application for planning and monitoring medical and social transport.</Item.Content>
+          <Item.Footer>
+            <Icons.NodeJs />
+            <Icons.Angular />
+          </Item.Footer>
+        </Item.Wrapper>
 
-        <Item
-          icon={<Tools />}
-          title="Datamanager/Ruimtemonitor"
-          subtitle="Omgeving Vlaanderen"
-          time="October 2017 - November 2017"
-          footer={
-            <>
-              <Java />
-              <Linux />
-            </>
-          }
-        >
-          A migration of two applications hosted on commercial platforms to an on site hosted environment.
-        </Item>
+        <Item.Wrapper>
+          <Item.Icon>
+            <Icons.Project />
+          </Item.Icon>
+          <Item.Title>Datamanager &amp; Ruimtemonitor</Item.Title>
+          <Item.Subtitle>Omgeving Vlaanderen</Item.Subtitle>
+          <Item.Time>October 2017 &#8594; November 2017</Item.Time>
+          <Item.Content>
+            A migration of two applications hosted on commercial platforms to an on site hosted environment.
+          </Item.Content>
+          <Item.Footer>
+            <Icons.Java />
+            <Icons.Linux />
+          </Item.Footer>
+        </Item.Wrapper>
 
-        <Item
-          icon={<Tools />}
-          title="EnCo"
-          subtitle="Unbrace - Proximus"
-          time="March 2018 - June 2018"
-          footer={
-            <>
-              <ReactIcon />
-              <TypeScript />
-              <Redux />
-              <StyledComponents />
-            </>
-          }
-        >
-          A wide suite of PaaS/SaaS solutions bundled trough a central marketplace.
-        </Item>
+        <Item.Wrapper>
+          <Item.Icon>
+            <Icons.Project />
+          </Item.Icon>
+          <Item.Title>
+            <a href="https://proximusapi.enco.io/" target="_blank" rel="noopener noreferrer">
+              EnCo
+            </a>
+          </Item.Title>
+          <Item.Subtitle>Unbrace &#8209; Proximus</Item.Subtitle>
+          <Item.Time>March 2018 &#8594; June 2018</Item.Time>
+          <Item.Content>A wide suite of PaaS/SaaS solutions bundled trough a central marketplace.</Item.Content>
+          <Item.Footer>
+            <Icons.ReactJs />
+            <Icons.TypeScript />
+            <Icons.Redux />
+            <Icons.StyledComponents />
+          </Item.Footer>
+        </Item.Wrapper>
 
-        <Item
-          icon={<Tools />}
-          title="Marathon"
-          subtitle="B. Rekencentra NV - Aurubis"
-          time="July 2018 - October 2018"
-          footer={
-            <>
-              <ReactIcon />
-              <TypeScript />
-              <PWA />
-            </>
-          }
-        >
-          An application for managing and monitoring the different flows of Aurubis Olen.
-        </Item>
+        <Item.Wrapper>
+          <Item.Icon>
+            <Icons.Project />
+          </Item.Icon>
+          <Item.Title>Marathon</Item.Title>
+          <Item.Subtitle>B. Rekencentra NV &#8209; Aurubis</Item.Subtitle>
+          <Item.Time>July 2018 &#8594; October 2018</Item.Time>
+          <Item.Content>An application for managing and monitoring the different flows of Aurubis Olen.</Item.Content>
+          <Item.Footer>
+            <Icons.ReactJs />
+            <Icons.TypeScript />
+            <Icons.PWA />
+          </Item.Footer>
+        </Item.Wrapper>
 
-        <Item
-          icon={<Tools />}
-          title="Stark"
-          subtitle="National Bank of Belgium"
-          time="October 2018 - May 2019"
-          footer={
-            <>
-              <Angular />
-              <Material />
-              <Github />
-              <TravisCI />
-              <Jasmine />
-              <Karma />
-            </>
-          }
-        >
-          An open source frontend framework designed for use within the National Bank of Belgium.
-        </Item>
+        <Item.Wrapper>
+          <Item.Icon>
+            <Icons.Project />
+          </Item.Icon>
+          <Item.Title>
+            <a href="https://github.com/NationalBankBelgium/stark" target="_blank" rel="noopener noreferrer">
+              Stark
+            </a>
+          </Item.Title>
+          <Item.Subtitle>National Bank of Belgium</Item.Subtitle>
+          <Item.Time>October 2018 &#8594; May 2019</Item.Time>
+          <Item.Content>
+            An open source frontend framework designed for use within the National Bank of Belgium.
+          </Item.Content>
+          <Item.Footer>
+            <Icons.Angular />
+            <Icons.Material />
+            <Icons.Github />
+            <Icons.TravisCI />
+            <Icons.Jasmine />
+            <Icons.Karma />
+          </Item.Footer>
+        </Item.Wrapper>
 
-        <Item
-          icon={<Diploma />}
-          title="Certified Scrum Master"
-          subtitle="Agilar - Scrum Alliance"
-          time="Februari 2019"
-        />
+        <Item.Wrapper>
+          <Item.Icon>
+            <Icons.Certificate />
+          </Item.Icon>
+          <Item.Title>Certified Scrum Master</Item.Title>
+          <Item.Subtitle>Agilar &#8209; Scrum Alliance</Item.Subtitle>
+          <Item.Time>Februari 2019</Item.Time>
+        </Item.Wrapper>
 
-        <Item icon={<Diploma />} title="Leadership skills" subtitle="Being Matters" time="2019" />
+        <Item.Wrapper>
+          <Item.Icon>
+            <Icons.Certificate />
+          </Item.Icon>
+          <Item.Title>Leadership skills</Item.Title>
+          <Item.Subtitle>Being Matters</Item.Subtitle>
+          <Item.Time>March 2019 &#8594; December 2019</Item.Time>
+        </Item.Wrapper>
 
-        <Item
-          icon={<Tools />}
-          title="Digitale Methode"
-          subtitle="Calibrate - Signpost"
-          time="November 2019 - March 2020"
-          footer={
-            <>
-              <ReactIcon />
-              <TypeScript />
-              <StyledComponents />
-            </>
-          }
-        >
-          A platform for the digitalization of the secondary education curriculum in Flanders.
-        </Item>
+        <Item.Wrapper>
+          <Item.Icon>
+            <Icons.Project />
+          </Item.Icon>
+          <Item.Title>
+            <a href="https://digitalemethode.be/info/" target="_blank" rel="noopener noreferrer">
+              Digitale Methode
+            </a>
+          </Item.Title>
+          <Item.Subtitle>Calibrate &#8209; Signpost</Item.Subtitle>
+          <Item.Time>November 2019 &#8594; March 2020</Item.Time>
+          <Item.Content>
+            A platform for the digitalization of the secondary education curriculum in Flanders.
+          </Item.Content>
+          <Item.Footer>
+            <Icons.ReactJs />
+            <Icons.TypeScript />
+            <Icons.StyledComponents />
+          </Item.Footer>
+        </Item.Wrapper>
 
-        <Item icon={<Podium />} title="React Summit" subtitle="React Summit Amsterdam" time="2020">
-          A conference for React developers. Where I took several courses by some of the top experts in the field.
-        </Item>
+        <Item.Wrapper>
+          <Item.Icon>
+            <Icons.Project />
+          </Item.Icon>
+          <Item.Title>Holmes</Item.Title>
+          <Item.Subtitle>Agentschap Uitbetaling Groeipakket</Item.Subtitle>
+          <Item.Time>August 2020 &#8594; March 2021</Item.Time>
+          <Item.Content>
+            An application used by the agency to track and manage all incoming/outgoing communications with civilians.
+          </Item.Content>
+          <Item.Footer>
+            <Icons.Kubernetes />
+            <Icons.Java />
+            <Icons.HTML />
+            <Icons.CSS />
+            <Icons.JavaScript />
+          </Item.Footer>
+        </Item.Wrapper>
 
-        <Item
-          icon={<Tools />}
-          title="Holmes"
-          subtitle="Agentschap Uitbetaling Groeipakket"
-          time="March 2021 - Current"
-          footer={
-            <>
-              <Kubernetes />
-              <Java />
-              <HTML />
-              <CSS />
-              <JavaScript />
-            </>
-          }
-        >
-          An application used by the agency to track and manage all incoming/outgoing communications with civilians.
-        </Item>
-
-        <Item
-          icon={<Tools />}
-          title="Samenwerkingsplatform Uitbraak Management"
-          subtitle="KPMG - Agentschap Zorg & Gezondheid"
-          time="March 2021 - Current"
-          footer={
-            <>
-              <AWS />
-              <OpenSearch />
-              <Lambda />
-              <NodeJs />
-              <ReactIcon />
-              <TypeScript />
-              <StyledComponents />
-            </>
-          }
-        >
-          The flemish platform for cooperation between the different stakeholders of the COVID-19 crisis.
-        </Item>
+        <Item.Wrapper>
+          <Item.Icon>
+            <Icons.Project />
+          </Item.Icon>
+          <Item.Title>Samenwerkingsplatform Uitbraak Management</Item.Title>
+          <Item.Subtitle>KPMG &#8209; Agentschap Zorg & Gezondheid</Item.Subtitle>
+          <Item.Time>March 2021 &#8594; ...</Item.Time>
+          <Item.Content>
+            The flemish platform for cooperation between the different stakeholders of the COVID&#8209;19 crisis.
+          </Item.Content>
+          <Item.Footer>
+            <Icons.AWS />
+            <Icons.OpenSearch />
+            <Icons.Lambda />
+            <Icons.NodeJs />
+            <Icons.ReactJs />
+            <Icons.TypeScript />
+            <Icons.StyledComponents />
+          </Item.Footer>
+        </Item.Wrapper>
       </List>
     </Section>
   );
