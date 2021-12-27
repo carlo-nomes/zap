@@ -6,6 +6,7 @@ import LinkedIn from "./LinkedIn";
 import Twitter from "./Twitter";
 import Medium from "./Medium";
 import Bar from "./Bar";
+import Behance from "./Behance";
 
 export default Social;
-export { Codepen, GitHub, Instagram, LinkedIn, Twitter, Medium, Bar };
+export { Codepen, GitHub, Instagram, LinkedIn, Twitter, Medium, Bar, Behance };

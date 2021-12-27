@@ -26,10 +26,8 @@ const Header = () => (
   <Wrapper>
     <List>
       <Socials.GitHub />
-      <Socials.Codepen />
       <Socials.Medium />
       <Socials.LinkedIn />
-      <Socials.Instagram />
       <Socials.Twitter />
     </List>
   </Wrapper>
