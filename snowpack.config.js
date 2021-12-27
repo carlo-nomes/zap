@@ -7,5 +7,4 @@ module.exports = {
   plugins: ["@snowpack/plugin-typescript"],
   // site hosted on https://carlo-nomes.github.io/zap
   buildOptions: { baseUrl: "/zap" },
-  optimize: { bundle: true, minify: true, target: "es2018" },
 };
