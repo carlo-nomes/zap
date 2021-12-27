@@ -1,40 +1,13 @@
 import React from "../../_snowpack/pkg/react.js";
 import styled from "../../_snowpack/pkg/styled-components.js";
-import {
-  Angular,
-  Arduino,
-  AWS,
-  CSS,
-  Diploma,
-  HTML,
-  Jasmine,
-  Java,
-  JavaScript,
-  Kubernetes,
-  Lambda,
-  Material,
-  NodeJs,
-  OpenSearch,
-  Podium,
-  PWA,
-  ReactIcon,
-  Redux,
-  School,
-  StyledComponents,
-  Tools,
-  TravisCI,
-  TypeScript
-} from "../common/icons/index.js";
-import Github from "../common/icons/Github.js";
-import Karma from "../common/icons/Karma.js";
-import Linux from "../common/icons/Linux.js";
 import AppSection from "../common/Section/index.js";
 import WaveBackground from "../common/WaveBackground.js";
-import Item from "./Item.js";
+import useIsTopOutOfView from "./useIsTopOutOfView.js";
+import Title from "./Title.js";
 import Line from "./Line.js";
 import List from "./List.js";
-import Title from "./Title.js";
-import useIsTopOutOfView from "./useIsTopOutOfView.js";
+import * as Item from "./Item.js";
+import * as Icons from "./TimelineIcons.js";
 const Section = styled(AppSection)`
   height: auto;
   min-height: 100vh;
@@ -60,94 +33,22 @@ const Timeline = () => {
     min: 0.5,
     max: 1,
     as: Title
-  }, "Timeline"), /* @__PURE__ */ React.createElement(Line, null), /* @__PURE__ */ React.createElement(List, null, /* @__PURE__ */ React.createElement(Item, {
-    icon: /* @__PURE__ */ React.createElement(School, null),
-    title: "IT-management",
-    subtitle: "KS Joma",
-    time: "2012"
-  }, "High school diploma with a certificate of business management."), /* @__PURE__ */ React.createElement(Item, {
-    icon: /* @__PURE__ */ React.createElement(Tools, null),
-    title: "Aan Tafel",
-    time: "July 2012",
-    footer: /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(HTML, null), /* @__PURE__ */ React.createElement(CSS, null), /* @__PURE__ */ React.createElement(JavaScript, null))
-  }, "A website for a local non-profit organization. Engaged to provide affordable meals to disabled people."), /* @__PURE__ */ React.createElement(Item, {
-    icon: /* @__PURE__ */ React.createElement(School, null),
-    title: "Interactive Multimedia Design",
-    subtitle: "Thomas More Mechelen",
-    time: "2012 - 2013"
-  }, "Junior year of a professional bachelor focussed on design."), /* @__PURE__ */ React.createElement(Item, {
-    icon: /* @__PURE__ */ React.createElement(School, null),
-    title: "Software Management",
-    subtitle: "KDG",
-    time: "2013 - 2017"
-  }, "A professional bachelor with a focus on software management. Graduated with distinction."), /* @__PURE__ */ React.createElement(Item, {
-    icon: /* @__PURE__ */ React.createElement(Tools, null),
-    title: "Smart Plant Monitor",
-    subtitle: "Optis",
-    time: "April 2017 - June 2017",
-    footer: /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(Arduino, null), /* @__PURE__ */ React.createElement(NodeJs, null), /* @__PURE__ */ React.createElement(Angular, null))
-  }, "An IoT proof-of-concept for monitoring a bonsai with an Arduino connected to a web application."), /* @__PURE__ */ React.createElement(Item, {
-    icon: /* @__PURE__ */ React.createElement(Tools, null),
-    title: "BOOQIT",
-    time: "August 2017 - October 2017",
-    footer: /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(NodeJs, null), /* @__PURE__ */ React.createElement(Angular, null))
-  }, "A webapp for planning and monitoring medical and social transport."), /* @__PURE__ */ React.createElement(Item, {
-    icon: /* @__PURE__ */ React.createElement(Tools, null),
-    title: "Datamanager/Ruimtemonitor",
-    subtitle: "Omgeving Vlaanderen",
-    time: "October 2017 - November 2017",
-    footer: /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(Java, null), /* @__PURE__ */ React.createElement(Linux, null))
-  }, "A migration of two applications hosted on commercial platforms to an on site hosted environment."), /* @__PURE__ */ React.createElement(Item, {
-    icon: /* @__PURE__ */ React.createElement(Tools, null),
-    title: "EnCo",
-    subtitle: "Unbrace - Proximus",
-    time: "March 2018 - June 2018",
-    footer: /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(ReactIcon, null), /* @__PURE__ */ React.createElement(TypeScript, null), /* @__PURE__ */ React.createElement(Redux, null), /* @__PURE__ */ React.createElement(StyledComponents, null))
-  }, "A wide suite of PaaS/SaaS solutions bundled trough a central marketplace."), /* @__PURE__ */ React.createElement(Item, {
-    icon: /* @__PURE__ */ React.createElement(Tools, null),
-    title: "Marathon",
-    subtitle: "B. Rekencentra NV - Aurubis",
-    time: "July 2018 - October 2018",
-    footer: /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(ReactIcon, null), /* @__PURE__ */ React.createElement(TypeScript, null), /* @__PURE__ */ React.createElement(PWA, null))
-  }, "An application for managing and monitoring the different flows of Aurubis Olen."), /* @__PURE__ */ React.createElement(Item, {
-    icon: /* @__PURE__ */ React.createElement(Tools, null),
-    title: "Stark",
-    subtitle: "National Bank of Belgium",
-    time: "October 2018 - May 2019",
-    footer: /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(Angular, null), /* @__PURE__ */ React.createElement(Material, null), /* @__PURE__ */ React.createElement(Github, null), /* @__PURE__ */ React.createElement(TravisCI, null), /* @__PURE__ */ React.createElement(Jasmine, null), /* @__PURE__ */ React.createElement(Karma, null))
-  }, "An open source frontend framework designed for use within the National Bank of Belgium."), /* @__PURE__ */ React.createElement(Item, {
-    icon: /* @__PURE__ */ React.createElement(Diploma, null),
-    title: "Certified Scrum Master",
-    subtitle: "Agilar - Scrum Alliance",
-    time: "Februari 2019"
-  }), /* @__PURE__ */ React.createElement(Item, {
-    icon: /* @__PURE__ */ React.createElement(Diploma, null),
-    title: "Leadership skills",
-    subtitle: "Being Matters",
-    time: "2019"
-  }), /* @__PURE__ */ React.createElement(Item, {
-    icon: /* @__PURE__ */ React.createElement(Tools, null),
-    title: "Digitale Methode",
-    subtitle: "Calibrate - Signpost",
-    time: "November 2019 - March 2020",
-    footer: /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(ReactIcon, null), /* @__PURE__ */ React.createElement(TypeScript, null), /* @__PURE__ */ React.createElement(StyledComponents, null))
-  }, "A platform for the digitalization of the secondary education curriculum in Flanders."), /* @__PURE__ */ React.createElement(Item, {
-    icon: /* @__PURE__ */ React.createElement(Podium, null),
-    title: "React Summit",
-    subtitle: "React Summit Amsterdam",
-    time: "2020"
-  }, "A conference for React developers. Where I took several courses by some of the top experts in the field."), /* @__PURE__ */ React.createElement(Item, {
-    icon: /* @__PURE__ */ React.createElement(Tools, null),
-    title: "Holmes",
-    subtitle: "Agentschap Uitbetaling Groeipakket",
-    time: "March 2021 - Current",
-    footer: /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(Kubernetes, null), /* @__PURE__ */ React.createElement(Java, null), /* @__PURE__ */ React.createElement(HTML, null), /* @__PURE__ */ React.createElement(CSS, null), /* @__PURE__ */ React.createElement(JavaScript, null))
-  }, "An application used by the agency to track and manage all incoming/outgoing communications with civilians."), /* @__PURE__ */ React.createElement(Item, {
-    icon: /* @__PURE__ */ React.createElement(Tools, null),
-    title: "Samenwerkingsplatform Uitbraak Management",
-    subtitle: "KPMG - Agentschap Zorg & Gezondheid",
-    time: "March 2021 - Current",
-    footer: /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(AWS, null), /* @__PURE__ */ React.createElement(OpenSearch, null), /* @__PURE__ */ React.createElement(Lambda, null), /* @__PURE__ */ React.createElement(NodeJs, null), /* @__PURE__ */ React.createElement(ReactIcon, null), /* @__PURE__ */ React.createElement(TypeScript, null), /* @__PURE__ */ React.createElement(StyledComponents, null))
-  }, "The flemish platform for cooperation between the different stakeholders of the COVID-19 crisis.")));
+  }, "Timeline"), /* @__PURE__ */ React.createElement(Line, null), /* @__PURE__ */ React.createElement(List, null, /* @__PURE__ */ React.createElement(Item.Wrapper, null, /* @__PURE__ */ React.createElement(Item.Icon, null, /* @__PURE__ */ React.createElement(Icons.School, null)), /* @__PURE__ */ React.createElement(Item.Title, null, "IT-management"), /* @__PURE__ */ React.createElement(Item.Subtitle, null, "KS Joma"), /* @__PURE__ */ React.createElement(Item.Time, null, "Graduated 2012"), /* @__PURE__ */ React.createElement(Item.Content, null, "High school diploma with a certificate of business management.")), /* @__PURE__ */ React.createElement(Item.Wrapper, null, /* @__PURE__ */ React.createElement(Item.Icon, null, /* @__PURE__ */ React.createElement(Icons.Project, null)), /* @__PURE__ */ React.createElement(Item.Title, null, "Aan Tafel"), /* @__PURE__ */ React.createElement(Item.Time, null, "Summer 2012"), /* @__PURE__ */ React.createElement(Item.Content, null, "A website for a local non‑profit organization. Engaged to provide affordable meals to disabled people."), /* @__PURE__ */ React.createElement(Item.Footer, null, /* @__PURE__ */ React.createElement(Icons.HTML, null), /* @__PURE__ */ React.createElement(Icons.CSS, null), /* @__PURE__ */ React.createElement(Icons.JavaScript, null))), /* @__PURE__ */ React.createElement(Item.Wrapper, null, /* @__PURE__ */ React.createElement(Item.Icon, null, /* @__PURE__ */ React.createElement(Icons.School, null)), /* @__PURE__ */ React.createElement(Item.Title, null, "Interactive Multimedia Design"), /* @__PURE__ */ React.createElement(Item.Subtitle, null, "Thomas More Mechelen"), /* @__PURE__ */ React.createElement(Item.Time, null, "Finished 2013"), /* @__PURE__ */ React.createElement(Item.Content, null, "Junior year of a professional bachelor focussed on design.")), /* @__PURE__ */ React.createElement(Item.Wrapper, null, /* @__PURE__ */ React.createElement(Item.Icon, null, /* @__PURE__ */ React.createElement(Icons.Project, null)), /* @__PURE__ */ React.createElement(Item.Title, null, "Smart Plant Monitor"), /* @__PURE__ */ React.createElement(Item.Subtitle, null, "Optis"), /* @__PURE__ */ React.createElement(Item.Time, null, "Internship 2017"), /* @__PURE__ */ React.createElement(Item.Content, null, "An IoT proof-of-concept for monitoring a bonsai with an Arduino connected to a web application."), /* @__PURE__ */ React.createElement(Item.Footer, null, /* @__PURE__ */ React.createElement(Icons.Arduino, null), /* @__PURE__ */ React.createElement(Icons.NodeJs, null), /* @__PURE__ */ React.createElement(Icons.Angular, null))), /* @__PURE__ */ React.createElement(Item.Wrapper, null, /* @__PURE__ */ React.createElement(Item.Icon, null, /* @__PURE__ */ React.createElement(Icons.School, null)), /* @__PURE__ */ React.createElement(Item.Title, null, "Software Management"), /* @__PURE__ */ React.createElement(Item.Subtitle, null, "KDG"), /* @__PURE__ */ React.createElement(Item.Time, null, "Graduated 2017"), /* @__PURE__ */ React.createElement(Item.Content, null, "A professional bachelor with a focus on software management. Graduated with distinction.")), /* @__PURE__ */ React.createElement(Item.Wrapper, null, /* @__PURE__ */ React.createElement(Item.Icon, null, /* @__PURE__ */ React.createElement(Icons.Project, null)), /* @__PURE__ */ React.createElement(Item.Title, null, /* @__PURE__ */ React.createElement("a", {
+    href: "https://www.booqit.be/en/",
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, "BOOQIT")), /* @__PURE__ */ React.createElement(Item.Time, null, "August 2017 → October 2017"), /* @__PURE__ */ React.createElement(Item.Content, null, "A web application for planning and monitoring medical and social transport."), /* @__PURE__ */ React.createElement(Item.Footer, null, /* @__PURE__ */ React.createElement(Icons.NodeJs, null), /* @__PURE__ */ React.createElement(Icons.Angular, null))), /* @__PURE__ */ React.createElement(Item.Wrapper, null, /* @__PURE__ */ React.createElement(Item.Icon, null, /* @__PURE__ */ React.createElement(Icons.Project, null)), /* @__PURE__ */ React.createElement(Item.Title, null, "Datamanager & Ruimtemonitor"), /* @__PURE__ */ React.createElement(Item.Subtitle, null, "Omgeving Vlaanderen"), /* @__PURE__ */ React.createElement(Item.Time, null, "October 2017 → November 2017"), /* @__PURE__ */ React.createElement(Item.Content, null, "A migration of two applications hosted on commercial platforms to an on site hosted environment."), /* @__PURE__ */ React.createElement(Item.Footer, null, /* @__PURE__ */ React.createElement(Icons.Java, null), /* @__PURE__ */ React.createElement(Icons.Linux, null))), /* @__PURE__ */ React.createElement(Item.Wrapper, null, /* @__PURE__ */ React.createElement(Item.Icon, null, /* @__PURE__ */ React.createElement(Icons.Project, null)), /* @__PURE__ */ React.createElement(Item.Title, null, /* @__PURE__ */ React.createElement("a", {
+    href: "https://proximusapi.enco.io/",
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, "EnCo")), /* @__PURE__ */ React.createElement(Item.Subtitle, null, "Unbrace ‑ Proximus"), /* @__PURE__ */ React.createElement(Item.Time, null, "March 2018 → June 2018"), /* @__PURE__ */ React.createElement(Item.Content, null, "A wide suite of PaaS/SaaS solutions bundled trough a central marketplace."), /* @__PURE__ */ React.createElement(Item.Footer, null, /* @__PURE__ */ React.createElement(Icons.ReactJs, null), /* @__PURE__ */ React.createElement(Icons.TypeScript, null), /* @__PURE__ */ React.createElement(Icons.Redux, null), /* @__PURE__ */ React.createElement(Icons.StyledComponents, null))), /* @__PURE__ */ React.createElement(Item.Wrapper, null, /* @__PURE__ */ React.createElement(Item.Icon, null, /* @__PURE__ */ React.createElement(Icons.Project, null)), /* @__PURE__ */ React.createElement(Item.Title, null, "Marathon"), /* @__PURE__ */ React.createElement(Item.Subtitle, null, "B. Rekencentra NV ‑ Aurubis"), /* @__PURE__ */ React.createElement(Item.Time, null, "July 2018 → October 2018"), /* @__PURE__ */ React.createElement(Item.Content, null, "An application for managing and monitoring the different flows of Aurubis Olen."), /* @__PURE__ */ React.createElement(Item.Footer, null, /* @__PURE__ */ React.createElement(Icons.ReactJs, null), /* @__PURE__ */ React.createElement(Icons.TypeScript, null), /* @__PURE__ */ React.createElement(Icons.PWA, null))), /* @__PURE__ */ React.createElement(Item.Wrapper, null, /* @__PURE__ */ React.createElement(Item.Icon, null, /* @__PURE__ */ React.createElement(Icons.Project, null)), /* @__PURE__ */ React.createElement(Item.Title, null, /* @__PURE__ */ React.createElement("a", {
+    href: "https://github.com/NationalBankBelgium/stark",
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, "Stark")), /* @__PURE__ */ React.createElement(Item.Subtitle, null, "National Bank of Belgium"), /* @__PURE__ */ React.createElement(Item.Time, null, "October 2018 → May 2019"), /* @__PURE__ */ React.createElement(Item.Content, null, "An open source frontend framework designed for use within the National Bank of Belgium."), /* @__PURE__ */ React.createElement(Item.Footer, null, /* @__PURE__ */ React.createElement(Icons.Angular, null), /* @__PURE__ */ React.createElement(Icons.Material, null), /* @__PURE__ */ React.createElement(Icons.Github, null), /* @__PURE__ */ React.createElement(Icons.TravisCI, null), /* @__PURE__ */ React.createElement(Icons.Jasmine, null), /* @__PURE__ */ React.createElement(Icons.Karma, null))), /* @__PURE__ */ React.createElement(Item.Wrapper, null, /* @__PURE__ */ React.createElement(Item.Icon, null, /* @__PURE__ */ React.createElement(Icons.Certificate, null)), /* @__PURE__ */ React.createElement(Item.Title, null, "Certified Scrum Master"), /* @__PURE__ */ React.createElement(Item.Subtitle, null, "Agilar ‑ Scrum Alliance"), /* @__PURE__ */ React.createElement(Item.Time, null, "Februari 2019")), /* @__PURE__ */ React.createElement(Item.Wrapper, null, /* @__PURE__ */ React.createElement(Item.Icon, null, /* @__PURE__ */ React.createElement(Icons.Certificate, null)), /* @__PURE__ */ React.createElement(Item.Title, null, "Leadership skills"), /* @__PURE__ */ React.createElement(Item.Subtitle, null, "Being Matters"), /* @__PURE__ */ React.createElement(Item.Time, null, "March 2019 → December 2019")), /* @__PURE__ */ React.createElement(Item.Wrapper, null, /* @__PURE__ */ React.createElement(Item.Icon, null, /* @__PURE__ */ React.createElement(Icons.Project, null)), /* @__PURE__ */ React.createElement(Item.Title, null, /* @__PURE__ */ React.createElement("a", {
+    href: "https://digitalemethode.be/info/",
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, "Digitale Methode")), /* @__PURE__ */ React.createElement(Item.Subtitle, null, "Calibrate ‑ Signpost"), /* @__PURE__ */ React.createElement(Item.Time, null, "November 2019 → March 2020"), /* @__PURE__ */ React.createElement(Item.Content, null, "A platform for the digitalization of the secondary education curriculum in Flanders."), /* @__PURE__ */ React.createElement(Item.Footer, null, /* @__PURE__ */ React.createElement(Icons.ReactJs, null), /* @__PURE__ */ React.createElement(Icons.TypeScript, null), /* @__PURE__ */ React.createElement(Icons.StyledComponents, null))), /* @__PURE__ */ React.createElement(Item.Wrapper, null, /* @__PURE__ */ React.createElement(Item.Icon, null, /* @__PURE__ */ React.createElement(Icons.Project, null)), /* @__PURE__ */ React.createElement(Item.Title, null, "Holmes"), /* @__PURE__ */ React.createElement(Item.Subtitle, null, "Agentschap Uitbetaling Groeipakket"), /* @__PURE__ */ React.createElement(Item.Time, null, "August 2020 → March 2021"), /* @__PURE__ */ React.createElement(Item.Content, null, "An application used by the agency to track and manage all incoming/outgoing communications with civilians."), /* @__PURE__ */ React.createElement(Item.Footer, null, /* @__PURE__ */ React.createElement(Icons.Kubernetes, null), /* @__PURE__ */ React.createElement(Icons.Java, null), /* @__PURE__ */ React.createElement(Icons.HTML, null), /* @__PURE__ */ React.createElement(Icons.CSS, null), /* @__PURE__ */ React.createElement(Icons.JavaScript, null))), /* @__PURE__ */ React.createElement(Item.Wrapper, null, /* @__PURE__ */ React.createElement(Item.Icon, null, /* @__PURE__ */ React.createElement(Icons.Project, null)), /* @__PURE__ */ React.createElement(Item.Title, null, "Samenwerkingsplatform Uitbraak Management"), /* @__PURE__ */ React.createElement(Item.Subtitle, null, "KPMG ‑ Agentschap Zorg & Gezondheid"), /* @__PURE__ */ React.createElement(Item.Time, null, "March 2021 → ..."), /* @__PURE__ */ React.createElement(Item.Content, null, "The flemish platform for cooperation between the different stakeholders of the COVID‑19 crisis."), /* @__PURE__ */ React.createElement(Item.Footer, null, /* @__PURE__ */ React.createElement(Icons.AWS, null), /* @__PURE__ */ React.createElement(Icons.OpenSearch, null), /* @__PURE__ */ React.createElement(Icons.Lambda, null), /* @__PURE__ */ React.createElement(Icons.NodeJs, null), /* @__PURE__ */ React.createElement(Icons.ReactJs, null), /* @__PURE__ */ React.createElement(Icons.TypeScript, null), /* @__PURE__ */ React.createElement(Icons.StyledComponents, null)))));
 };
 export default Timeline;

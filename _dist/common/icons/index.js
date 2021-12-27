@@ -1,48 +1,26 @@
-import Angular from "./Angular.js";
-import Arduino from "./Arduino.js";
-import AWS from "./AWS.js";
-import CSS from "./CSS.js";
-import Diploma from "./Diploma.js";
-import HTML from "./HTML.js";
-import JavaScript from "./JavaScript.js";
-import Lambda from "./Lambda.js";
-import NodeJs from "./NodeJs.js";
-import OpenSearch from "./OpenSearch.js";
-import PWA from "./PWA.js";
-import ReactIcon from "./ReactIcon.js";
-import Redux from "./Redux.js";
-import School from "./School.js";
-import StyledComponents from "./StyledComponents.js";
-import Tools from "./Tools.js";
-import TypeScript from "./TypeScript.js";
-import Java from "./Java.js";
-import TravisCI from "./TravisCI.js";
-import Jasmine from "./Jasmine.js";
-import Material from "./Material.js";
-import Kubernetes from "./Kubernetes.js";
-import Podium from "./Podium.js";
-export {
-  Angular,
-  Arduino,
-  AWS,
-  CSS,
-  Diploma,
-  HTML,
-  JavaScript,
-  Lambda,
-  NodeJs,
-  OpenSearch,
-  PWA,
-  ReactIcon,
-  Redux,
-  School,
-  StyledComponents,
-  Tools,
-  TypeScript,
-  Java,
-  TravisCI,
-  Jasmine,
-  Material,
-  Kubernetes,
-  Podium
-};
+export {default as Angular} from "./Angular.js";
+export {default as Arduino} from "./Arduino.js";
+export {default as AWS} from "./AWS.js";
+export {default as CSS} from "./CSS.js";
+export {default as Diploma} from "./Diploma.js";
+export {default as HTML} from "./HTML.js";
+export {default as JavaScript} from "./JavaScript.js";
+export {default as Lambda} from "./Lambda.js";
+export {default as NodeJs} from "./NodeJs.js";
+export {default as OpenSearch} from "./OpenSearch.js";
+export {default as PWA} from "./PWA.js";
+export {default as ReactJs} from "./ReactJs.js";
+export {default as Redux} from "./Redux.js";
+export {default as School} from "./School.js";
+export {default as StyledComponents} from "./StyledComponents.js";
+export {default as Tools} from "./Tools.js";
+export {default as TypeScript} from "./TypeScript.js";
+export {default as Java} from "./Java.js";
+export {default as TravisCI} from "./TravisCI.js";
+export {default as Jasmine} from "./Jasmine.js";
+export {default as Material} from "./Material.js";
+export {default as Kubernetes} from "./Kubernetes.js";
+export {default as Podium} from "./Podium.js";
+export {default as Karma} from "./Karma.js";
+export {default as Github} from "./Github.js";
+export {default as Linux} from "./Linux.js";

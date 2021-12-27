@@ -1,4 +1,3 @@
-import React from "../../_snowpack/pkg/react.js";
 import styled, {css} from "../../_snowpack/pkg/styled-components.js";
 const smallItem = css`
   align-self: stretch;
@@ -13,26 +12,32 @@ const smallItem = css`
 const leftItem = css`
   align-self: flex-start;
   grid-template:
-    "icon title"
-    "_ subtitle"
-    "_ time"
-    "_ content"
-    "_ footer"
-    / 1.5rem 1fr;
+    "icon title time"
+    "_ subtitle time"
+    "_ content content"
+    "_ footer footer"
+    / 1.5rem 1fr auto;
+
   text-align: left;
+  .time {
+    text-align: right;
+  }
 `;
 const rightItem = css`
   align-self: flex-end;
   grid-template:
-    "title icon"
-    "subtitle _"
-    "time _"
-    "content _"
-    "footer _"
-    / 1fr 1.5rem;
+    "time title icon"
+    "time subtitle _"
+    "content content _"
+    "footer footer _"
+    / auto 1fr 1.5rem;
+
   text-align: right;
+  .time {
+    text-align: left;
+  }
 `;
-const Wrapper = styled.li`
+export const Wrapper = styled.li`
   list-style: none;
 
   box-sizing: border-box;
@@ -40,7 +45,8 @@ const Wrapper = styled.li`
 
   display: grid;
   ${smallItem}
-  grid-column-gap: 0.5rem;
+  grid-row-gap: 0.5rem;
+  grid-column-gap: 0.75rem;
 
   @media screen and (min-width: 60rem) {
     width: 50%;
@@ -54,7 +60,7 @@ const Wrapper = styled.li`
     }
   }
 `;
-const IconWrapper = styled.div`
+export const Icon = styled.div`
   grid-area: icon;
 
   color: var(--colors-gray-300);
@@ -65,45 +71,43 @@ const IconWrapper = styled.div`
 
   font-size: 1.75rem;
 `;
-const TitleWrapper = styled.h3`
+export const Title = styled.h3`
   grid-area: title;
 
   color: var(--colors-primary);
   font-size: 1.5rem;
   margin: 0;
+
+  a {
+    color: inherit;
+  }
 `;
-const SubTitleWrapper = styled.h4`
+export const Subtitle = styled.h4`
   grid-area: subtitle;
 
   color: var(--colors-secondary);
   font-size: 1rem;
   margin: 0;
 `;
-const TimeWrapper = styled.i`
+export const Time = styled.i`
   grid-area: time;
 
-  font-weight: lighter;
-
+  display: flex;
+  align-items: center;
   color: var(--colors-primary);
-  font-size: 0.75rem;
 `;
-const ContentWrapper = styled.p`
+export const Content = styled.p`
   grid-area: content;
 
   margin: 0;
 `;
-const FooterWrapper = styled.div`
+export const Footer = styled.div`
   grid-area: footer;
 
   color: var(--colors-gray-300);
 
-  margin: 0rem -0.5rem;
+  margin: -0.5rem;
   > * {
-    height: 1.5rem;
     margin: 0.5rem;
   }
 `;
-const Item = ({icon, title, subtitle, time, children, footer}) => {
-  return /* @__PURE__ */ React.createElement(Wrapper, null, /* @__PURE__ */ React.createElement(IconWrapper, null, icon), /* @__PURE__ */ React.createElement(TitleWrapper, null, title), /* @__PURE__ */ React.createElement(SubTitleWrapper, null, subtitle), /* @__PURE__ */ React.createElement(TimeWrapper, null, time), /* @__PURE__ */ React.createElement(ContentWrapper, null, children), /* @__PURE__ */ React.createElement(FooterWrapper, null, footer));
-};
-export default Item;

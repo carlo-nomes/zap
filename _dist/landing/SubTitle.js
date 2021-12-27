@@ -1,6 +1,6 @@
 import React from "../../_snowpack/pkg/react.js";
 import styled from "../../_snowpack/pkg/styled-components.js";
-import {ConstructionSign} from "../common/emojis/index.js";
+import {HighVoltage} from "../common/emojis/index.js";
 const Wrapper = styled.h2`
   align-self: center;
   > span {
@@ -16,5 +16,5 @@ const Wrapper = styled.h2`
     font-size: 1rem;
   }
 `;
-const SubTitle = () => /* @__PURE__ */ React.createElement(Wrapper, null, /* @__PURE__ */ React.createElement(ConstructionSign, null), "under construction", /* @__PURE__ */ React.createElement(ConstructionSign, null));
+const SubTitle = () => /* @__PURE__ */ React.createElement(Wrapper, null, /* @__PURE__ */ React.createElement(HighVoltage, null), "Lightning fast development", /* @__PURE__ */ React.createElement(HighVoltage, null));
 export default SubTitle;
