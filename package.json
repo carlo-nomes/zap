@@ -1,90 +1,48 @@
 {
   "name": "zap.dev",
+  "version": "1.0.0",
   "private": true,
   "description": "Portfolio site for @Carlo.Nomes",
-  "version": "1.0.0",
-  "author": "Carlo Nomes <carlo@zap.dev>",
   "homepage": "https://carlo-nomes.github.io/zap",
-  "license": "MIT",
-  "dependencies": {
-    "@types/lodash.debounce": "^4.0.6",
-    "@types/react": "^17.0.26",
-    "@types/react-dom": "^17.0.9",
-    "@types/styled-components": "^5.1.14",
-    "lodash.debounce": "^4.0.8",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "styled-components": "^5.3.1",
-    "styled-normalize": "^8.0.7",
-    "typescript": "^4.4.3"
-  },
-  "devDependencies": {
-    "@snowpack/plugin-typescript": "^1.2.1",
-    "@typescript-eslint/eslint-plugin": "^5.3.0",
-    "@typescript-eslint/parser": "^5.3.0",
-    "eslint": "^7.32.0",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.26.1",
-    "eslint-plugin-react-hooks": "^4.3.0",
-    "gh-pages": "^3.2.3",
-    "prettier": "^2.4.1",
-    "snowpack": "^3.8.8"
-  },
-  "scripts": {
-    "start": "snowpack dev",
-    "build": "snowpack build",
-    "format": "prettier --write './src/**/*.{js,jsx,ts,tsx,json}'",
-    "lint": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
-    "deploy": "gh-pages -d build -t true"
-  },
-  "prettier": {
-    "printWidth": 120
-  },
-  "eslintConfig": {
-    "env": {
-      "browser": true,
-      "node": true,
-      "es2021": true
-    },
-    "extends": [
-      "eslint:recommended",
-      "plugin:import/recommended",
-      "plugin:react/recommended",
-      "plugin:react-hooks/recommended",
-      "plugin:jsx-a11y/recommended"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-      "ecmaFeatures": {
-        "jsx": true
-      },
-      "ecmaVersion": "latest",
-      "sourceType": "module"
-    },
-    "plugins": [
-      "@typescript-eslint",
-      "import",
-      "react",
-      "jsx-a11y"
-    ],
-    "rules": {
-      "import/no-unresolved": "off",
-      "no-unused-vars": "off",
-      "@typescript-eslint/no-unused-vars": [
-        "error",
-        {
-          "argsIgnorePattern": "^_"
-        }
-      ]
-    }
+  "bugs": {
+    "url": "https://github.com/cnomes/zap/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/cnomes/zap"
   },
-  "bugs": {
-    "url": "https://github.com/cnomes/zap/issues"
+  "license": "MIT",
+  "author": "Carlo Nomes <nomes.carlo@gmail.com>",
+  "scripts": {
+    "build": "vite build",
+    "deploy": "vite build && gh-pages -d dist -t true",
+    "lint": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
+    "prettier": "prettier --write './src/**/*.{js,jsx,ts,tsx,json}'",
+    "start": "vite"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.6",
+    "styled-normalize": "^8.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.3",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "@types/styled-components": "^5.1.26",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
+    "@vitejs/plugin-react": "^2.1.0",
+    "eslint": "^8.26.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "gh-pages": "^4.0.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.4",
+    "vite": "^3.1.8"
   }
 }

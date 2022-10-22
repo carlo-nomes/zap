@@ -32,7 +32,7 @@ Temporary Items
 .apdisk
 
 ### react ###
-build
+dist
 
 .DS_*
 *.log

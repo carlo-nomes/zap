@@ -1,18 +1,18 @@
-import React, { ReactNode, useCallback, useEffect, useReducer } from "react";
+import { createContext, ReactNode, useCallback, useContext, useEffect, useReducer } from "react";
 
 import { useScrollContext } from "../ScrollContext";
 import { isElementInView } from "../ScrollContext/util";
 
 import useHash from "../useHash";
 
-const SectionContext = React.createContext({
+const SectionContext = createContext({
   sections: {} as Record<string, HTMLElement>,
   addSection: (_id: string, _node: HTMLElement) => {},
   removeSection: (_id: string) => {},
 });
 
 export const useSectionContext = () => {
-  const context = React.useContext(SectionContext);
+  const context = useContext(SectionContext);
   return context;
 };
 

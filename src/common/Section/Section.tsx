@@ -1,4 +1,4 @@
-import React, { ReactNode, useRef } from "react";
+import { DetailedHTMLProps, HTMLAttributes, ReactNode, useEffect, useRef } from "react";
 import styled from "styled-components";
 
 import { useSectionContext } from "./SectionContext";
@@ -17,13 +17,13 @@ const Section = styled.section<{ index: number }>`
 type Props = {
   id: string;
   children?: ReactNode;
-} & React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+} & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
 const SectionWrapper = ({ id, ...props }: Props) => {
   const { addSection, removeSection } = useSectionContext();
   const sectionRef = useRef<HTMLElement | null>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!sectionRef.current) return;
     addSection(id, sectionRef.current);
     return () => removeSection(id);

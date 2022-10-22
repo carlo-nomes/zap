@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import { HearNoEvil, SeeNoEvil } from "../common/emojis";
@@ -18,9 +18,9 @@ const Hidden = styled.div`
 `;
 
 const usePeekABoo = (delay: number) => {
-  const [peekABoo, setPeekABoo] = React.useState(false);
+  const [peekABoo, setPeekABoo] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => setPeekABoo((prevState) => !prevState), delay);
     return () => clearInterval(interval);
   }, [delay]);
