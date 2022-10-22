@@ -1,42 +1,56 @@
-import React from "react";
 import styled, { keyframes } from "styled-components";
 
-const groove = keyframes`
+const gradientKeys = keyframes`
   0% {
-    color: #b5413b;
+    background-position: 0 0;
   }
-  33% {
-    color: #f4d75a;
-  }
-  66% {
-    color: #09814a;
+  50% {
+    background-position: 0 100%;
   }
   100% {
-    color: #b5413b;
+    background-position: 0 0;
   }
 `;
 
-const Wrapper = styled.span`
-  animation: ${groove} 30s infinite;
+const Background = styled.div`
+  width: 100%;
+  height: 100%;
 
-  align-self: stretch;
-  margin: 0 10px;
-  &,
-  svg {
-    height: 100%;
-    width: auto;
-  }
+  --color-1: hsl(218, 95%, 74%);
+  --color-2: hsl(151, 83%, 35%);
+  --color-3: hsl(25, 88.6%, 75.9%);
+  --color-4: hsl(1, 43%, 54%);
+  --color-5: hsl(48, 87%, 65%);
+
+  background: var(--color-5);
+  background: linear-gradient(35deg, var(--color-1), var(--color-2), var(--color-3), var(--color-4), var(--color-5));
+  background-size: 400% 400%;
+
+  animation: ${gradientKeys} 20s ease-in-out infinite;
+`;
+
+const ClipPath = styled.div`
+  clip-path: path("M0 0 H150 L100 150 H150 L50 350 V200 H0 Z");
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 150px;
+  height: 350px;
+`;
+
+const Wrapper = styled.div`
+  z-index: -1;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
 `;
 
 const Bolt = () => (
   <Wrapper>
-    <svg viewBox="0 0 215 500" xmlns="http://www.w3.org/2000/svg">
-      <title>Bolt</title>
-      <polygon
-        fill="currentcolor"
-        points="0,2.49800181e-13 214.28571399999998,2.2586397e-13 142.857143,213.795918 214.28571399999998,213.795918 71.428571,500 71.428571,285.061224 0,285.061224"
-      />
-    </svg>
+    <ClipPath>
+      <Background />
+    </ClipPath>
   </Wrapper>
 );
 

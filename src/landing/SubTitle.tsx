@@ -17,6 +17,8 @@ const Wrapper = styled.h2`
   @media (max-width: 700px), (max-height: 700px) {
     font-size: 1rem;
   }
+
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1));
 `;
 
 const SubTitle = () => (
