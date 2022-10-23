@@ -16,14 +16,21 @@ const Background = styled.div`
   width: 100%;
   height: 100%;
 
-  --color-1: hsl(218, 95%, 74%);
-  --color-2: hsl(151, 83%, 35%);
-  --color-3: hsl(25, 88.6%, 75.9%);
-  --color-4: hsl(1, 43%, 54%);
-  --color-5: hsl(48, 87%, 65%);
+  --bolt-color-1: hsl(218, 95%, 74%);
+  --bolt-color-2: hsl(151, 83%, 35%);
+  --bolt-color-3: hsl(25, 88.6%, 75.9%);
+  --bolt-color-4: hsl(1, 43%, 54%);
+  --bolt-color-5: hsl(48, 87%, 65%);
 
-  background: var(--color-5);
-  background: linear-gradient(35deg, var(--color-1), var(--color-2), var(--color-3), var(--color-4), var(--color-5));
+  background: var(--bolt-color-5);
+  background: linear-gradient(
+    35deg,
+    var(--bolt-color-1),
+    var(--bolt-color-2),
+    var(--bolt-color-3),
+    var(--bolt-color-4),
+    var(--bolt-color-5)
+  );
   background-size: 400% 400%;
 
   animation: ${gradientKeys} 20s ease-in-out infinite;
