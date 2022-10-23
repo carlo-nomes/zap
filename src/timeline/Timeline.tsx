@@ -270,6 +270,25 @@ const Timeline = () => {
             <Icons.StyledComponents />
           </Item.Footer>
         </Item.Wrapper>
+
+        <Item.Wrapper>
+          <Item.Icon>
+            <Icons.Project />
+          </Item.Icon>
+          <Item.Title>Zorg Dataplatform</Item.Title>
+          <Item.Subtitle>Agentschap Zorg & Gezondheid</Item.Subtitle>
+          <Item.Time>January 2022 &#8594; ...</Item.Time>
+          <Item.Content>A suite off applications for the Flemish Agency of public health.</Item.Content>
+          <Item.Footer>
+            <Icons.AWS />
+            <Icons.OpenSearch />
+            <Icons.Lambda />
+            <Icons.NodeJs />
+            <Icons.ReactJs />
+            <Icons.TypeScript />
+            <Icons.StyledComponents />
+          </Item.Footer>
+        </Item.Wrapper>
       </List>
     </Section>
   );
