@@ -49,10 +49,19 @@ const Text = styled.p`
   }
 `;
 
+const Profile = styled.img`
+  width: 33%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  opacity: 0.75;
+`;
+
 const Bio = () => {
   const [inView, ref] = useElementInView<HTMLParagraphElement>();
   return (
     <WaveBackground id="bio" position="top" amount={3} min={0} max={0.15} as={Section}>
+      <Profile src="./images/profile.svg" alt="Profile" />
       <Spacer />
       <Wave />
       <Text ref={ref} className={inView ? "in-view" : ""}>
