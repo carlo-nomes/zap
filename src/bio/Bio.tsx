@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import AppSection from "../common/Section";
-import { Wave as AppWave } from "../common/emojis";
+import { Wave } from "../common/emojis";
 import Arrow from "../common/Arrow";
 import Spacer from "../common/Spacer";
 import WaveBackground from "../common/WaveBackground";
@@ -15,15 +15,9 @@ const Section = styled(AppSection)`
   background-color: var(--colors-primary);
 `;
 
-const Wave = styled(AppWave)`
-  float: left;
-  margin: 1rem;
-
-  text-align: center;
-  font-size: 2rem;
-`;
-
 const Text = styled.p`
+  z-index: 10; // above the profile image
+
   box-sizing: border-box;
   padding: 1rem;
   max-width: 50rem;
@@ -49,37 +43,50 @@ const Text = styled.p`
   }
 `;
 
-const Profile = styled.img`
-  width: 33%;
-  position: absolute;
-  right: 0;
+const Profile = styled.div`
+  position: fixed;
+
+  top: calc(100vh * 0.15);
+  right: -15%;
   bottom: 0;
-  opacity: 0.75;
+  left: 50%;
+
+  opacity: 0.65;
+  background-image: url("./images/profile.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right bottom;
 `;
 
 const Bio = () => {
   const [inView, ref] = useElementInView<HTMLParagraphElement>();
   return (
     <WaveBackground id="bio" position="top" amount={3} min={0} max={0.15} as={Section}>
-      <Profile src="./images/profile.svg" alt="Profile" />
       <Spacer />
-      <Wave />
+      <Profile aria-label="drawing of me" />
       <Text ref={ref} className={inView ? "in-view" : ""}>
-        Hi there,
+        Hi there! <Wave />
         <br />
-        my name is Carlo.
+        My name is Carlo.
         <br />
-        <br />I am a full-stack JavaScript developer and UX/UI enthusiast. <br />
+        <br />
+        I am a full-stack developer, agile consultant and UX/UI enthusiast. <br />
         Since 2017 I have been using my passion for technology to help organizations create amazing web applications.
         <br />
         <br />
         My credo is:
         <br />
         <q>For every challenge, there exists an elegant solution.</q>
-        <br />I get these solutions with the latest and greatest tools/techniques available. Through persistent learning
-        and critical reflection, I maintain a current view of what is needed to make any project succeed.
-        <br />I believe that every successful endeavor, no matter the size or complexity, requires agility and an open,
-        honest and clear line of communication between all parties.
+        <br />
+        I get these solutions with the latest and greatest tools/techniques available. Through persistent learning and
+        critical reflection, I maintain a current view of what is needed to make any project succeed.
+        <br />
+        I believe that every successful endeavor, no matter the size or complexity, requires agility and an open, honest
+        and clear line of communication between all parties.
+        <br />
+        <br />
+        Please take some time to look around my portfolio and get to know me better. If you like what you see, feel free
+        to contact me.
       </Text>
       <Spacer />
       <Arrow href="#timeline" />
