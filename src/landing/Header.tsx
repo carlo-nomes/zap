@@ -1,11 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import * as Socials from "../../common/Socials";
+import * as Socials from "../common/Socials";
 
 const Wrapper = styled.header`
-  align-self: stretch;
-
   display: flex;
   flex-direction: row;
 
@@ -22,8 +20,12 @@ const List = styled.ul`
   padding: 10px;
 `;
 
-const Header = () => (
-  <Wrapper>
+type Props = {
+  className?: string;
+};
+
+const Header = (props: Props) => (
+  <Wrapper {...props}>
     <List>
       <Socials.GitHub />
       <Socials.Medium />

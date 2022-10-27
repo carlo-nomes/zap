@@ -53,11 +53,12 @@ const ChevronDown = () => (
 );
 
 type Props = {
+  className?: string;
   href: string;
 };
 
-const Arrow = ({ href }: Props) => (
-  <Link aria-label="Next section" href={href}>
+const Arrow = (props: Props) => (
+  <Link aria-label="Next section" {...props}>
     <ChevronDown />
     <ChevronDown />
   </Link>

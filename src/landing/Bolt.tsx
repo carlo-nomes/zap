@@ -12,9 +12,15 @@ const gradientKeys = keyframes`
   }
 `;
 
-const Background = styled.div`
+const Wrapper = styled.div`
+  aspect-ratio: 150/350;
+`;
+
+const Shape = styled.div`
   width: 100%;
   height: 100%;
+
+  clip-path: url(#bolt-clip-path);
 
   --bolt-color-1: hsl(218, 95%, 74%);
   --bolt-color-2: hsl(151, 83%, 35%);
@@ -31,33 +37,24 @@ const Background = styled.div`
     var(--bolt-color-4),
     var(--bolt-color-5)
   );
+
   background-size: 400% 400%;
 
   animation: ${gradientKeys} 20s ease-in-out infinite;
 `;
 
-const ClipPath = styled.div`
-  clip-path: path("M0 0 H150 L100 150 H150 L50 350 V200 H0 Z");
-  overflow: hidden;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 150px;
-  height: 350px;
-`;
-
-const Wrapper = styled.div`
-  z-index: -1;
-  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
-`;
-
-const Bolt = () => (
-  <Wrapper>
-    <ClipPath>
-      <Background />
-    </ClipPath>
+type Props = {
+  className?: string;
+};
+const Bolt = (props: Props) => (
+  <Wrapper {...props}>
+    <Shape aria-label="lightning bolt">
+      <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg">
+        <clipPath id="bolt-clip-path" clipPathUnits="objectBoundingBox">
+          <path d="M0 0 H1 L0.6666666666 0.4285714286 H1 L0.3333333333 1 V0.5714285714 H0 Z" />
+        </clipPath>
+      </svg>
+    </Shape>
   </Wrapper>
 );
 
