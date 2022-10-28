@@ -26,6 +26,14 @@ const variables = css`
   --colors-tertiary-500: hsl(152, 87%, 27%);
   --colors-tertiary: var(--colors-tertiary-500);
 
+  // Link Palette
+  --colors-link-100: hsl(220, 60%, 50%);
+  --colors-link-500: hsl(220, 60%, 30%);
+  --colors-link-900: hsl(247, 62%, 53%);
+  --colors-link: var(--colors-link-100);
+  --colors-link-hover: var(--colors-link-500);
+  --colors-link-visited: var(--colors-link-900);
+
   --font-family-sans: "Open Sans", sans-serif;
 
   --transition-duration-default: 500ms;
@@ -45,6 +53,16 @@ const GlobalStyle = createGlobalStyle`
 
     font-family: var(--font-family-sans);
     font-size: 1rem;
+  }
+
+  a {
+    color: var(--colors-link);
+    &:visited {
+      color: var(--colors-link-visited);
+    } 
+    &:hover, &:focus, &:active {
+      color: var(--colors-link-hover);
+    }
   }
 `;
 

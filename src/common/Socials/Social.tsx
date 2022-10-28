@@ -6,6 +6,12 @@ import AppButton from "../Button";
 const Button = styled(AppButton)`
   width: 2.5rem;
   height: 2.5rem;
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    color: var(--colors-gray-100);
+  }
 `;
 
 const ItemWrapper = styled.li`

@@ -86,7 +86,8 @@ const Bio = () => {
         and clear line of communication between all parties.
         <br />
         <br />
-        Please take some time to look around my portfolio and get to know me better.
+        Checkout my <a href="#timeline">previous projects</a>! And if you like what you see, feel free to{" "}
+        <a href="#contact">get in touch</a>!
       </Text>
       <Arrow href="#timeline" />
     </WaveBackground>
