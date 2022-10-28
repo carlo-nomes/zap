@@ -576,7 +576,7 @@ Error generating stack: `+o.message+`
   &:visited {
     color: var(--colors-gray-100);
   }
-`,J6=W.li`
+`,J6=W.div`
   display: block;
   text-decoration: none;
   margin: 0.25rem;
