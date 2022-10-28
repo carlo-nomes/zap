@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 import AppSection from "../common/Section";
@@ -6,6 +5,7 @@ import Arrow from "../common/Arrow";
 import { HighVoltage } from "../common/emojis";
 
 import Bolt from "./Bolt";
+import HypeText from "./HypeText";
 
 const Title = styled.div`
   flex: 1;
@@ -77,21 +77,23 @@ const Section = styled(AppSection)`
   }
 `;
 
-const Landing = () => (
-  <Section id="landing">
-    <Title>
-      <h1>
-        ZAP
-        <HighVoltage />
-        DEV
-      </h1>
+const Landing = () => {
+  return (
+    <Section id="landing">
+      <Title>
+        <h1>
+          ZAP
+          <HighVoltage />
+          DEV
+        </h1>
 
-      <h2>Lightning fast development</h2>
+        <HypeText />
 
-      <Bolt className="bolt" />
-    </Title>
-    <Arrow className="arrow" href="#bio" />
-  </Section>
-);
+        <Bolt className="bolt" />
+      </Title>
+      <Arrow className="arrow" href="#bio" />
+    </Section>
+  );
+};
 
 export default Landing;
