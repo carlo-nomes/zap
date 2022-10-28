@@ -14,7 +14,7 @@ const Button = styled(AppButton)`
   }
 `;
 
-const ItemWrapper = styled.li`
+const ItemWrapper = styled.div`
   display: block;
   text-decoration: none;
   margin: 0.25rem;
