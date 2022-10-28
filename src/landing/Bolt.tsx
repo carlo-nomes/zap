@@ -48,7 +48,7 @@ type Props = {
 };
 const Bolt = (props: Props) => (
   <Wrapper {...props}>
-    <Shape aria-label="lightning bolt">
+    <Shape role="img" aria-label="bolt-label">
       <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg">
         <clipPath id="bolt-clip-path" clipPathUnits="objectBoundingBox">
           <path d="M0 0 H1 L0.6666666666 0.4285714286 H1 L0.3333333333 1 V0.5714285714 H0 Z" />

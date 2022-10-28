@@ -63,7 +63,7 @@ const Bio = () => {
       as={Section}
       bg="linear-gradient(0deg, var(--colors-primary), var(--colors-primary))"
     >
-      <Profile aria-label="drawing of me" />
+      <Profile role="img" aria-label="drawing of me" />
       <Text>
         Hi there! <Wave />
         <br />
