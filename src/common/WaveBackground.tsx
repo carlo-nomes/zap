@@ -1,4 +1,4 @@
-import React, { ReactElement, useMemo } from "react";
+import { PropsWithChildren, ReactElement, useMemo } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div<{ id: string; bg: string }>`
@@ -36,16 +36,15 @@ const getPath = (amount: number, min: number, max: number) => {
   return `M${start.x},${start.y} ${curvesString}  L1,1 L0,1 Z`;
 };
 
-type Props = {
+type Props = PropsWithChildren<{
   id: string;
   amount: number;
   min?: number;
   max?: number;
   bg: string;
   className?: string;
-  children?: React.ReactNode;
   as: (props: any, context?: any) => ReactElement<any, any> | null;
-};
+}>;
 
 const WaveBackground = ({ children, amount, min = 0, max = 1, ...props }: Props) => {
   const path = useMemo(() => getPath(amount, min, max), [amount, min, max]);

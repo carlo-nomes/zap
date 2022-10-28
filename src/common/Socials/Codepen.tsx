@@ -1,5 +1,3 @@
-import React from "react";
-
 import Social from "./Social";
 
 const CodePen = () => (

@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useCallback, useContext, useEffect, useReducer } from "react";
+import { createContext, PropsWithChildren, useCallback, useContext, useEffect, useReducer } from "react";
 
 import { useScrollContext } from "../ScrollContext";
 import { isElementInView } from "../ScrollContext/util";
@@ -30,7 +30,7 @@ const sectionReducer = (state: Record<string, HTMLElement>, action: Action): Rec
   }
 };
 
-const SectionContextProvider = ({ children }: { children: ReactNode }) => {
+const SectionContextProvider = ({ children }: PropsWithChildren) => {
   const { addListener, removeListener } = useScrollContext();
   const [hash, setHash] = useHash();
 

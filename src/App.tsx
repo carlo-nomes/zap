@@ -1,5 +1,3 @@
-import React from "react";
-
 import ScrollContext from "./common/ScrollContext";
 import { SectionContext } from "./common/Section";
 

@@ -1,12 +1,4 @@
-import React, {
-  useContext,
-  createContext,
-  ReactNode,
-  useReducer,
-  useCallback,
-  ComponentType,
-  HTMLAttributes,
-} from "react";
+import { useContext, createContext, ReactNode, useReducer, useCallback, ComponentType, HTMLAttributes } from "react";
 import useDebouncedCallback from "../useDebouncedCallback";
 
 // High enough to prevent triggers during smooth scroll

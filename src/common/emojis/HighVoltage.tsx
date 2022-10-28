@@ -1,4 +1,4 @@
-import React, { HTMLProps } from "react";
+import { HTMLProps } from "react";
 
 const HighVoltage = (props: HTMLProps<HTMLSpanElement>) => (
   <span role="img" aria-label="high voltage" {...props}>

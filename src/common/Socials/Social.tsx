@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { PropsWithChildren } from "react";
 import styled from "styled-components";
 
 import AppButton from "../Button";
@@ -20,11 +20,10 @@ const ItemWrapper = styled.li`
   margin: 0.25rem;
 `;
 
-type Props = {
+type Props = PropsWithChildren<{
   href: string;
   "aria-label": string;
-  children: ReactNode;
-};
+}>;
 const Social = (props: Props) => (
   <ItemWrapper>
     <Button as="a" target="_blank" rel="noopener noreferrer" {...props} />
