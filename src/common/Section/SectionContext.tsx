@@ -49,8 +49,25 @@ const SectionContextProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const updateHash = () => {
-      const [section, ...other] = Object.keys(sections).filter((k) => isElementInView(sections[k]));
-      if (other.length) return;
+      const [section] = Object.entries(sections)
+        .sort(([_key1, element1], [_key2, element2]) => {
+          // sort by amount of pixels visible
+          const rect1 = element1.getBoundingClientRect();
+          const rect2 = element2.getBoundingClientRect();
+
+          const bottom1 = rect1.bottom > window.innerHeight ? window.innerHeight : rect1.bottom;
+          const bottom2 = rect2.bottom > window.innerHeight ? window.innerHeight : rect2.bottom;
+
+          const top1 = rect1.top < 0 ? 0 : rect1.top;
+          const top2 = rect2.top < 0 ? 0 : rect2.top;
+
+          const visible1 = bottom1 - top1;
+          const visible2 = bottom2 - top2;
+
+          return visible2 - visible1;
+        })
+        .map(([key]) => key);
+
       setHash(section);
     };
 

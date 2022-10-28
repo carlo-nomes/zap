@@ -10,7 +10,6 @@ const Wrapper = styled.main`
   overflow-y: auto;
   overflow-x: hidden;
 
-  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 `;
 

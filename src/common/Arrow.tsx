@@ -26,6 +26,10 @@ const Link = styled.a`
   margin: 10px;
   align-self: center;
 
+  &.arrow-up {
+    transform: rotate(180deg);
+  }
+
   svg {
     position: absolute;
     animation: ${jitter} 1s ease-in-out infinite;
@@ -54,11 +58,12 @@ const ChevronDown = () => (
 
 type Props = {
   className?: string;
+  direction?: "up" | "down";
   href: string;
 };
 
-const Arrow = (props: Props) => (
-  <Link aria-label="Next section" {...props}>
+const Arrow = ({ direction = "down", className, ...props }: Props) => (
+  <Link aria-label="Next section" className={[`arrow-${direction}`, className].filter(Boolean).join(" ")} {...props}>
     <ChevronDown />
     <ChevronDown />
   </Link>

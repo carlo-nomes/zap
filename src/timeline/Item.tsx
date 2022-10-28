@@ -14,7 +14,7 @@ const smallItem = css`
 const leftItem = css`
   align-self: flex-start;
   grid-template:
-    "icon title time"
+    "icon title title"
     "_ subtitle time"
     "_ content content"
     "_ footer footer"
@@ -29,7 +29,7 @@ const leftItem = css`
 const rightItem = css`
   align-self: flex-end;
   grid-template:
-    "time title icon"
+    "title title icon"
     "time subtitle _"
     "content content _"
     "footer footer _"
@@ -53,7 +53,8 @@ export const Wrapper = styled.li`
   grid-column-gap: 0.75rem;
 
   @media screen and (min-width: 60rem) {
-    width: 50%;
+    width: calc(50% - 0.25rem);
+    max-width: 50rem;
 
     &:nth-child(odd) {
       ${leftItem}
@@ -107,7 +108,6 @@ export const Time = styled.i`
 
 export const Content = styled.p`
   grid-area: content;
-
   margin: 0;
 `;
 

@@ -1,27 +1,29 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode, useEffect, useRef } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 import styled from "styled-components";
 
 import { useSectionContext } from "./SectionContext";
 
-const Section = styled.section<{ index: number }>`
-  width: 100%;
-  height: 100%;
+const Section = styled.section`
+  box-sizing: border-box;
+
+  min-width: 100vw;
+  min-height: 100vh;
 
   display: flex;
   flex-direction: column;
 
   position: relative;
-  scroll-snap-align: start;
 `;
 
 type Props = {
   id: string;
+  className?: string;
   children?: ReactNode;
-} & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+};
 
 const SectionWrapper = ({ id, ...props }: Props) => {
   const { addSection, removeSection } = useSectionContext();
-  const sectionRef = useRef<HTMLElement | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     if (!sectionRef.current) return;

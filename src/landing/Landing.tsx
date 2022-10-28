@@ -5,7 +5,6 @@ import AppSection from "../common/Section";
 import Arrow from "../common/Arrow";
 import { HighVoltage } from "../common/emojis";
 
-import Header from "./Header";
 import Bolt from "./Bolt";
 
 const Title = styled.div`
@@ -80,7 +79,6 @@ const Section = styled(AppSection)`
 
 const Landing = () => (
   <Section id="landing">
-    <Header className="header" />
     <Title>
       <h1>
         ZAP

@@ -1,43 +1,54 @@
 import React, { ReactElement, useMemo } from "react";
 import styled from "styled-components";
 
-const Wrapper = styled.div`
-  clip-path: url(#${({ id }: { id: string }) => `${id}-wave-clip-path`});
+const Wrapper = styled.div<{ id: string; bg: string }>`
+  --curve-height: 5rem;
+  --background-image: ${({ bg }) => bg};
+
+  &:before {
+    content: "";
+
+    width: 100%;
+    height: var(--curve-height);
+
+    clip-path: url(#${({ id }: { id: string }) => `${id}-wave-clip-path`});
+    background: var(--background-image);
+  }
+  background: var(--background-image) center var(--curve-height) / cover no-repeat;
 `;
 
 type Coordinates = { x: number; y: number };
 
-const getPath = (position: "top" | "bottom", amount: number, min: number, max: number) => {
-  const hd = (max + min) / 2;
+const getPath = (amount: number, min: number, max: number) => {
+  const half = (max + min) / 2; // 0.5
   const step = 0.5 / amount;
 
-  const start: Coordinates = { x: 0, y: hd };
+  const start: Coordinates = { x: 0, y: half };
   const curves: { cp: Coordinates; end: Coordinates }[] = [];
   for (let i = 0; i < amount; i++) {
-    const cp = { x: (curves[i - 1]?.end || start).x + step, y: i % 2 ? min : max };
-    const end = { x: cp.x + step, y: hd };
+    const prevEnd = curves[i - 1]?.end ?? start;
+    const cp = { x: prevEnd.x + step, y: i % 2 ? min - half : max + half };
+    const end = { x: cp.x + step, y: half };
     curves.push({ cp, end });
   }
-  const end = { x: 1, y: hd };
 
   const curvesString = curves.map(({ cp, end }) => `Q${cp.x},${cp.y} ${end.x},${end.y}`).join(" ");
-  if (position === "bottom") return `M${start.x},${start.y} ${curvesString} L${end.x},${end.y} L1,0 L0,0 Z`;
-  return `M${start.x},${start.y} ${curvesString} L${end.x},${end.y} L1,1 L0,1 Z`;
+  return `M${start.x},${start.y} ${curvesString}  L1,1 L0,1 Z`;
 };
 
 type Props = {
   id: string;
-  position: "top" | "bottom";
   amount: number;
-  min: number;
-  max: number;
+  min?: number;
+  max?: number;
+  bg: string;
   className?: string;
   children?: React.ReactNode;
   as: (props: any, context?: any) => ReactElement<any, any> | null;
 };
 
-const WaveBackground = ({ children, position, amount, min, max, ...props }: Props) => {
-  const path = useMemo(() => getPath(position, amount, min, max), [position, amount, min, max]);
+const WaveBackground = ({ children, amount, min = 0, max = 1, ...props }: Props) => {
+  const path = useMemo(() => getPath(amount, min, max), [amount, min, max]);
   return (
     <Wrapper {...props}>
       <svg height="0" width="0">

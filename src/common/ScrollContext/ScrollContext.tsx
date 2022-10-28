@@ -7,9 +7,10 @@ import React, {
   ComponentType,
   HTMLAttributes,
 } from "react";
-import { debounce } from "lodash";
+import useDebouncedCallback from "../useDebouncedCallback";
 
-import { SCROLL_DEBOUNCE_TIME } from "./constants";
+// High enough to prevent triggers during smooth scroll
+const SCROLL_DEBOUNCE_TIME = 100;
 
 const ScrollContainerContext = createContext({
   addListener: (_func: () => void) => {},
@@ -41,8 +42,7 @@ const ScrollContext = ({ Container, children }: Props) => {
   const addListener = useCallback((listener: () => void) => dispatch({ type: "ADD", listener }), []);
   const removeListener = useCallback((listener: () => void) => dispatch({ type: "REMOVE", listener }), []);
 
-  const handleScroll = debounce(() => listeners.forEach((listener) => listener()), SCROLL_DEBOUNCE_TIME);
-
+  const handleScroll = useDebouncedCallback(() => listeners.forEach((listener) => listener()), SCROLL_DEBOUNCE_TIME);
   return (
     <ScrollContainerContext.Provider value={{ addListener, removeListener }}>
       <Container onScroll={handleScroll}>{children}</Container>

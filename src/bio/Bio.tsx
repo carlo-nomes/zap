@@ -4,21 +4,25 @@ import styled from "styled-components";
 import AppSection from "../common/Section";
 import { Wave } from "../common/emojis";
 import Arrow from "../common/Arrow";
-import Spacer from "../common/Spacer";
 import WaveBackground from "../common/WaveBackground";
-import { useElementInView } from "../common/ScrollContext";
 
 const Section = styled(AppSection)`
   align-items: center;
-  justify-content: space-between;
 
-  background-color: var(--colors-primary);
+  --negative-margin: 15rem;
+  min-height: calc(100vh + var(--negative-margin));
+  padding-bottom: var(--negative-margin);
+  margin-bottom: calc(0px - var(--negative-margin));
+
+  justify-content: space-between;
 `;
 
 const Text = styled.p`
-  z-index: 10; // above the profile image
+  z-index: 1; // above the profile image
+  filter: drop-shadow(0 0 0.5rem var(--colors-primary));
 
   box-sizing: border-box;
+  margin: 0;
   padding: 1rem;
   max-width: 50rem;
 
@@ -32,26 +36,20 @@ const Text = styled.p`
     margin: 0.5rem 0;
     font-weight: bold;
   }
-
-  opacity: 0;
-  margin: 5rem 0 -5rem 0;
-  transition: opacity var(--transition-duration-long) ease-in-out, margin var(--transition-duration-long) ease-in-out;
-
-  &.in-view {
-    opacity: 1;
-    margin: 0;
-  }
 `;
 
 const Profile = styled.div`
-  position: fixed;
+  pointer-events: none;
+  position: absolute;
 
-  top: calc(100vh * 0.15);
-  right: -15%;
+  opacity: 0.5;
+  filter: blur(0.25rem);
+
+  top: 10rem;
+  left: 0;
+  right: 0;
   bottom: 0;
-  left: 50%;
 
-  opacity: 0.65;
   background-image: url("./images/profile.svg");
   background-size: contain;
   background-repeat: no-repeat;
@@ -59,12 +57,15 @@ const Profile = styled.div`
 `;
 
 const Bio = () => {
-  const [inView, ref] = useElementInView<HTMLParagraphElement>();
   return (
-    <WaveBackground id="bio" position="top" amount={3} min={0} max={0.15} as={Section}>
-      <Spacer />
+    <WaveBackground
+      id="bio"
+      amount={2}
+      as={Section}
+      bg="linear-gradient(0deg, var(--colors-primary), var(--colors-primary))"
+    >
       <Profile aria-label="drawing of me" />
-      <Text ref={ref} className={inView ? "in-view" : ""}>
+      <Text>
         Hi there! <Wave />
         <br />
         My name is Carlo.
@@ -85,10 +86,8 @@ const Bio = () => {
         and clear line of communication between all parties.
         <br />
         <br />
-        Please take some time to look around my portfolio and get to know me better. If you like what you see, feel free
-        to contact me.
+        Please take some time to look around my portfolio and get to know me better.
       </Text>
-      <Spacer />
       <Arrow href="#timeline" />
     </WaveBackground>
   );
