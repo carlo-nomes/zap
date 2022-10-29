@@ -34,7 +34,6 @@ const variables = css`
   --colors-link-hover: var(--colors-link-500);
   --colors-link-visited: var(--colors-link-900);
 
-  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&family=Source+Code+Pro:wght@600&display=swap");
   --font-family-sans: "Open Sans", sans-serif;
   --font-family-mono: "Source Code Pro", monospace;
 
@@ -45,6 +44,7 @@ const variables = css`
 `;
 
 const GlobalStyle = createGlobalStyle`
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&family=Source+Code+Pro:wght@600&display=swap");
   ${normalize}
 
   :root {
