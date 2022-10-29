@@ -43,7 +43,7 @@ const Title = styled.div`
   }
   h2 {
     font-size: 0.5em;
-    font-style: italic;
+    font-family: var(--font-family-mono);
   }
 
   .bolt {

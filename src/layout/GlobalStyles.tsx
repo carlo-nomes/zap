@@ -34,7 +34,9 @@ const variables = css`
   --colors-link-hover: var(--colors-link-500);
   --colors-link-visited: var(--colors-link-900);
 
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&family=Source+Code+Pro:wght@600&display=swap");
   --font-family-sans: "Open Sans", sans-serif;
+  --font-family-mono: "Source Code Pro", monospace;
 
   --transition-duration-default: 500ms;
   --transition-duration-long: 1000ms;
@@ -52,6 +54,7 @@ const GlobalStyle = createGlobalStyle`
     color: var(--colors-gray-900);
 
     font-family: var(--font-family-sans);
+    font-weight: 300;
     font-size: 1rem;
   }
 
