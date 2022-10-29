@@ -98,7 +98,6 @@ Error generating stack: `+o.message+`
   --colors-link-hover: var(--colors-link-500);
   --colors-link-visited: var(--colors-link-900);
 
-  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&family=Source+Code+Pro:wght@600&display=swap");
   --font-family-sans: "Open Sans", sans-serif;
   --font-family-mono: "Source Code Pro", monospace;
 
@@ -107,6 +106,7 @@ Error generating stack: `+o.message+`
 
   --spacing-default: 1rem;
 `,j5=Gc`
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&family=Source+Code+Pro:wght@600&display=swap");
   ${Yc}
 
   :root {
