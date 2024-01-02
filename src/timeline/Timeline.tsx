@@ -72,8 +72,8 @@ const Timeline = () => {
             <Item.Title>Aan Tafel</Item.Title>
             <Item.Time>Summer 2012</Item.Time>
             <Item.Content>
-              A website for a local non&#8209;profit organization. Engaged to provide affordable meals to disabled
-              people.
+              A promotional website for a non-profit organization by the same name engaged in providing affordable and
+              nutritious meals to persons with a physical or mental impairment.
             </Item.Content>
             <Item.Footer>
               <Icons.HTML />
@@ -100,12 +100,18 @@ const Timeline = () => {
             <Item.Subtitle>Optis</Item.Subtitle>
             <Item.Time>Internship 2017</Item.Time>
             <Item.Content>
-              An IoT proof-of-concept for monitoring a bonsai with an Arduino connected to a web application.
+              An IoT proof-of-concept for monitoring and managing the health of a bonsai tree using an Arduino and a web
+              interface.
             </Item.Content>
             <Item.Footer>
               <Icons.Arduino />
+              <Icons.MQTT />
               <Icons.NodeJs />
+              <Icons.MongoDB />
               <Icons.Angular />
+              <Icons.Material />
+              <Icons.HTML />
+              <Icons.CSS />
             </Item.Footer>
           </Item.Wrapper>
 
@@ -126,7 +132,7 @@ const Timeline = () => {
               <Icons.Project />
             </Item.Icon>
             <Item.Title>
-              <a href="https://www.booqit.be/en/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.booqit.be" target="_blank" rel="noopener noreferrer">
                 BOOQIT
               </a>
             </Item.Title>
@@ -135,6 +141,9 @@ const Timeline = () => {
             <Item.Footer>
               <Icons.NodeJs />
               <Icons.Angular />
+              <Icons.Bulma />
+              <Icons.HTML />
+              <Icons.CSS />
             </Item.Footer>
           </Item.Wrapper>
 
@@ -285,6 +294,7 @@ const Timeline = () => {
               <Icons.AWS />
               <Icons.OpenSearch />
               <Icons.Lambda />
+              <Icons.DynamoDB />
               <Icons.NodeJs />
               <Icons.ReactJs />
               <Icons.TypeScript />

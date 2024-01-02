@@ -11,7 +11,7 @@ const List = styled.ul`
   align-self: center;
 
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   position: relative;
 

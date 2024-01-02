@@ -82,6 +82,12 @@ export const Material = () => (
   </IconWrapper>
 );
 
+export const Bulma = () => (
+  <IconWrapper title="Bulma">
+    <Icons.Bulma />
+  </IconWrapper>
+);
+
 export const Jasmine = () => (
   <IconWrapper title="Jasmine">
     <Icons.Jasmine />
@@ -91,6 +97,18 @@ export const Jasmine = () => (
 export const Karma = () => (
   <IconWrapper title="Karma">
     <Icons.Karma />
+  </IconWrapper>
+);
+
+export const MongoDB = () => (
+  <IconWrapper title="MongoDB">
+    <Icons.MongoDB />
+  </IconWrapper>
+);
+
+export const MQTT = () => (
+  <IconWrapper title="MQTT">
+    <Icons.MQTT />
   </IconWrapper>
 );
 
@@ -133,6 +151,12 @@ export const AWS = () => (
 export const Lambda = () => (
   <IconWrapper title="AWS Lambda">
     <Icons.Lambda />
+  </IconWrapper>
+);
+
+export const DynamoDB = () => (
+  <IconWrapper title="AWS DynamoDB">
+    <Icons.DynamoDB />
   </IconWrapper>
 );
 

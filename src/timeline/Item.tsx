@@ -56,11 +56,11 @@ export const Wrapper = styled.li`
     width: calc(50% - 0.25rem);
     max-width: 50rem;
 
-    &:nth-child(odd) {
+    &:nth-child(even) {
       ${leftItem}
     }
 
-    &:nth-child(even) {
+    &:nth-child(odd) {
       ${rightItem}
     }
   }
