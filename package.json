@@ -14,11 +14,11 @@
   "license": "MIT",
   "author": "Carlo Nomes <nomes.carlo@gmail.com>",
   "scripts": {
+    "dev": "vite",
     "build": "vite build",
     "deploy": "vite build && gh-pages -d dist -t true",
     "lint": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
-    "prettier": "prettier --write './src/**/*.{js,jsx,ts,tsx,json}'",
-    "start": "vite"
+    "prettier": "prettier --write './src/**/*.{js,jsx,ts,tsx,json}'"
   },
   "dependencies": {
     "react": "^18.2.0",
