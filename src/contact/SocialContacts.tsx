@@ -12,6 +12,7 @@ const Wrapper = styled.div`
 
 const SocialContacts = () => (
   <Wrapper>
+    <Socials.Mail />
     <Socials.GitHub />
     <Socials.Codepen />
     <Socials.Medium />
