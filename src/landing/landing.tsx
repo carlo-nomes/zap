@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-import AppSection from "../common/section";
 import Arrow from "../common/arrow";
 import { HighVoltage } from "../common/emojis";
+import AppSection from "../common/section";
 
 import Bolt from "./bolt";
 import HypeText from "./hype-text";

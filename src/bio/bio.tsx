@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-import AppSection from "../common/section";
-import { Wave } from "../common/emojis";
 import Arrow from "../common/arrow";
+import { Wave } from "../common/emojis";
+import AppSection from "../common/section";
 import WaveBackground from "../common/wave-background";
 
 const Section = styled(AppSection)`

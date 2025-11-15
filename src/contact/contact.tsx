@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-import AppSection from "../common/section";
-import WaveBackground from "../common/wave-background";
 import Arrow from "../common/arrow";
-import Spacer from "../common/spacer";
+import AppSection from "../common/section";
 import * as Socials from "../common/socials";
+import Spacer from "../common/spacer";
+import WaveBackground from "../common/wave-background";
 
-import Title from "./title";
 import Subtitle from "./subtitle";
+import Title from "./title";
 
 const Section = styled(AppSection)`
   color: var(--colors-gray-600);

@@ -3,8 +3,8 @@ import styled from "styled-components";
 import AppSection from "../common/section";
 import WaveBackground from "../common/wave-background";
 
-import List from "./list";
 import * as Item from "./item";
+import List from "./list";
 import * as Icons from "./timeline-icons";
 
 const Section = styled(AppSection)`

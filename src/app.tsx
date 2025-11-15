@@ -1,11 +1,11 @@
 import ScrollContext from "./common/scroll-context";
 import { SectionContext } from "./common/section";
 
-import Layout from "./layout";
-import Landing from "./landing";
 import Bio from "./bio";
-import Timeline from "./timeline";
 import Contact from "./contact";
+import Landing from "./landing";
+import Layout from "./layout";
+import Timeline from "./timeline";
 
 const App = () => {
   return (
