@@ -6,11 +6,11 @@
   "description": "Portfolio site for @Carlo.Nomes",
   "homepage": "https://carlo-nomes.github.io/zap",
   "bugs": {
-    "url": "https://github.com/cnomes/zap/issues"
+    "url": "https://github.com/carlo-nomes/zap/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cnomes/zap"
+    "url": "https://github.com/carlo-nomes/zap"
   },
   "license": "MIT",
   "author": "Carlo Nomes <nomes.carlo@gmail.com>",
