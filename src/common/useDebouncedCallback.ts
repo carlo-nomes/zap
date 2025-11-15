@@ -13,7 +13,7 @@ const useDebouncedCallback = <Args extends unknown[], R = unknown>(func: (...arg
       clearTimeout(timeout.current);
       timeout.current = setTimeout(later, wait);
     },
-    [func, wait]
+    [func, wait],
   );
 };
 
