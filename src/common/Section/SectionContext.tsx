@@ -45,7 +45,13 @@ const SectionContextProvider = ({ children }: PropsWithChildren) => {
     if (!section) return;
     if (isElementInView(section)) return;
 
-    section.scrollIntoView({ behavior: "smooth" });
+    try {
+      section.scrollIntoView({ behavior: "smooth" });
+    } catch (error) {
+      console.warn("Error scrolling to section:", error);
+      // Fallback to instant scroll
+      section.scrollIntoView();
+    }
   }, [hash, sections]);
 
   useEffect(() => {

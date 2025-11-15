@@ -48,11 +48,15 @@ const useGlyphTransition = (prev: string, next: string) => {
   // When the next text is different than the current text move to the text to glyphs stage
   useEffect(() => {
     // Use a microtask to avoid synchronous state updates in effect
-    Promise.resolve().then(() => {
-      setToBe(next);
-      setText({ type: "RESET", text: prev });
-      setStage("PADDING");
-    });
+    Promise.resolve()
+      .then(() => {
+        setToBe(next);
+        setText({ type: "RESET", text: prev });
+        setStage("PADDING");
+      })
+      .catch((error) => {
+        console.error("Error initializing glyph transition:", error);
+      });
   }, [next, prev]);
 
   // Padd either the to be text or the current text
@@ -61,7 +65,11 @@ const useGlyphTransition = (prev: string, next: string) => {
 
     // If the next text is the same length, move to the next stage
     if (diff === 0) {
-      Promise.resolve().then(() => setStage("TEXT_TO_GLYPHS"));
+      Promise.resolve()
+        .then(() => setStage("TEXT_TO_GLYPHS"))
+        .catch((error) => {
+          console.error("Error transitioning stage:", error);
+        });
       return;
     }
 
@@ -88,16 +96,20 @@ const useGlyphTransition = (prev: string, next: string) => {
 
     // If the next text is shorter, padd the text with spaces
     if (diff < 0) {
-      Promise.resolve().then(() => {
-        setToBe((prevToBe) => {
-          const padding = new Array(Math.abs(diff)).fill(" ");
-          const half = Math.floor(padding.length / 2);
-          const paddingStart = padding.slice(0, half).join("");
-          const paddingEnd = padding.slice(half).join("");
-          return `${paddingStart}${prevToBe}${paddingEnd}`;
+      Promise.resolve()
+        .then(() => {
+          setToBe((prevToBe) => {
+            const padding = new Array(Math.abs(diff)).fill(" ");
+            const half = Math.floor(padding.length / 2);
+            const paddingStart = padding.slice(0, half).join("");
+            const paddingEnd = padding.slice(half).join("");
+            return `${paddingStart}${prevToBe}${paddingEnd}`;
+          });
+          setStage("TEXT_TO_GLYPHS");
+        })
+        .catch((error) => {
+          console.error("Error padding text:", error);
         });
-        setStage("TEXT_TO_GLYPHS");
-      });
     }
   }, [diff, stage]);
 
