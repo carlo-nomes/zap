@@ -1,4 +1,4 @@
-import Social from "./Social";
+import Social from "./social";
 
 const Instagram = () => (
   <Social href="https://goo.gl/maps/rqsxsaQKU61Jqda27" aria-label="My favorite bar">

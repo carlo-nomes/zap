@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useScrollContext } from "../common/ScrollContext";
+import { useScrollContext } from "../common/scroll-context";
 
 const isIdTopOutOfView = (id: string) => {
   const sectionEl = document.querySelector(`#${id}`);

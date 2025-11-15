@@ -1,4 +1,4 @@
-import Social from "./Social";
+import Social from "./social";
 
 const GitHub = () => (
   <Social href="https://github.com/carlo-nomes/" aria-label="GitHub">

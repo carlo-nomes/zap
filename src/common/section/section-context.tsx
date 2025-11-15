@@ -1,9 +1,9 @@
 import { createContext, PropsWithChildren, useCallback, useContext, useEffect, useReducer } from "react";
 
-import { useScrollContext } from "../ScrollContext";
-import { isElementInView } from "../ScrollContext/util";
+import { useScrollContext } from "../scroll-context";
+import { isElementInView } from "../scroll-context/util";
 
-import useHash from "../useHash";
+import useHash from "../use-hash";
 
 const SectionContext = createContext({
   sections: {} as Record<string, HTMLElement>,

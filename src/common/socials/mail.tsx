@@ -1,4 +1,4 @@
-import Social from "./Social";
+import Social from "./social";
 
 const Mail = () => (
   <Social href="mailto:carlo@nomes.dev" aria-label="Mail">

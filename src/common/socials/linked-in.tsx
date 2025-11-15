@@ -1,4 +1,4 @@
-import Social from "./Social";
+import Social from "./social";
 
 const LinkedIn = () => (
   <Social href="https://www.linkedin.com/in/carlo-nomes/" aria-label="LinkedIn">

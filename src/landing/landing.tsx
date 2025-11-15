@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-import AppSection from "../common/Section";
-import Arrow from "../common/Arrow";
+import AppSection from "../common/section";
+import Arrow from "../common/arrow";
 import { HighVoltage } from "../common/emojis";
 
-import Bolt from "./Bolt";
-import HypeText from "./HypeText";
+import Bolt from "./bolt";
+import HypeText from "./hype-text";
 
 const Title = styled.div`
   flex: 1;

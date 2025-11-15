@@ -1,7 +1,7 @@
 import { HTMLAttributes } from "react";
 import styled from "styled-components";
 
-import GlobalStyle from "./GlobalStyles";
+import GlobalStyle from "./global-styles";
 
 const Wrapper = styled.main`
   width: 100vw;

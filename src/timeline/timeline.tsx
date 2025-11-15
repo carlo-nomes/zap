@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-import AppSection from "../common/Section";
-import WaveBackground from "../common/WaveBackground";
+import AppSection from "../common/section";
+import WaveBackground from "../common/wave-background";
 
-import List from "./List";
-import * as Item from "./Item";
-import * as Icons from "./TimelineIcons";
+import List from "./list";
+import * as Item from "./item";
+import * as Icons from "./timeline-icons";
 
 const Section = styled(AppSection)`
   --negative-margin: 15rem;

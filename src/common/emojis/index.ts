@@ -1,7 +1,7 @@
-import HearNoEvil from "./HearNoEvil";
-import SeeNoEvil from "./SeeNoEvil";
-import ConstructionSign from "./ConstructionSign";
-import Wave from "./Wave";
-import HighVoltage from "./HighVoltage";
+import HearNoEvil from "./hear-no-evil";
+import SeeNoEvil from "./see-no-evil";
+import ConstructionSign from "./construction-sign";
+import Wave from "./wave";
+import HighVoltage from "./high-voltage";
 
 export { HearNoEvil, SeeNoEvil, ConstructionSign, Wave, HighVoltage };

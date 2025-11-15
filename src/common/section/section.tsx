@@ -1,7 +1,7 @@
 import { ReactNode, useEffect, useRef } from "react";
 import styled from "styled-components";
 
-import { useSectionContext } from "./SectionContext";
+import { useSectionContext } from "./section-context";
 
 const Section = styled.section`
   box-sizing: border-box;

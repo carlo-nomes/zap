@@ -1,5 +1,5 @@
 import { useContext, createContext, ReactNode, useReducer, useCallback, ComponentType, HTMLAttributes } from "react";
-import useDebouncedCallback from "../useDebouncedCallback";
+import useDebouncedCallback from "../use-debounced-callback";
 
 // High enough to prevent triggers during smooth scroll
 const SCROLL_DEBOUNCE_TIME = 100;

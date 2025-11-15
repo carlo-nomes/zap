@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-import AppSection from "../common/Section";
+import AppSection from "../common/section";
 import { Wave } from "../common/emojis";
-import Arrow from "../common/Arrow";
-import WaveBackground from "../common/WaveBackground";
+import Arrow from "../common/arrow";
+import WaveBackground from "../common/wave-background";
 
 const Section = styled(AppSection)`
   align-items: center;

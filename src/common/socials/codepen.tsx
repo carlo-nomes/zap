@@ -1,4 +1,4 @@
-import Social from "./Social";
+import Social from "./social";
 
 const CodePen = () => (
   <Social href="https://codepen.io/carlo-nomes/" aria-label="CodePen">

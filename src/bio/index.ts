@@ -1,3 +1,3 @@
-import Bio from "./Bio.jsx";
+import Bio from "./bio";
 
 export default Bio;

@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 
-import { useScrollContext } from "./ScrollContext";
+import { useScrollContext } from "./scroll-context";
 import { isElementInView } from "./util";
 
 const useElementInView = <ElementType extends HTMLElement>() => {

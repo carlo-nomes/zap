@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import * as Socials from "../common/Socials";
+import * as Socials from "../common/socials";
 
 const Wrapper = styled.div`
   display: inline-flex;

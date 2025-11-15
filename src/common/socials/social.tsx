@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 import styled from "styled-components";
 
-import AppButton from "../Button";
+import AppButton from "../button";
 
 const Button = styled(AppButton)`
   width: 2.5rem;

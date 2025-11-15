@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import useGlyphTransition from "../common/useGlyphTransition";
+import useGlyphTransition from "../common/use-glyph-transition";
 
 const HYPE_ROTATION = 10000;
 const HYPES = [

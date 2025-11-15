@@ -1,4 +1,4 @@
-import Social from "./Social";
+import Social from "./social";
 
 const Behance = () => (
   <Social href="https://www.behance.net/carlo-nomes" aria-label="Behance">

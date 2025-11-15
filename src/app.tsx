@@ -1,5 +1,5 @@
-import ScrollContext from "./common/ScrollContext";
-import { SectionContext } from "./common/Section";
+import ScrollContext from "./common/scroll-context";
+import { SectionContext } from "./common/section";
 
 import Layout from "./layout";
 import Landing from "./landing";

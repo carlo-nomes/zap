@@ -1,4 +1,4 @@
-import Social from "./Social";
+import Social from "./social";
 
 const Medium = () => (
   <Social href="https://medium.com/@carlo.nomes/" aria-label="Medium">
