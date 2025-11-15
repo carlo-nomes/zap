@@ -1,7 +1,7 @@
 import { useCallback, useRef } from "react";
 
 const useDebouncedCallback = <Args extends unknown[], R = unknown>(func: (...args: Args) => R, wait: number) => {
-  const timeout = useRef<any>();
+  const timeout = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   return useCallback(
     (...args: Args) => {
