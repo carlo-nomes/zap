@@ -39,6 +39,7 @@ const SectionContextProvider = ({ children }: PropsWithChildren) => {
   const removeSection = useCallback((id: string) => dispatchSection({ type: "REMOVE", id }), []);
 
   useEffect(() => {
+    if (!hash) return;
     const section = sections[hash];
 
     if (!section) return;
@@ -68,7 +69,9 @@ const SectionContextProvider = ({ children }: PropsWithChildren) => {
         })
         .map(([key]) => key);
 
-      setHash(section);
+      if (section) {
+        setHash(section);
+      }
     };
 
     addListener(updateHash);

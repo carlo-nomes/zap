@@ -4,7 +4,10 @@ import { getRandomIndex } from "./helpers";
 const STEP_INTERVAL = 70;
 const GLYPHS = "▤▥▦▧▨◊◆◇◈◉○◌◍◎●◐◑◒◓◧◨◩◪◫◬◭◮═║╞╟╠╡╢╣╪╫╬";
 
-const getRandomGlyph = () => GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
+const getRandomGlyph = (): string => {
+  const glyph = GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
+  return glyph ?? "◆"; // fallback to a default glyph
+};
 
 type Action =
   | { type: "RESET"; text: string }
@@ -70,7 +73,9 @@ const useGlyphTransition = (prev: string, next: string) => {
           // If the next text is longer, padd the text
           if (remaining > 0) {
             remaining = remaining - 2;
-            return { type: "PADD", start: getRandomGlyph(), end: getRandomGlyph() };
+            const start = getRandomGlyph();
+            const end = getRandomGlyph();
+            return { type: "PADD", start, end };
           }
 
           setStage("TEXT_TO_GLYPHS");
@@ -110,7 +115,11 @@ const useGlyphTransition = (prev: string, next: string) => {
 
         // Get a random index that is not already a glyph
         let index = getRandomIndex(prevText);
-        while (GLYPHS.includes(prevText[index])) index = getRandomIndex(prevText);
+        let charAtIndex = prevText[index];
+        while (charAtIndex && GLYPHS.includes(charAtIndex)) {
+          index = getRandomIndex(prevText);
+          charAtIndex = prevText[index];
+        }
 
         return { type: "REPLACE", char: getRandomGlyph(), index };
       });
@@ -134,7 +143,7 @@ const useGlyphTransition = (prev: string, next: string) => {
         // Get a random index, make sure it is not already transitioned
         let index = getRandomIndex(prevText);
         let char = toBe[index];
-        while (prevText[index] === char) {
+        while (char !== undefined && prevText[index] === char) {
           index = getRandomIndex(prevText);
           char = toBe[index];
         }

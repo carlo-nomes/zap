@@ -20,17 +20,21 @@ const HypeWrapper = styled.h2`
 `;
 
 const HypeText = () => {
-  const [prevHype, setPrevHype] = useState("");
-  const [nextHype, setNextHype] = useState(HYPES[0]);
+  const [prevHype, setPrevHype] = useState(HYPES[0] ?? "");
+  const [nextHype, setNextHype] = useState(HYPES[0] ?? "");
   const { text, stage } = useGlyphTransition(prevHype, nextHype);
 
   useEffect(() => {
     if (stage !== "DONE") return;
 
     const timeout = setTimeout(() => {
-      const nextIndex = (HYPES.indexOf(nextHype) + 1) % HYPES.length;
-      setPrevHype(nextHype);
-      setNextHype(HYPES[nextIndex]);
+      const currentIndex = HYPES.indexOf(nextHype);
+      const nextIndex = (currentIndex + 1) % HYPES.length;
+      const nextValue = HYPES[nextIndex];
+      if (nextValue) {
+        setPrevHype(nextHype);
+        setNextHype(nextValue);
+      }
     }, HYPE_ROTATION);
 
     return () => clearTimeout(timeout);
