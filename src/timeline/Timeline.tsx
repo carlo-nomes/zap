@@ -320,6 +320,15 @@ const Timeline = () => {
               <Icons.StyledComponents />
             </Item.Footer>
           </Item.Wrapper>
+
+          <Item.Wrapper>
+            <Item.Icon>
+              <Icons.Certificate />
+            </Item.Icon>
+            <Item.Title>Certified Scrum Product Owner</Item.Title>
+            <Item.Subtitle>Agilar - Scrum Alliance</Item.Subtitle>
+            <Item.Time>August 2025</Item.Time>
+          </Item.Wrapper>
         </List>
       </WaveBackground>
     </Section>
