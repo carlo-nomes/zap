@@ -1,23 +1,36 @@
 import { useEffect, useReducer } from "react";
 
 const hashReducer = (hash: string, value: string) => {
-  const newHash = value[0] === "#" ? value : `#${value}`;
-  if (hash === newHash) return hash;
+  try {
+    const newHash = value[0] === "#" ? value : `#${value}`;
+    if (hash === newHash) return hash;
 
-  window.location.hash = newHash;
-  return newHash;
+    window.location.hash = newHash;
+    return newHash;
+  } catch (error) {
+    console.warn("Error updating hash:", error);
+    return hash;
+  }
 };
 
 const useHash = () => {
   const [hash, dispatchHash] = useReducer(hashReducer, window.location.hash);
   useEffect(() => {
-    window.onhashchange = () => dispatchHash(window.location.hash);
+    const handleHashChange = () => {
+      try {
+        dispatchHash(window.location.hash);
+      } catch (error) {
+        console.warn("Error handling hash change:", error);
+      }
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
     return () => {
-      window.onhashchange = null;
+      window.removeEventListener("hashchange", handleHashChange);
     };
   }, []);
 
-  return [hash.split("#")[1], dispatchHash] as const;
+  return [hash.split("#")[1] ?? "", dispatchHash] as const;
 };
 
 export default useHash;
