@@ -37,6 +37,9 @@ jobs:
       - name: Run Prettier check
         run: npx prettier --check './src/**/*.{js,jsx,ts,tsx,json}'
 
+      - name: Run TypeScript type check
+        run: npm run test:type
+
   build-and-deploy:
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
