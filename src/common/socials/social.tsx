@@ -4,8 +4,9 @@ import styled from "styled-components";
 import AppButton from "../button";
 
 const Button = styled(AppButton)`
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 3rem;
+  height: 3rem;
+
   &:hover,
   &:focus,
   &:active,
